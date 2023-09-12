@@ -1,5 +1,5 @@
 # **Recipe Website**
-## **Function: **
+## **Function:**
 
 -	The website should allow registered users to create a recipe for a dish.
 -	The user should be able to specify ingredients required for a dish.
