@@ -10,7 +10,7 @@
 
 ## **Detailed Functions:**
 
-**Registration:** name, id, profile (default, can be changed later)
+**Registration:** name, id, password, profile (default, can be changed later,except id)
 
 **Unregistered:** search and view posts.
 **Registered:** search posts, view, collect and send posts.
@@ -21,24 +21,39 @@
 
 ## **Web Pages:**
 
-**Home:**
+**Note: Side column is fixed**
+
+**Home (before log in):**
 - pictures (posts)
-- log in (log in box/page) (personal page)
-- register (register box/page)
 - search box (same page after filtering)
 - columns (categories)
+- side column: log in
 
-**Post:**
+**log in:**
+- name
+- password
+- log in (button)
+- register (button)
+
+**Home (after log in):**
+- pictures (posts)
+- search box (same page after filtering)
+- columns (categories)
+- side column: home, post, collection, me
+
+**CLiked Post:**
 - content of the post (title, picture, category, tags)
 - collect
 
-**Personal Page:**
-- personal information (name, id, profile) (name and profile can be edited)
-- posted (column)
-- collected (column)
-- edit post
+**Colloction**
+- pictures (posts)
+
+**Me:**
+- personal information: name, id, password, profile (can be edited,except id)
 
 **Edit post:**
-- content of the post (title, picture, category, tags)
-- release
+- content of the post: title, picture, category, tags (ingredients), amount 
+- release (button)
+
+
 
