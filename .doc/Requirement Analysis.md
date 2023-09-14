@@ -41,7 +41,7 @@
 - columns (categories)
 - side column: home, post, collection, me
 
-**CLiked Post:**
+**Cliked Post:**
 - content of the post (title, picture, category, tags)
 - collect
 
