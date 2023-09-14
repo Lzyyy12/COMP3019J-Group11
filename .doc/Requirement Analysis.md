@@ -29,7 +29,7 @@
 - columns (categories)
 - side column: log in
 
-**log in:**
+**Log in:**
 - name
 - password
 - log in (button)
