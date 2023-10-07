@@ -1,0 +1,43 @@
+/* Reset default margin and padding for the body */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Style for the sidebar */
+.sidebar {
+    position: fixed; /* Fix the sidebar to the screen */
+    top: 0; /* Align it to the top */
+    left: 0; /* Align it to the left */
+    width: 200px; /* Set the width of the sidebar */
+    height: 100%; /* Make it the full height of the screen */
+    background-color: #333; /* Background color for the sidebar */
+    color: white; /* Text color for the sidebar */
+    padding: 20px; /* Add some padding for spacing */
+}
+
+/* Style for the login link */
+.sidebar a {
+    text-decoration: none; /* Remove underline from the link */
+    color: white; /* Text color for the link */
+    display: block; /* Display it as a block element for spacing */
+    margin-bottom: 20px; /* Add some margin between links */
+}
+
+/* Style for the name */
+.name {
+    font-size: 16px; /* Set the font size */
+}
+
+/* Style for the content outside the sidebar */
+.content {
+    margin-left: 220px; /* Add some margin to the left to avoid overlap with the sidebar */
+    padding: 20px; /* Add padding for spacing */
+}
+
+/* Style for the footer */
+footer {
+    color: palevioletred;
+    text-align: center; /* Center-align the text */
+    padding: 10px; /* Add padding for spacing */
+}
