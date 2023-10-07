@@ -2,21 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link  href="static/css/index.css" rel="stylesheet">
+    <link  href="../static/css/index.css" rel="stylesheet">
     <title>EpicureanMatrix</title>
 </head>
 <body>
 
     <!--固定的侧边栏：用户信息-->
     <div class="sidebar">
-        <a href="./login.html">Log in</a>
-        <div class="name">Your Name</div>
+        <img src="../static/image/logo.jpg" alt="Your Image Description">
+    
+        <a href="./login.html" class="login">Log in</a>
+    
     </div>
 
     <!--侧边栏以外的区域：菜谱、菜系、搜索框-->
-    <div>
-        {{recipe_list}}
-    </div>
+    
+
+    <!-- 添加搜索栏 -->
+    <div class="search-bar">
+    <form action="search.php" method="get"> <!-- 设置适当的表单处理动作和方法 -->
+        <input type="text" name="query" placeholder="Search...">
+        <button type="submit">Search</button>
+    </form>
+</div>
 
     <!--页脚-->
     <footer style="color: palevioletred;">This is Footer</footer>
