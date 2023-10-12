@@ -51,15 +51,15 @@ body {
     width: 50%; /* 设置输入框宽度为80% */
     padding: 5px; /* 添加内边距 */
     margin: 0 auto; 
-    display: inline-block;/* 使用auto来水平居中 */
+    /* 使用auto来水平居中 */
     display: block; /* 将输入框显示为块级元素 */
 }
 
 /* 样式为按钮 */
 .search-bar button {
     padding: 5px 10px; /* 添加内边距 */
-    display: inline-block; /* 将按钮显示为块级元素 */
-    vertical-align: middle; /* 使用auto来水平居中，并增加垂直间距 */
+    display: block; /* 将按钮显示为块级元素 */
+    margin: 10px auto; /* 使用auto来水平居中，并增加垂直间距 */
 }
 
 /* Style for the footer */
