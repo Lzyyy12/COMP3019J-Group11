@@ -10,8 +10,18 @@
     <!--固定的侧边栏：用户信息-->
     <div class="sidebar">
         <img src="../static/image/logo.jpg" alt="Your Image Description">
+
+        <div class="user">
+            {% if islogin %}
+            <h4>User Info</h4>
+            <div>{{usermsg}}</div>
+            <button onclick='location.href=("./api/logout")'>EXIT</button>
+            {% else %}
+            <a href="./api/login" target="_self">LOG IN</a>
+            {% endif %}
+        </div>
     
-        <a href="./login.html" class="login">Log in</a>
+        <!-- <a href="./login.html" class="login">Log in</a> -->
     
     </div>
 
