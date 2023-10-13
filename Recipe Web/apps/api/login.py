@@ -15,7 +15,7 @@ def login():
         password = request.form['password']
         user_obj = User.query.filter_by(name=username).first()
 
-        if username == 'name' and password == 'password':
+        if username == user_obj.name and password == user_obj.password:
             session["username"] = username
             session['logged_in'] = user_obj.id
             return redirect('/')
