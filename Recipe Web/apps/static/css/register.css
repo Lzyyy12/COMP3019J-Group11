@@ -1,0 +1,29 @@
+.background {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.background img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* 定义包含表单和图片的容器 */
+.form-container {
+    position: relative;
+}
+
+
+/* 设置表单内容居中 */
+.form-div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.9); /* 可能需要半透明背景，以便文本更易阅读 */
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+}

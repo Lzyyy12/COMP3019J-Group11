@@ -3,16 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <title>Log in</title>
+    <link href="../static/css/register.css" rel="stylesheet">
 </head>
 <body>
 
     <!--左侧展示图片区域-->
-    <div></div>
+    <div class="background">
+        <img src="../static/image/background.jpeg" alt="Your Image Description">
+    </div>
 
     <!--右侧用户输入信息区域-->
-    <div></div>
+    <div class="form-div">
+        <h1><b>Welcome to register</b></h1>
+        <!-- <form id="reg-form" action="registerServlet" method="post"> -->
+            <table>
+                <tr>
+                    <td>User Name</td>
+                    <td class="inputs">
+                        <input name="username" type="text" id="username">
+                        <br>
+                        <span id="username_err" class="err_msg"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td class="inputs">
+                        <input name="password" type="password" id="password">
+                        <br>
+                        <span id="password_err" class="err_msg" style="display: none">Incorrect password format</span>
+                    </td>
+                </tr>
+            </table>
+    
+            <div class="buttons">
+                <input value="register" type="submit" id="reg_btn">
+            </div>
+            <div class="reg-content">
+            
+            <span>Already have an account?</span> <a href="./login.html">Log in</a>
+            </div>
+            <!-- <br class="clear"> -->
+        </form>
+    
+    </div>
 
     <!--页脚-->
-    <footer style="color: palevioletred;">This is Footer</footer>
+    <!-- <footer style="color: palevioletred;">This is Footer</footer> -->
 </body>
 </html>
