@@ -1,0 +1,70 @@
+/* Reset default margin and padding for the body */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Style for the sidebar */
+.sidebar {
+    position: fixed; /* Fix the sidebar to the screen */
+    top: 0; /* Align it to the top */
+    left: 0; /* Align it to the left */
+    width: 200px; /* Set the width of the sidebar */
+    height: 100%; /* Make it the full height of the screen */
+    background-color: #333; /* Background color for the sidebar */
+    color: white; /* Text color for the sidebar */
+    padding: 20px; /* Add some padding for spacing */
+}
+
+.sidebar img {
+    width: 80px;
+    height: 80px;
+}
+
+/* Style for the login link */
+.main,.post,.favorite,.user{
+    text-decoration: none; /* Remove underline from the link */
+    color: white; /* Text color for the link */
+    display: block; /* Display it as a block element for spacing */
+    margin-top: 40px;
+    border: 1px solid #ccc; /* Add a 1px border */
+    border-radius: 10px;
+    padding: 5px; /* 添加内边距，增加可点击区域大小 */
+    transition: background-color 0.2s; 
+    font-weight: bold;/* 添加过渡效果，使背景颜色变化平滑 */
+}
+.main:hover,.post:hover,.favorite:hover,.user:hover {
+    background-color: #5f5d5d; /* 悬停时的背景颜色 */
+    color: #fff; /* 悬停时的文字颜色 */
+}
+
+
+/* Style for the content outside the sidebar */
+.search-bar {
+    text-align: center; /* 文本内容水平居中 */
+    margin-left: 30px;
+    margin-top: 40px;
+}
+
+/* 样式为输入框 */
+.search-bar input[type="text"] {
+    width: 50%; /* 设置输入框宽度为80% */
+    padding: 5px; /* 添加内边距 */
+    margin: 0 auto; 
+    /* 使用auto来水平居中 */
+    display: block; /* 将输入框显示为块级元素 */
+}
+
+/* 样式为按钮 */
+.search-bar button {
+    padding: 5px 10px; /* 添加内边距 */
+    display: block; /* 将按钮显示为块级元素 */
+    margin: 10px auto; /* 使用auto来水平居中，并增加垂直间距 */
+}
+
+/* Style for the footer */
+footer {
+    color: palevioletred;
+    text-align: center; /* Center-align the text */
+    padding: 10px; /* Add padding for spacing */
+}
