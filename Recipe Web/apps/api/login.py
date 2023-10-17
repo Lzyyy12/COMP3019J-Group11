@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify, Blueprint, render_template, session, url_for, redirect
 import json
 from apps.model.model import User
+from apps import db
 
 bp = Blueprint("login", __name__, url_prefix="/api")
 
@@ -25,14 +26,28 @@ def login():
     return render_template('login.html', **context)
 
 
-@bp.route("/register", methods=["POST"])
+@bp.route("/register", methods=["GET", "POST"])
 def register():
-    data = request.get_data()
-    json_data = json.loads(data)
-    if True:
-        return 'success'
-    else:
-        return 'fail'
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+
+        # 检查用户名是否已经存在
+        existing_user = User.query.filter_by(name=username).first()
+        if existing_user:
+            return "Username already exists. Please choose a different username."
+
+        # 创建一个新用户对象
+        new_user = User(name=username, password=password)
+
+        # 将新用户添加到数据库并提交更改
+        db.session.add(new_user)
+        db.session.commit()
+
+        # 重定向到登录页面或其他适当页面
+        return redirect('/login')
+
+    return render_template('register.html')
 
 
 @bp.route('/logout')
