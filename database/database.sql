@@ -1,15 +1,15 @@
-DROP DATABASE IF EXISTS Manage;
+DROP DATABASE IF EXISTS recipe_web;
 
-CREATE DATABASE Manage CHARACTER SET utf8 COLLATE utf8_general_ci;
+CREATE DATABASE recipe_web CHARACTER SET utf8 COLLATE utf8_general_ci;
 
-USE Manage;
+USE recipe_web;
 
 DROP TABLE IF EXISTS User;
 CREATE TABLE User (
     user_id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-    password VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-    photo BLOB NOT NULL
+    password VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci,
+    photo VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci
 );
 
 DROP TABLE IF EXISTS Recipe;
