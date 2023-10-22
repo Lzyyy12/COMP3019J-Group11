@@ -3,14 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Log in</title>
+    <link href="../static/css/login.css" rel="stylesheet">
 </head>
 <body>
 
     <!--左侧展示图片区域-->
-    <div></div>
+    <div class="background">
+        <img src="../static/image/background.jpeg" alt="Your Image Description">
+    </div>
 
     <!--右侧用户输入信息区域-->
-    <div>
+    <div class="login_table">
         <p>{{msg}}</p>
         <form action="" method="post">
             <div>
@@ -23,12 +26,12 @@
             </div>
             <button type="submit">login</button>
         </form>
+   
+
+
+        <!--注册按钮 -->
+        <p>Don't have an account? <a href="./register">Register</a></p>
     </div>
-
-
-    <!--注册按钮 -->
-    <p>Don't have an account? <a href="./register">Register</a></p>
-
     <!--页脚-->
     <footer style="color: palevioletred;">This is Footer</footer>
 </body>

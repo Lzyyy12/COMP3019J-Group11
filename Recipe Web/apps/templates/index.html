@@ -13,9 +13,12 @@
 
         <div class="user">
             {% if islogin %}
-            <h4>User Info</h4>
-            <div>{{usermsg}}</div>
-            <button onclick='location.href=("./api/logout")'>EXIT</button>
+            <a href="./main.html" class="main">Main</a>
+            <a href="./post.html" class="post">Post</a>
+            <a href="./favorite.html" class="favorite">Favorite</a>
+            <a href="./user.html" class="user">User</a>
+
+            <button onclick='location.href=("./api/logout")'>Exit</button>
             {% else %}
             <a href="./api/login" target="_self">LOG IN</a>
             {% endif %}
@@ -26,15 +29,37 @@
     </div>
 
     <!--侧边栏以外的区域：菜谱、菜系、搜索框-->
-    
+    <main class="page"> 
+        <div class="search-bar">
+        <form action="search.php" method="get"> <!-- 设置适当的表单处理动作和方法 -->
+            <input type="text" name="query" placeholder="Search...">
+            <button type="submit">Search</button>
+        </form>
+        </div>
+        <section class="recipes-container">
+            <div class="recipes-list">
+                <a href="single-recipe.html" class="recipe">
+                    <img src="../static/image/recipe1.png" alt="food" class="recipe-img"/>
+                    <h5>noddle</h5>
+                </a>
+            </div>
+            <div class="recipes-list">
+                <a href="single-recipe.html" class="recipe">
+                    <img src="../static/image/recipe2.png" alt="food" class="recipe-img"/>
+                    <h5>noddle</h5>
+                </a>
+            </div>
+            <div class="recipes-list">
+                <a href="single-recipe.html" class="recipe">
+                    <img src="../static/image/recipe3.png" alt="food" class="recipe-img"/>
+                    <h5>noddle</h5>
+                </a>
+            </div>
+        </section>
+    </main>
 
     <!-- 添加搜索栏 -->
-    <div class="search-bar">
-    <form action="search.php" method="get"> <!-- 设置适当的表单处理动作和方法 -->
-        <input type="text" name="query" placeholder="Search...">
-        <button type="submit">Search</button>
-    </form>
-</div>
+   
 
     <!--页脚-->
     <footer style="color: palevioletred;">This is Footer</footer>

@@ -22,7 +22,7 @@ body {
 }
 
 /* Style for the login link */
-.login {
+.main {
     text-decoration: none; /* Remove underline from the link */
     color: white; /* Text color for the link */
     display: block; /* Display it as a block element for spacing */
@@ -33,10 +33,81 @@ body {
     transition: background-color 0.2s; 
     font-weight: bold;/* 添加过渡效果，使背景颜色变化平滑 */
 }
-.login:hover {
+.main:hover {
     background-color: #5f5d5d; /* 悬停时的背景颜色 */
     color: #fff; /* 悬停时的文字颜色 */
 }
+.favorite {
+    text-decoration: none; /* Remove underline from the link */
+    color: white; /* Text color for the link */
+    display: block; /* Display it as a block element for spacing */
+    margin-top: 40px;
+    border: 1px solid #ccc; /* Add a 1px border */
+    border-radius: 10px;
+    padding: 5px; /* 添加内边距，增加可点击区域大小 */
+    transition: background-color 0.2s; 
+    font-weight: bold;/* 添加过渡效果，使背景颜色变化平滑 */
+}
+.favorite:hover {
+    background-color: #5f5d5d; /* 悬停时的背景颜色 */
+    color: #fff; /* 悬停时的文字颜色 */
+}
+.post{
+    text-decoration: none; /* Remove underline from the link */
+    color: white; /* Text color for the link */
+    display: block; /* Display it as a block element for spacing */
+    margin-top: 40px;
+    border: 1px solid #ccc; /* Add a 1px border */
+    border-radius: 10px;
+    padding: 5px; /* 添加内边距，增加可点击区域大小 */
+    transition: background-color 0.2s; 
+    font-weight: bold;/* 添加过渡效果，使背景颜色变化平滑 */
+}
+.post:hover {
+    background-color: #5f5d5d; /* 悬停时的背景颜色 */
+    color: #fff; /* 悬停时的文字颜色 */
+}
+
+.user {
+    text-decoration: none; /* Remove underline from the link */
+    color: white; /* Text color for the link */
+    display: block; /* Display it as a block element for spacing */
+    margin-top: 40px;
+    border: 1px solid #ccc; /* Add a 1px border */
+    border-radius: 10px;
+    padding: 5px; /* 添加内边距，增加可点击区域大小 */
+    transition: background-color 0.2s; 
+    font-weight: bold;/* 添加过渡效果，使背景颜色变化平滑 */
+}
+.user:hover {
+    background-color: #5f5d5d; /* 悬停时的背景颜色 */
+    color: #fff; /* 悬停时的文字颜色 */
+}
+/* Recipes */
+.recipes-container{
+    display: grid;
+    gap:2rem 1rem;
+    border: 2px solid red;
+}
+.recipes-list{
+    margin-left: 300px;
+    display: grid;
+    gap:2rem 1rem;
+    padding-bottom: 3rem;
+    border: 2px solid green;
+}
+.recipes{
+    display: block;
+}
+.recipes-img {
+    height: 15rem;
+    width: 100%;
+    object-fit: cover;
+    border-radius: var(--borderRadius);
+    margin-bottom: 1rem;
+    margin-left: 200px; /* 设置左边距等于侧边栏的宽度 */
+}
+
 
 
 /* Style for the content outside the sidebar */
