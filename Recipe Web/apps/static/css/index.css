@@ -9,7 +9,7 @@ body {
     position: fixed; /* Fix the sidebar to the screen */
     top: 0; /* Align it to the top */
     left: 0; /* Align it to the left */
-    width: 200px; /* Set the width of the sidebar */
+    width: 20%; /* Set the width of the sidebar */
     height: 100%; /* Make it the full height of the screen */
     background-color: #333; /* Background color for the sidebar */
     color: white; /* Text color for the sidebar */
@@ -22,7 +22,7 @@ body {
 }
 
 /* Style for the login link */
-.main {
+.main,.logout,.favorite,.post,.user,.login {
     text-decoration: none; /* Remove underline from the link */
     color: white; /* Text color for the link */
     display: block; /* Display it as a block element for spacing */
@@ -33,105 +33,86 @@ body {
     transition: background-color 0.2s; 
     font-weight: bold;/* 添加过渡效果，使背景颜色变化平滑 */
 }
-.main:hover {
-    background-color: #5f5d5d; /* 悬停时的背景颜色 */
-    color: #fff; /* 悬停时的文字颜色 */
-}
-.favorite {
-    text-decoration: none; /* Remove underline from the link */
-    color: white; /* Text color for the link */
-    display: block; /* Display it as a block element for spacing */
-    margin-top: 40px;
-    border: 1px solid #ccc; /* Add a 1px border */
-    border-radius: 10px;
-    padding: 5px; /* 添加内边距，增加可点击区域大小 */
-    transition: background-color 0.2s; 
-    font-weight: bold;/* 添加过渡效果，使背景颜色变化平滑 */
-}
-.favorite:hover {
-    background-color: #5f5d5d; /* 悬停时的背景颜色 */
-    color: #fff; /* 悬停时的文字颜色 */
-}
-.post{
-    text-decoration: none; /* Remove underline from the link */
-    color: white; /* Text color for the link */
-    display: block; /* Display it as a block element for spacing */
-    margin-top: 40px;
-    border: 1px solid #ccc; /* Add a 1px border */
-    border-radius: 10px;
-    padding: 5px; /* 添加内边距，增加可点击区域大小 */
-    transition: background-color 0.2s; 
-    font-weight: bold;/* 添加过渡效果，使背景颜色变化平滑 */
-}
-.post:hover {
+.main:hover,.logout:hover,.favorite:hover,.post:hover,.user:hover,.login:hover {
     background-color: #5f5d5d; /* 悬停时的背景颜色 */
     color: #fff; /* 悬停时的文字颜色 */
 }
 
-.user {
-    text-decoration: none; /* Remove underline from the link */
-    color: white; /* Text color for the link */
-    display: block; /* Display it as a block element for spacing */
-    margin-top: 40px;
-    border: 1px solid #ccc; /* Add a 1px border */
-    border-radius: 10px;
-    padding: 5px; /* 添加内边距，增加可点击区域大小 */
-    transition: background-color 0.2s; 
-    font-weight: bold;/* 添加过渡效果，使背景颜色变化平滑 */
-}
-.user:hover {
-    background-color: #5f5d5d; /* 悬停时的背景颜色 */
-    color: #fff; /* 悬停时的文字颜色 */
-}
 /* Recipes */
-.recipes-container{
+.recipes-container {
     display: grid;
-    gap:2rem 1rem;
+    gap: 2rem 1rem;
     border: 2px solid red;
+    align-items: start; /* 确保子元素顶部对齐 */
+    /* position: fixed; /* 将容器固定在屏幕上 */
+    /* right: 0;
+    width: 75%; 
+    height: 100vh;  */ 
 }
-.recipes-list{
-    margin-left: 300px;
+
+
+
+.recipes-list {
     display: grid;
-    gap:2rem 1rem;
+    gap: 2rem 1rem;
     padding-bottom: 3rem;
     border: 2px solid green;
 }
-.recipes{
+
+.recipes {
     display: block;
 }
+
 .recipes-img {
-    height: 15rem;
-    width: 100%;
+    width: 20%; /* 更改为100%以适应列宽度 */
+    height: auto;
     object-fit: cover;
-    border-radius: var(--borderRadius);
+    /* border-radius: var(--borderRadius); */
     margin-bottom: 1rem;
-    margin-left: 200px; /* 设置左边距等于侧边栏的宽度 */
+    /* 不再需要 margin-left: 200px; */
 }
+
 
 
 
 /* Style for the content outside the sidebar */
-.search-bar {
+.search {
     text-align: center; /* 文本内容水平居中 */
     margin-left: 30px;
     margin-top: 40px;
 }
 
 /* 样式为输入框 */
-.search-bar input[type="text"] {
+.search_content {
     width: 50%; /* 设置输入框宽度为80% */
     padding: 5px; /* 添加内边距 */
     margin: 0 auto; 
     /* 使用auto来水平居中 */
-    display: block; /* 将输入框显示为块级元素 */
+    display: inline-block; /* 将输入框显示为行内块元素 */
+    vertical-align: middle; /* 垂直居中对齐 */
 }
 
 /* 样式为按钮 */
-.search-bar button {
-    padding: 5px 10px; /* 添加内边距 */
-    display: block; /* 将按钮显示为块级元素 */
-    margin: 10px auto; /* 使用auto来水平居中，并增加垂直间距 */
+.search_button {
+    display: inline-block; /* 将其转换为行内块元素 */
+    padding: 10px 20px;    /* 按钮内边距 */
+    background-color: #787a7c; /* 背景颜色 */
+    color: #fff;           /* 文字颜色 */
+    border: none;          /* 去掉边框 */
+    cursor: pointer;       /* 鼠标样式为手型 */
+    border-radius: 5px;    /* 圆角 */
+    text-align: center;    /* 文本居中 */
+    text-decoration: none; /* 去掉下划线 */
+    font-weight: bold;     /* 加粗文本 */
+    vertical-align: middle; /* 垂直居中对齐 */
 }
+
+
+/* 鼠标悬停样式 */
+.search_button:hover {
+    background-color: #0056b3; /* 悬停时的背景颜色 */
+}
+
 
 /* Style for the footer */
 footer {

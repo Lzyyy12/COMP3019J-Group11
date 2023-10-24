@@ -11,30 +11,30 @@
     <div class="sidebar">
         <img src="../static/image/logo.jpg" alt="Your Image Description">
 
-        <div class="user">
+        <div> 
             {% if islogin %}
             <a href="./main.html" class="main">Main</a>
             <a href="./post.html" class="post">Post</a>
             <a href="./favorite.html" class="favorite">Favorite</a>
             <a href="./user.html" class="user">User</a>
-
-            <button onclick='location.href=("./api/logout")'>Exit</button>
+            <a href="./api/logout" class="logout">Logout</a>
             {% else %}
-            <a href="./api/login" target="_self">LOG IN</a>
+            <a href="./api/login" target="_self" class="login">LOG IN</a>
             {% endif %}
         </div>
-    
-        <!-- <a href="./login.html" class="login">Log in</a> -->
     
     </div>
 
     <!--侧边栏以外的区域：菜谱、菜系、搜索框-->
     <main class="page"> 
-        <div class="search-bar">
-        <form action="search.php" method="get"> <!-- 设置适当的表单处理动作和方法 -->
-            <input type="text" name="query" placeholder="Search...">
-            <button type="submit">Search</button>
-        </form>
+        <div class="search">
+            <div class="search_content">
+                <!-- <img class="search_img" alt="搜索" src="/resources/m/images/icon_search.png" /> -->
+                <input type="text" value="" class="search_input font12" placeholder="Search..." />
+            </div>
+            <div class="search_button">
+                Search
+            </div>
         </div>
         <section class="recipes-container">
             <div class="recipes-list">
