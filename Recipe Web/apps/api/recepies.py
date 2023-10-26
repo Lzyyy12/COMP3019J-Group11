@@ -1,15 +1,38 @@
-from flask import Flask,request,jsonify, Blueprint,render_template
+from flask import Flask, request, jsonify, Blueprint, render_template
+from apps.model.model import User
+from apps import db
+import json
 
-bp = Blueprint("recipes",__name__,url_prefix="/")
+bp = Blueprint("recipe", __name__, url_prefix="/api")
 
-@bp.route("/",methods=["GET"])
-def recipes():
-    recipe_list=[
-        {"name":"Apple Pie","path":"#"},
-        {"name":"Pineapple Pizza","path":"#"},
+
+# @bp.route('/addrecipe', methods=['POST'])
+# def addrecipe():
+#     data = request.get_data()
+#     json_data = json.loads(data)
+#     name = json_data.get('name')
+#     imgpath = json_data.get('imgpath')
+#     detail = json_data.get('detail')
+
+#     if not name or not imgpath or not detail:
+#         return 'input error'
+
+#     newobj = User(username=name, email=imgpath, password=detail)
+#     db.session.add(newobj)
+#     db.session.commit()
+#     users = User.query.all()
+#     return render_template('addrecipe.html', users=users)
+
+
+@bp.route("/getrecipe", methods=["GET"])
+def getrecipe():
+    cplist = [
+        {"name": "Dish A", "path": "#"},
+        {"name": "Dish B", "path": "#"},
     ]
-    
-    context={
-        "recipe_list":recipe_list
+
+    context = {
+        "cplist": cplist
     }
-    return render_template("index.html",**context)
+    context["cplist"]
+    return render_template("recipe.html", **context)
