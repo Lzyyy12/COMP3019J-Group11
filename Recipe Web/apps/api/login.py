@@ -17,6 +17,7 @@ def login():
         user_obj = User.query.filter_by(name=username).first()
 
         if username == user_obj.name and password == user_obj.password:
+            # Session是一个字典对象
             session["username"] = username
             session['logged_in'] = user_obj.id
             return redirect('./main')
