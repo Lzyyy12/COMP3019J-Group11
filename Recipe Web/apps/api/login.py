@@ -9,7 +9,7 @@ bp = Blueprint("login", __name__, url_prefix="/api")
 @bp.route("/login", methods=["GET", "POST"])
 def login():
     context = {
-        "msg": 'please input name and password to login!'
+        "msg": 'Please input name and password to login!'
     }
     if request.method == 'POST':
         username = request.form['username']
@@ -29,24 +29,23 @@ def login():
 @bp.route("/register", methods=["GET", "POST"])
 def register():
     context = {
-        "msg": 'please input name and password to register!'
+        "msg": 'Please input name and password to register!'
     }
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
 
-        # 检查用户名是否已经存在
+        # Check if the username already exists.
         existing_user = User.query.filter_by(name=username).first()
         if existing_user:
             context["msg"] = "Username already exists. Please choose a different username."
             return render_template('register.html', **context)
-        # 创建一个新用户对象
+        # Create a new user and store to database.
         new_user = User(name=username, password=password)
-        # 将新用户添加到数据库并提交更改
         db.session.add(new_user)
         db.session.commit()
 
-        # 重定向到登录页面
+        # Redirect to login page.
         return redirect('./login')
     return render_template('register.html', **context)
 
