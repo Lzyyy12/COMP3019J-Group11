@@ -1,70 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link  href="../static/css/index.css" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EpicureanMatrix</title>
-</head>
-<body>
-
-    <!--固定的侧边栏：用户信息-->
-    <div class="sidebar">
-        <img src="../static/image/logo.jpg" alt="Your Image Description">
-
-        <div> 
+    <!-- favicon -->
+    <link rel="shortcut icon" href="../static/image/huluobu.svg" type="image/x-icon" />
+    <!-- main css -->
+    <link rel="stylesheet" href="../static/css/index.css" />
+  </head>
+  <body>
+    <!-- nav  -->
+    <nav class="navbar">
+      <div class="nav-center">
+        <div class="nav-header">
+          <a href="index.html" class="nav-logo">
+            <img src="../static/image/logo.jpg" alt="simply recipes" />
+          </a>
+          <button class="nav-btn btn">
+            <i class="fas fa-align-justify"></i>
+          </button>
+        </div>
+        <div class="nav-links">
+          <a href="Eastern.html" class="nav-link"> Eastern </a>
+          <a href="Westerne.html" class="nav-link"> Westerne </a>
+          <a href="Turkish.html" class="nav-link"> Turkish </a>
+        </div>
+      </div>
+    </nav>
+    <!-- end of nav -->
+    <!-- main -->
+    <main class="page">
+      <header class="hero">
+        <div class="search">
+          <input type="text" value="" class="search_input" placeholder="Search..." />
+          <div class="search_button">Search
+          </div>
+      </div>
+      </header>
+      <!-- end of header -->
+      <section class="recipes-container">
+        <!-- tag container -->
+        <div class="tags-container">
+          <div class="tags-list">
             {% if islogin %}
-            <a href="./main.html" class="main">Main</a>
+            <a href="./index.html" class="main">Main</a>
             <a href="./post.html" class="post">Post</a>
             <a href="./favorite.html" class="favorite">Favorite</a>
             <a href="./user.html" class="user">User</a>
-            <a href="./api/logout" class="logout">Logout</a>
+            <a href="./api/logout" class="logout">Log out</a>
             {% else %}
-            <a href="./api/login" target="_self" class="login">LOG IN</a>
+            <a href="./api/login" target="_self" class="login">Log in</a>
             {% endif %}
+          </div>
         </div>
-    
-    </div>
+        <!-- end of tag container -->
+        <!-- recipes list -->
+        <div class="recipes-list">
+          <!-- single recipe -->
+          <a href="single-recipe.html" class="recipe">
+            <img
+              src="../static/image/recipes/recipe3.png"
+              class="img recipe-img"
+              alt=""
+            />
+            <h5>Carne Asada</h5>
+          
+          </a>
+          <!-- end of single recipe -->
+          <!-- single recipe -->
+          <a href="single-recipe.html" class="recipe">
+            <img
+              src="../static/image/recipes/recipe-2.jpeg"
+              class="img recipe-img"
+              alt=""
+            />
+            <h5>Greek Ribs</h5>
+            
+          </a>
+          <!-- end of single recipe -->
+          <!-- single recipe -->
+          <a href="single-recipe.html" class="recipe">
+            <img
+              src="../static/image/recipes/recipe-3.jpeg"
+              class="img recipe-img"
+              alt=""
+            />
+            <h5>Vegetable Soup</h5>
+          </a>
+          <!-- end of single recipe -->
+          <!-- single recipe -->
+          <a href="single-recipe.html" class="recipe">
+            <img
+              src="../static/image/recipes/recipe1.png"
+              class="img recipe-img"
+              alt=""
+            />
+            <h5>Banana Pancakes</h5>
+           
+          </a>
 
-    <!--侧边栏以外的区域：菜谱、菜系、搜索框-->
-    <main class="page"> 
-        <div class="search">
-            <div class="search_content">
-                <!-- <img class="search_img" alt="搜索" src="/resources/m/images/icon_search.png" /> -->
-                <input type="text" value="" class="search_input font12" placeholder="Search..." />
-            </div>
-            <div class="search_button">
-                Search
-            </div>
+          <a href="single-recipe.html" class="recipe">
+            <img
+              src="../static/image/recipes/recipe-4.jpeg"
+              class="img recipe-img"
+              alt=""
+            />
+            <h5>Carne Asada</h5>
+          
+          </a>
+          <!-- end of single recipe -->
         </div>
-        <section class="recipes-container">
-            <div class="recipes-list">
-                <a href="single-recipe.html" class="recipe">
-                    <img src="../static/image/recipe1.png" alt="food" class="recipe-img"/>
-                    <h5>noddle</h5>
-                </a>
-            </div>
-            <div class="recipes-list">
-                <a href="single-recipe.html" class="recipe">
-                    <img src="../static/image/recipe2.png" alt="food" class="recipe-img"/>
-                    <h5>noddle</h5>
-                </a>
-            </div>
-            <div class="recipes-list">
-                <a href="single-recipe.html" class="recipe">
-                    <img src="../static/image/recipe3.png" alt="food" class="recipe-img"/>
-                    <h5>noddle</h5>
-                </a>
-            </div>
-        </section>
+        <!-- end of recipes list -->
+      </section>
     </main>
-
-    <!-- 添加搜索栏 -->
-   
-
-    <!--页脚-->
-    <footer style="color: palevioletred;">This is Footer</footer>
-</body>
+    <!-- end of main -->
+    <!-- footer -->
+    <footer class="page-footer">
+      <p>
+        &copy; <span id="date">2023</span>
+      </p>
+     </footer>
+    <script src="../static/js/app.js"></script> 
+  </body>
 </html>
-
-<!DOCTYPE html>
-<html lang="en">

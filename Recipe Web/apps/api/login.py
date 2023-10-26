@@ -20,7 +20,7 @@ def login():
             # Session是一个字典对象
             session["username"] = username
             session['logged_in'] = user_obj.id
-            return redirect('./main')
+            return redirect('/')
         else:
             context["msg"] = 'User name not exist or wrong password，please input name and password again to login!'
             return render_template('login.html', **context)
