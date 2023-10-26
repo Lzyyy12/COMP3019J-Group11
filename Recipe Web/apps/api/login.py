@@ -19,7 +19,7 @@ def login():
         if username == user_obj.name and password == user_obj.password:
             session["username"] = username
             session['logged_in'] = user_obj.id
-            return redirect('/')
+            return redirect('./main')
         else:
             context["msg"] = 'User name not exist or wrong password，please input name and password again to login!'
             return render_template('login.html', **context)
@@ -28,6 +28,9 @@ def login():
 
 @bp.route("/register", methods=["GET", "POST"])
 def register():
+    context = {
+        "msg": 'please input name and password to register!'
+    }
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
@@ -35,21 +38,17 @@ def register():
         # 检查用户名是否已经存在
         existing_user = User.query.filter_by(name=username).first()
         if existing_user:
-            print("error")
-            return "Username already exists. Please choose a different username."
-
+            context["msg"] = "Username already exists. Please choose a different username."
+            return render_template('register.html', **context)
         # 创建一个新用户对象
         new_user = User(name=username, password=password)
-        print(new_user)
         # 将新用户添加到数据库并提交更改
         db.session.add(new_user)
-        print(1)
         db.session.commit()
 
-        # 重定向到登录页面或其他适当页面
-        return redirect('/login')
-
-    return render_template('register.html')
+        # 重定向到登录页面
+        return redirect('./login')
+    return render_template('register.html', **context)
 
 
 @bp.route('/logout')
