@@ -2,81 +2,21 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <!-- main css -->
-    <link rel="shortcut icon" href="../static/image/huluobu.svg" type="image/x-icon" />
-    <link rel="stylesheet" href="../static/css/index.css" />
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../static/css/index.css" />
 </head>
 
 <body>
-    <!-- recipes list -->
-    <div class="recipes-list">
-        <!-- single recipe -->
-        <a href="single-recipe.html" class="recipe">
-          <img
-            src="../static/image/recipes/recipe1.png"
-            class="img recipe-img"
-            alt=""
-          />
-          <h5>Noodle</h5>
-        
-        </a>
-        <!-- end of single recipe -->
-        <!-- single recipe -->
-        <a href="single-recipe.html" class="recipe">
-          <img
-            src="../static/image/recipes/recipe2.jpeg"
-            class="img recipe-img"
-            alt=""
-          />
-          <h5>Skewers</h5>
-          
-        </a>
-        <!-- end of single recipe -->
-        <!-- single recipe -->
-        <a href="single-recipe.html" class="recipe">
-          <img
-            src="../static/image/recipes/recipe3.png"
-            class="img recipe-img"
-            alt=""
-          />
-          <h5>Beef brisket with tomato</h5>
-        </a>
-        <!-- end of single recipe -->
-        <!-- single recipe -->
-        <a href="single-recipe.html" class="recipe">
-          <img
-            src="../static/image/recipes/recipe4.jpeg"
-            class="img recipe-img"
-            alt=""
-          />
-          <h5>Pizza</h5>
-         
-        </a>
-  
-        <a href="single-recipe.html" class="recipe">
-          <img
-            src="../static/image/recipes/recipe5.jpeg"
-            class="img recipe-img"
-            alt=""
-          />
-          <h5>Dessert</h5>
-        
-        </a>
-        <a href="single-recipe.html" class="recipe">
-          <img
-            src="../static/image/recipes/recipe6.jpg"
-            class="img recipe-img"
-            alt=""
-          />
-          <h5>Macarons</h5>
-        
-        </a>
-        <!-- end of single recipe -->
-      </div>
-      <!-- end of recipes list -->
+  <!-- recipes list -->
+  <div id="recipes" class="recipes-list">
+    {% for cp in cplist %}
+    <a href="single-recipe.html" class="recipe">
+      <img src = {{ cp.path }} class="img recipe-img" alt="" />
+      <h5>{{ cp.name }}</h5>
+      {% endfor %}
+  </div>
+  <!-- end of recipes list -->
 
-    <script src="../static/js/recipe.js"></script> 
 </body>
 
 </html>

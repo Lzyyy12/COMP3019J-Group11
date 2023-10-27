@@ -80,6 +80,7 @@ Navbar
   transition: var(--transition);
   color: white;
   font-weight: bold;
+  cursor: pointer;
   text-decoration: underline;
 }
 .nav-link:hover {

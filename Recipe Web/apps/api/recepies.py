@@ -5,34 +5,21 @@ import json
 
 bp = Blueprint("recipe", __name__, url_prefix="/api")
 
+@bp.route("/get_recipe", methods=["GET"])
+def get_recipe():
+    type = request.args.get("type")
+    cplist = []
 
-# @bp.route('/addrecipe', methods=['POST'])
-# def addrecipe():
-#     data = request.get_data()
-#     json_data = json.loads(data)
-#     name = json_data.get('name')
-#     imgpath = json_data.get('imgpath')
-#     detail = json_data.get('detail')
-
-#     if not name or not imgpath or not detail:
-#         return 'input error'
-
-#     newobj = User(username=name, email=imgpath, password=detail)
-#     db.session.add(newobj)
-#     db.session.commit()
-#     users = User.query.all()
-#     return render_template('addrecipe.html', users=users)
-
-
-@bp.route("/get-recipe", methods=["GET"])
-def getAllRecipe():
-    cplist = [
-        {"name": "Dish A", "path": "#"},
-        {"name": "Dish B", "path": "#"},
-    ]
-
+    recipe_objs = Recipe.query.all()
+    for recipe in recipe_objs:
+        if type == recipe.type or type == 'all':
+            recipedata = {}
+            recipedata['name'] = recipe.name
+            recipedata['path'] = recipe.path
+            cplist.append(recipedata)
+   
     context = {
         "cplist": cplist
-    }
-    context["cplist"]
+        }
+    
     return render_template("recipe.html", **context)

@@ -23,9 +23,9 @@
           </button>
         </div>
         <div class="nav-links">
-          <a href="Eastern.html" onclick="eastern()" class="nav-link"> Eastern </a>
-          <a href="Westerne.html" onclick="westerne()" class="nav-link"> Westerne </a>
-          <a href="Turkish.html" onclick="turkish()" class="nav-link"> Turkish </a>
+          <a onclick="all_recipe()" class="nav-link" style="color: #FFFA05"> All </a>
+          <a onclick="eastern()" class="nav-link"> Eastern </a>
+          <a onclick="western()" class="nav-link"> Western </a>
         </div>
       </div>
     </nav>
@@ -57,7 +57,8 @@
         </div>
         <!-- end of tag container -->
         
-        <iframe name="ifd" onload="this.height=ifd.document.body.scrollHeight" src="./api/get-recipe" scrolling="no" frameborder="0" style="width:100%;"></iframe>
+        <iframe id="recipeframe" name="ifd" onload="this.height=ifd.document.body.scrollHeight"
+        src="./api/get_recipe?type=all" scrolling="no" frameborder="0" style="width:100%;"></iframe>
       </section>
     </main>
     <!-- end of main -->
@@ -69,6 +70,5 @@
       </p>
      </footer>
     <script src="../static/js/index.js"></script>
-    <script src="../static/js/recipe.js"></script> 
   </body>
 </html>

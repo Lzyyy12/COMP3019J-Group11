@@ -14,8 +14,9 @@ class User(db.Model):
 class Recipe(db.Model):
     __tablename__ = 'recipes'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    name = db.Column(db.String(255), unique=True)
-    path = db.Column(db.String(255), nullable=False)
+    name = db.Column(db.String(255), unique=False, nullable=False)
+    path = db.Column(db.String(255), nullable=True)
+    type = db.Column(db.String(255), nullable=True)
 
     def __repr__(self):
         return '<Recipe %r>' % self.name
