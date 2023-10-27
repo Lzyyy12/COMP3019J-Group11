@@ -21,11 +21,11 @@ CREATE TABLE recipes (
     path VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci
 );
 
-INSERT INTO recipes (name, path)
+INSERT INTO recipes (name, path, type)
 VALUES
-    ('carne_asada', '../static/image/recipes/recipe1.png'),
-    ('greek_rib', '../static/image/recipes/recipe2.png'),
-    ('vegetable_soup', '../static/image/recipes/recipe3.png'),
-    ('banana_pancake', '../static/image/recipes/recipe4.png'),
-    ('carne_asada', '../static/image/recipes/recipe5.png'),
-    ('carne_asada', '../static/image/recipes/recipe6.png');
+    ('noodle', '../static/image/recipes/recipe1.png', eastern),
+    ('skewers', '../static/image/recipes/recipe2.png', eastern),
+    ('beef_brisket_with_tomatop', '../static/image/recipes/recipe3.png', western),
+    ('pizza', '../static/image/recipes/recipe4.png', western),
+    ('dessert', '../static/image/recipes/recipe5.png', western),
+    ('macaron', '../static/image/recipes/recipe6.png', western);
