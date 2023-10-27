@@ -11,7 +11,3 @@ CREATE TABLE users (
     password VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci,
     photo VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci
 );
-
-INSERT INTO users (name, password)
-VALUES
-    ('username', '123456');

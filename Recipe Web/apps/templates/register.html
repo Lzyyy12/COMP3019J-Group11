@@ -44,6 +44,19 @@
                         {% endfor %}
                     </td>
                 </tr>
+                <tr>
+                    <td>
+                        {{ form.confirmpassword.label }}
+                    </td>
+                    <td>
+                        {{ form.confirmpassword(placeholder="ConfirmPassword") }}
+                    </td>
+                    <td>
+                        {% for error in form.confirmpassword.errors %}
+                        <span style="color: red;"> [{{ error}}]</span>
+                        {% endfor %}
+                    </td>
+                </tr>
             </table>
 
             <div class="buttons">
