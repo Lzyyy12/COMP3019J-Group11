@@ -1,15 +1,18 @@
+// Function to get an element by its selector, throwing an error if not found
 const getElement = (selector) => {
-    const element = document.querySelector(selector)
-  
-    if (element) return element
-    throw Error(
-      `Please double check your class names, there is no ${selector} class`
-    )
-  }
-  
-const links = getElement('.nav-links')
-const navBtnDOM = getElement('.nav-btn')
+  const element = document.querySelector(selector);
 
+  if (element) return element;
+  throw Error(
+    `Please double check your class names, there is no ${selector} class`
+  );
+}
+
+// Get the navigation links and the navigation button elements
+const links = getElement('.nav-links');
+const navBtnDOM = getElement('.nav-btn');
+
+// Add a click event listener to the navigation button to toggle the class for showing links
 navBtnDOM.addEventListener('click', () => {
   links.classList.toggle('show-links')
 })
@@ -29,6 +32,7 @@ navBtnDOM.addEventListener('click', () => {
 //   iframe.setAttribute("src", "./api/get_recipe?type=western")
 // }
 
+// Get a list of navigation links and assign data-index attributes
 var navlist = document.querySelectorAll(".nav-link");
 for (let i = 0; i < navlist.length; i++) {
   navlist[i].setAttribute("data-index", i);
@@ -41,7 +45,8 @@ for (let i = 0; i < navlist.length; i++) {
       else
         navlist[i].style.color = "#FFF";
     }
-
+    
+// Update the color of the clicked link and adjust the iframe source accordingly
     var iframe = document.getElementById("recipeframe");
     switch (index) {
       case "0":

@@ -1,31 +1,28 @@
-
 .background {
     width: 100vw;
     max-width: var(--max-width);
-    height:90vh;
+    height: 90vh;
     margin: 0 auto;
-    
-  }
+}
+
 .background {
     padding-top: 2rem;
     min-height: calc(100vh - (6rem + 4rem));
     background: url('../image/background.jpg') center/cover no-repeat;
-  }
+}
 
-
-/* 定义包含表单和图片的容器 */
+/* Define a container that includes a form and an image */
 .form-container {
     position: relative;
 }
 
-
-/* 设置表单内容居中 */
+/* Center the form content */
 .login_table {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(255, 255, 255, 0.9); /* 可能需要半透明背景，以便文本更易阅读 */
+    background-color: rgba(255, 255, 255, 0.9);
     padding: 20px;
     text-align: center;
     border-radius: 10px;

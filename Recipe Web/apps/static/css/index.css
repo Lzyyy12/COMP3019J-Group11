@@ -1,12 +1,5 @@
-
-
-
 :root {
   --transition: 0.3s ease-in-out all;
-  
-
-  /* box shadow*/
- 
 }
 
 .img {
@@ -14,10 +7,6 @@
   display: block;
   object-fit: cover;
 }
-
-
-
-
 
 /*
 =============== 
@@ -31,22 +20,25 @@ Navbar
   justify-content: center;
   background: url('../image/main.jpg') center/cover no-repeat;
 }
+
 .nav-center {
   width: 90vw;
   max-width: var(--max-width);
-  background: rgba(255,255,255, 0.2);
-
+  background: rgba(255, 255, 255, 0.2);
 }
+
 .nav-header {
   height: 6rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: space between;
   align-items: center;
 }
+
 .nav-header img {
   width: 80px;
   height: 80px;
 }
+
 .nav-logo {
   display: flex;
   align-items: flex-end;
@@ -55,9 +47,11 @@ Navbar
 .nav-btn {
   padding: 0.15rem 0.75rem;
 }
+
 .nav-btn i {
   font-size: 1.25rem;
 }
+
 .nav-links {
   height: 0;
   overflow: hidden;
@@ -65,6 +59,7 @@ Navbar
   flex-direction: column;
   transition: var(--transition);
 }
+
 .show-links {
   height: 23.9375rem;
 }
@@ -83,6 +78,7 @@ Navbar
   cursor: pointer;
   text-decoration: underline;
 }
+
 .nav-link:hover {
   color: var(--primary-500);
 }
@@ -95,10 +91,12 @@ Navbar
   .navbar {
     height: 6rem;
   }
+
   .nav-center {
     display: flex;
     align-items: center;
   }
+
   .nav-header {
     padding: 0;
     margin-right: 2rem;
@@ -108,22 +106,26 @@ Navbar
   .nav-btn {
     display: none;
   }
+
   .nav-links {
     height: auto !important;
     flex-direction: row;
     align-items: center;
     width: 100%;
   }
+
   .nav-link {
     padding: 0;
     border-top: none;
     margin-right: 2rem;
   }
+
   .contact-link {
     margin-right: 0;
     margin-left: auto;
   }
 }
+
 /*
 =============== 
 Page
@@ -135,10 +137,12 @@ Page
   max-width: var(--max-width);
   margin: 0 auto;
 }
+
 .page {
   padding-top: 2rem;
   min-height: calc(100vh - (6rem + 4rem));
 }
+
 /*
 =============== 
 Footer
@@ -154,17 +158,21 @@ Footer
   background: var(--black);
   color: var(--white);
 }
+
 .page-footer h5 {
   margin-top: 0;
   margin-bottom: 0;
 }
+
 .page-footer p {
   margin-bottom: 0;
 }
+
 .page-footer .footer-logo,
 .page-footer a {
   color: var(--primary-500);
 }
+
 /*
 =============== 
 Hero
@@ -177,6 +185,7 @@ Hero
   margin-bottom: 2rem;
   border-radius: var(--borderRadius);
 }
+
 .search {
   position: absolute;
   top: 0;
@@ -186,12 +195,12 @@ Hero
   display: flex;
   align-items: center;
   justify-content: right;
-  
   border-radius: var(--borderRadius);
 }
+
 .search_input {
-  width: 70%; 
-  font-size: 20px; 
+  width: 70%;
+  font-size: 20px;
 }
 
 .search_button {
@@ -232,48 +241,55 @@ Recipes
   gap: 2rem 1rem;
   padding-bottom: 3rem;
 }
+
 .tags-container {
   order: 1;
   display: flex;
   flex-direction: column;
   padding-bottom: 3rem;
 }
+
 .tags-container h4 {
   margin-bottom: 0.5rem;
   font-weight: 500;
 }
+
 .tags-list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
+
 .tags-list a {
   text-transform: capitalize;
   display: block;
   color: var(--grey-500);
   transition: var(--transition);
-  text-decoration: none; /* Remove underline from the link */
-  color: black; /* Text color for the link */
+  text-decoration: none;
+  color: black;
   margin-bottom: 35px;
   margin-right: 10%;
-  border: 1px solid #ccc; /* Add a 1px border */
+  border: 1px solid #ccc;
   border-radius: 10px;
-  padding: 5px; /* 添加内边距，增加可点击区域大小 */
-  transition: background-color 0.2s; 
-  font-weight: bold;/* 添加过渡效果，使背景颜色变化平滑 */
+  padding: 5px;
+  transition: background-color 0.2s;
+  font-weight: bold;
 }
+
 .tags-list a:hover {
-  /* color: var(--primary-500); */
-  background-color: #5f5d5d; /* 悬停时的背景颜色 */
-  color: #fff; /* 悬停时的文字颜色 */
+  background-color: #5f5d5d;
+  color: #fff;
 }
+
 .recipe {
   display: block;
 }
+
 .recipe-img {
   height: 15rem;
   border-radius: var(--borderRadius);
   margin-bottom: 1rem;
 }
+
 .recipe h5 {
   margin-bottom: 0;
   margin-top: 0.25rem;
@@ -281,6 +297,7 @@ Recipes
   color: black;
   font-weight: bold;
 }
+
 .recipe p {
   margin-bottom: 0;
   line-height: 1;
@@ -288,10 +305,12 @@ Recipes
   margin-top: 0.5rem;
   letter-spacing: var(--letterSpacing);
 }
+
 @media screen and (min-width: 576px) {
   .recipes-list {
     grid-template-columns: 1fr 1fr;
   }
+
   .recipe-img {
     height: 10rem;
   }
@@ -302,6 +321,7 @@ Recipes
     grid-template-columns: 200px 1fr;
     gap: 1rem;
   }
+
   .recipes-list {
     grid-template-columns: 1fr 1fr;
   }
@@ -309,10 +329,11 @@ Recipes
   .recipe p {
     font-size: 0.85rem;
   }
+
   .tags-container {
     order: 0;
-    /* background: blue; */
   }
+  
   .tags-list {
     display: grid;
     grid-template-columns: 1fr;
@@ -323,6 +344,7 @@ Recipes
   .recipe h5 {
     font-size: 1.15rem;
   }
+
   .recipes-list {
     grid-template-columns: 1fr 1fr 1fr;
   }

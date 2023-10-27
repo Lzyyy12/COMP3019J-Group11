@@ -5,18 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EpicureanMatrix</title>
-    <!-- favicon -->
+    <!-- Favicon -->
     <link rel="shortcut icon" href="../static/image/huluobu.svg" type="image/x-icon" />
-    <!-- main css -->
+    <!-- Main CSS -->
     <link rel="stylesheet" href="../static/css/index.css" />
   </head>
   <body>
-    <!-- nav  -->
+    <!-- Navigation: logo and the type of dish-->
     <nav class="navbar">
       <div class="nav-center">
         <div class="nav-header">
           <a href="index.html" class="nav-logo">
-            <img src="../static/image/logo.jpg" alt="simply recipes" />
+            <img src="../static/image/logo.jpg" alt="EpicureanMatrix" />
           </a>
           <button class="nav-btn btn">
             <i class="fas fa-align-justify"></i>
@@ -29,19 +29,21 @@
         </div>
       </div>
     </nav>
-    <!-- end of nav -->
-    <!-- main -->
+    <!-- End of Navigation -->
+
+    <!-- Main Content -->
     <main class="page">
       <header class="hero">
+        <!-- search bar -->
         <div class="search">
           <input type="text" value="" class="search_input" placeholder="Search..." />
-          <div class="search_button">Search
-          </div>
-      </div>
+          <div class="search_button">Search</div>
+        </div>
       </header>
-      <!-- end of header -->
+      <!-- End of Header -->
+
       <section class="recipes-container">
-        <!-- tag container -->
+        <!-- Tag Container -->
         <div class="tags-container">
           <div class="tags-list">
             {% if islogin %}
@@ -55,20 +57,20 @@
             {% endif %}
           </div>
         </div>
-        <!-- end of tag container -->
+        <!-- End of Tag Container -->
         
         <iframe id="recipeframe" name="ifd" onload="this.height=ifd.document.body.scrollHeight"
         src="./api/get_recipe?type=all" scrolling="no" frameborder="0" style="width:100%;"></iframe>
       </section>
     </main>
-    <!-- end of main -->
+    <!-- End of Main Content -->
 
-    <!-- footer -->
+    <!-- Footer -->
     <footer class="page-footer">
       <p>
         &copy; <span id="date">2023</span>
       </p>
-     </footer>
+    </footer>
     <script src="../static/js/index.js"></script>
   </body>
 </html>
