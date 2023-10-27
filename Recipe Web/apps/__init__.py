@@ -21,10 +21,8 @@ db = SQLAlchemy(app)
 
 from apps.api.index import bp as index_bp
 from apps.api.login import bp as login_bp
-#from apps.api.user import bp as user_bp
-#from apps.api.recipe import bp as recipe_bp
+from apps.api.recepies import bp as recipe_bp
 
 app.register_blueprint(index_bp)
 app.register_blueprint(login_bp)
-#app.register_blueprint(user_bp)
-#app.register_blueprint(recipe_bp)
+app.register_blueprint(recipe_bp)
