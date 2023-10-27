@@ -8,28 +8,35 @@ from apps import db
 
 bp = Blueprint("login", __name__, url_prefix="/api")
 
+# Login Form using Flask-WTF
+class LoginForm(FlaskForm):
+    username = StringField('Username', validators=[DataRequired()])
+    password = PasswordField('Password', validators=[DataRequired()])
 
+# Login route
 @bp.route("/login", methods=["GET", "POST"])
 def login():
+    form = LoginForm()
     context = {
         "msg": 'Please input name and password to login!'
     }
-    if request.method == 'POST':
-        username = request.form['username']
-        password = request.form['password']
-        user_obj = User.query.filter_by(name=username).first()
+    if form.validate_on_submit():
+        username = form.username.data
+        password = form.password.data
 
-        if username == user_obj.name and password == user_obj.password:
-            # Session是一个字典对象
+        user_obj = User.query.filter_by(name=username).first()
+        if user_obj is not None and password == user_obj.password:
+            # If username and password match an existing user, log in the user
             session["username"] = username
             session['logged_in'] = user_obj.id
             return redirect('/')
         else:
-            context["msg"] = 'Username not exist or wrong password，please input name and password again to login!'
-            return render_template('login.html', **context)
-    return render_template('login.html', **context)
+            # If login fails, show an error message using flash
+            flash('Username not exist or wrong password，please input again to login!', 'error')
+    return render_template('login.html', form=form, **context)
 
 
+# Registration Form using Flask-WTF
 class RegistrationForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
     password = PasswordField('Password', validators=[DataRequired()])
@@ -45,12 +52,15 @@ def register():
         password = form.password.data
         
         if len(username) < 6 or len(password) < 6:
+            # Check if the username and password meet length validations
             flash('Username and password must be at least 6 characters long.', 'error')
         else:
             existing_user = User.query.filter_by(name=username).first()
             if existing_user:
+                # If the username already exists, flash an error message
                 flash('Username already exists. Please choose a different username.', 'error')
             else:
+                # If all checks pass, create a new user and add it to the database
                 new_user = User(name=username, password=password)
                 db.session.add(new_user)
                 db.session.commit()
@@ -62,7 +72,9 @@ def register():
 @bp.route('/logout')
 def logout():
     if not session.get('logged_in'):
+        # If the user is not logged in, redirect to the login page
         return redirect(url_for('login'))
     else:
         session.pop('logged_in')
+        # If the user is logged in, log them out and redirect to the homepage
         return redirect('/')
