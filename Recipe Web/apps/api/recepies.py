@@ -24,8 +24,8 @@ bp = Blueprint("recipe", __name__, url_prefix="/api")
 #     return render_template('addrecipe.html', users=users)
 
 
-@bp.route("/getrecipe", methods=["GET"])
-def getALlRecipe():
+@bp.route("/get-recipe", methods=["GET"])
+def getAllRecipe():
     cplist = [
         {"name": "Dish A", "path": "#"},
         {"name": "Dish B", "path": "#"},
