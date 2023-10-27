@@ -1,54 +1,62 @@
+<!-- register.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Log in</title>
+    <title>Register</title>
     <link href="../static/css/register.css" rel="stylesheet">
 </head>
 <body>
-
     <!--左侧展示图片区域-->
     <div class="background">
-        <img src="../static/image/background.jpeg" alt="Your Image Description">
+        <img src="../static/image/background.jpeg" alt="backgroundimage">
     </div>
 
     <!--右侧用户输入信息区域-->
     <div class="register_table">
-        <h1><b>Welcome to Register</b></h1>
+        <h1><b>Register</b></h1>
         <p>{{msg}}</p>
-        <form id="reg-form" action="{{ url_for('login.register') }}" method="post">
+        <form id="reg-form" action="{{ url_for('login.register') }}" method="post" novalidate>
+            {{ form.hidden_tag() }}
             <table>
                 <tr>
-                    <td>Username</td>
-                    <td class="inputs">
-                        <input name="username" type="text" id="username">
-                        <br>
-                        <span id="username_err" class="err_msg"></span>
+                    <td>
+                        {{ form.username.label }}
+                    </td>
+                    <td>
+                        {{ form.username(placeholder="Username") }}
                     </td>
                 </tr>
                 <tr>
-                    <td>Password</td>
-                    <td class="inputs">
-                        <input name="password" type="password" id="password">
-                        <br>
-                        <span id="password_err" class="err_msg" style="display: none">Incorrect password format</span>
+                    <td>
+                        {{ form.password.label }}
+                    </td>
+                    <td>
+                        {{ form.password(placeholder="Password") }}
                     </td>
                 </tr>
             </table>
-    
+
             <div class="buttons">
                 <input value="Register" type="submit" id="reg_btn">
             </div>
-            <div class="reg-content">
-            
-            <span>Already have an account?</span> <a href="./login">Log in</a>
-            </div>
             <!-- <br class="clear"> -->
         </form>
-    
-    </div>
 
-    <!--页脚-->
-    <!-- <footer style="color: palevioletred;">This is Footer</footer> -->
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li style="color: red">{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+
+        <div class="reg-content">
+            <span>Already have an account?</span> <a href="./login">Log in</a>
+        </div>
+        
+    </div>
 </body>
 </html>

@@ -14,4 +14,4 @@ CREATE TABLE users (
 
 INSERT INTO users (name, password)
 VALUES
-    ('user', '123');
+    ('username', '123456');
