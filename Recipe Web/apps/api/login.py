@@ -38,8 +38,8 @@ def login():
 
 # Registration Form using Flask-WTF
 class RegistrationForm(FlaskForm):
-    username = StringField('Username', validators=[DataRequired()])
-    password = PasswordField('Password', validators=[DataRequired()])
+    username = StringField('Username', validators=[DataRequired(), Length(min=6)])
+    password = PasswordField('Password', validators=[DataRequired(), Length(min=6)])
 
 @bp.route('/register', methods=['GET', 'POST'])
 def register():
@@ -51,21 +51,17 @@ def register():
         username = form.username.data
         password = form.password.data
         
-        if len(username) < 6 or len(password) < 6:
-            # Check if the username and password meet length validations
-            flash('Username and password must be at least 6 characters long.', 'error')
+        existing_user = User.query.filter_by(name=username).first()
+        if existing_user:
+            # If the username already exists, flash an error message
+            flash('Username already exists. Please choose a different username.', 'error')
         else:
-            existing_user = User.query.filter_by(name=username).first()
-            if existing_user:
-                # If the username already exists, flash an error message
-                flash('Username already exists. Please choose a different username.', 'error')
-            else:
-                # If all checks pass, create a new user and add it to the database
-                new_user = User(name=username, password=password)
-                db.session.add(new_user)
-                db.session.commit()
-                flash('Registration successful. You can now log in.', 'success')
-                return redirect(url_for('login.login'))
+            # If all checks pass, create a new user and add it to the database
+            new_user = User(name=username, password=password)
+            db.session.add(new_user)
+            db.session.commit()
+            flash('Registration successful. You can now log in.', 'success')
+            return redirect(url_for('login.login'))
     return render_template('register.html', form=form, **context)
 
 

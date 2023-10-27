@@ -25,6 +25,11 @@
                     <td>
                         {{ form.username(placeholder="Username") }}
                     </td>
+                    <td>
+                        {% for error in form.username.errors %}
+                        <span style="color: red;"> [{{ error}}]</span>
+                        {% endfor %}
+                    </td>
                 </tr>
                 <tr>
                     <td>
@@ -32,6 +37,11 @@
                     </td>
                     <td>
                         {{ form.password(placeholder="Password") }}
+                    </td>
+                    <td>
+                        {% for error in form.password.errors %}
+                        <span style="color: red;"> [{{ error}}]</span>
+                        {% endfor %}
                     </td>
                 </tr>
             </table>
