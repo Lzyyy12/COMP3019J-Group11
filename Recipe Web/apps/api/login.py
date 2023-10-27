@@ -41,6 +41,7 @@ def login():
 
 # Registration Form using Flask-WTF
 class RegistrationForm(FlaskForm):
+    # Validation: username and password should be at least 6 charactor long, the confirmpassword mush match the password
     username = StringField('Username', validators=[DataRequired(), Length(min=6)])
     password = PasswordField('Password', validators=[DataRequired(), Length(min=6)])
     confirmpassword = PasswordField('Confirm Password', validators=[DataRequired(), EqualTo('password', message='Passwords must match')])
