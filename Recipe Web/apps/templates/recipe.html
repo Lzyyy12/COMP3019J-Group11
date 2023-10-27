@@ -3,79 +3,79 @@
 
 <head>
     <meta charset="UTF-8">
+    <!-- main css -->
+    <link rel="stylesheet" href="../static/css/index.css" />
 </head>
 
 <body>
-    <div class="mainframe">
-        <div class="toolbar">
-            <div class="category">
-                <ul>
-                    <li onclick="eastern_cuisine()">Eastern Cuisine</li>
-                    <li onclick="western_cuisine()">Western Cuisine</li>
-                </ul>
-            </div>
-        </div>
+    <!-- recipes list -->
+    <div class="recipes-list">
+        <!-- single recipe -->
+        <a href="single-recipe.html" class="recipe">
+          <img
+            src="../static/image/recipes/recipe1.png"
+            class="img recipe-img"
+            alt=""
+          />
+          <h5>Carne Asada</h5>
         
-        <div class="clear"></div>
+        </a>
+        <!-- end of single recipe -->
+        <!-- single recipe -->
+        <a href="single-recipe.html" class="recipe">
+          <img
+            src="../static/image/recipes/recipe2.jpeg"
+            class="img recipe-img"
+            alt=""
+          />
+          <h5>Greek Ribs</h5>
+          
+        </a>
+        <!-- end of single recipe -->
+        <!-- single recipe -->
+        <a href="single-recipe.html" class="recipe">
+          <img
+            src="../static/image/recipes/recipe3.png"
+            class="img recipe-img"
+            alt=""
+          />
+          <h5>Vegetable Soup</h5>
+        </a>
+        <!-- end of single recipe -->
+        <!-- single recipe -->
+        <a href="single-recipe.html" class="recipe">
+          <img
+            src="../static/image/recipes/recipe4.jpeg"
+            class="img recipe-img"
+            alt=""
+          />
+          <h5>Banana Pancakes</h5>
+         
+        </a>
+  
+        <a href="single-recipe.html" class="recipe">
+          <img
+            src="../static/image/recipes/recipe5.jpeg"
+            class="img recipe-img"
+            alt=""
+          />
+          <h5>Carne Asada</h5>
         
-        <div class="container">
-            <div class="recipe">
-                <ul>
-                    <li>
-                        <div class="recipes-list">
-                            <div class="pic">
-                                <a href="single-recipe.html" class="recipe"></a>
-                                <img src="../static/image/recipe1.png" alt="food" class="recipe-img"/>
-                            </div>
-                            
-                            <h5>noodle</h5>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="recipes-list">
-                            <div class="pic">
-                                <a href="single-recipe.html" class="recipe"></a>
-                                <img src="../static/image/recipe2.png" alt="food" class="recipe-img"/>
-                            </div>
-                            
-                            <h5>bao zi</h5>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            
-            <div class="recipe">
-                <ul>
-                    <li>
-                        <div class="recipes-list">
-                            <div class="pic">
-                                <a href="single-recipe.html" class="recipe"></a>
-                                <img src="../static/image/recipe3.png" alt="food" class="recipe-img"/>
-                            </div>
-                            
-                            <h2>strew</h2>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
+        </a>
+        <a href="single-recipe.html" class="recipe">
+          <img
+            src="../static/image/recipes/recipe6.jpg"
+            class="img recipe-img"
+            alt=""
+          />
+          <h5>Carne Asada</h5>
+        
+        </a>
+        <!-- end of single recipe -->
+      </div>
+      <!-- end of recipes list -->
+
+    <script src="../static/js/recipe.js"></script> 
 </body>
-
-<script>
-
-    var recipe = document.querySelectorAll(".recipe");
-
-    function chuan_cai() {
-        recipe[0].style.display = "block";
-        recipe[1].style.display = "";
-    }
-
-    function yue_cai() {
-        recipe[0].style.display = "";
-        recipe[1].style.display = "block";
-    }
-
-</script>
 
 </html>

@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify, Blueprint, render_template
-from apps.model.model import User
+from apps.model.model import Recipe
 from apps import db
 import json
 
@@ -25,7 +25,13 @@ bp = Blueprint("recipe", __name__, url_prefix="/api")
 
 
 @bp.route("/getrecipe", methods=["GET"])
-def getrecipe():
+def getALlRecipe():
+    recipe_obj = Recipe.query
+
+    for i in recipe_obj:
+        
+        i += i
+
     cplist = [
         {"name": "Dish A", "path": "#"},
         {"name": "Dish B", "path": "#"},

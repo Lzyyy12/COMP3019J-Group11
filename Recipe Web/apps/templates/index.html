@@ -23,9 +23,9 @@
           </button>
         </div>
         <div class="nav-links">
-          <a href="Eastern.html" class="nav-link"> Eastern </a>
-          <a href="Westerne.html" class="nav-link"> Westerne </a>
-          <a href="Turkish.html" class="nav-link"> Turkish </a>
+          <a href="Eastern.html" onclick="eastern()" class="nav-link"> Eastern </a>
+          <a href="Westerne.html" onclick="westerne()" class="nav-link"> Westerne </a>
+          <a href="Turkish.html" onclick="turkish()" class="nav-link"> Turkish </a>
         </div>
       </div>
     </nav>
@@ -56,81 +56,19 @@
           </div>
         </div>
         <!-- end of tag container -->
-        <!-- recipes list -->
-        <div class="recipes-list">
-          <!-- single recipe -->
-          <a href="single-recipe.html" class="recipe">
-            <img
-              src="../static/image/recipes/recipe1.png"
-              class="img recipe-img"
-              alt=""
-            />
-            <h5>Carne Asada</h5>
-          
-          </a>
-          <!-- end of single recipe -->
-          <!-- single recipe -->
-          <a href="single-recipe.html" class="recipe">
-            <img
-              src="../static/image/recipes/recipe2.jpeg"
-              class="img recipe-img"
-              alt=""
-            />
-            <h5>Greek Ribs</h5>
-            
-          </a>
-          <!-- end of single recipe -->
-          <!-- single recipe -->
-          <a href="single-recipe.html" class="recipe">
-            <img
-              src="../static/image/recipes/recipe3.png"
-              class="img recipe-img"
-              alt=""
-            />
-            <h5>Vegetable Soup</h5>
-          </a>
-          <!-- end of single recipe -->
-          <!-- single recipe -->
-          <a href="single-recipe.html" class="recipe">
-            <img
-              src="../static/image/recipes/recipe4.jpeg"
-              class="img recipe-img"
-              alt=""
-            />
-            <h5>Banana Pancakes</h5>
-           
-          </a>
-
-          <a href="single-recipe.html" class="recipe">
-            <img
-              src="../static/image/recipes/recipe5.jpeg"
-              class="img recipe-img"
-              alt=""
-            />
-            <h5>Carne Asada</h5>
-          
-          </a>
-          <a href="single-recipe.html" class="recipe">
-            <img
-              src="../static/image/recipes/recipe6.jpg"
-              class="img recipe-img"
-              alt=""
-            />
-            <h5>Carne Asada</h5>
-          
-          </a>
-          <!-- end of single recipe -->
-        </div>
-        <!-- end of recipes list -->
+        
+        <iframe name="ifd" onload="this.height=ifd.document.body.scrollHeight" src="./api/getrecipe" scrolling="no" frameborder="0" style="width:100%;"></iframe>
       </section>
     </main>
     <!-- end of main -->
+
     <!-- footer -->
     <footer class="page-footer">
       <p>
         &copy; <span id="date">2023</span>
       </p>
      </footer>
-    <script src="../static/js/app.js"></script> 
+    <script src="../static/js/index.js"></script>
+    <script src="../static/js/recipe.js"></script> 
   </body>
 </html>
