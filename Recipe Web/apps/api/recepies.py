@@ -26,12 +26,6 @@ bp = Blueprint("recipe", __name__, url_prefix="/api")
 
 @bp.route("/getrecipe", methods=["GET"])
 def getALlRecipe():
-    recipe_obj = Recipe.query
-
-    for i in recipe_obj:
-        
-        i += i
-
     cplist = [
         {"name": "Dish A", "path": "#"},
         {"name": "Dish B", "path": "#"},

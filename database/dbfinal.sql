@@ -13,7 +13,7 @@ CREATE TABLE users (
 
 INSERT INTO users (name, password)
 VALUES
-    ('user', '123');
+    ('123456', '123456');
 
 CREATE TABLE recipes (
     id INT AUTO_INCREMENT PRIMARY KEY,
