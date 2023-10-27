@@ -6,34 +6,69 @@
     <link href="../static/css/login.css" rel="stylesheet">
 </head>
 <body>
-
-    <!--左侧展示图片区域-->
+    <!-- background -->
     <div class="background">
-        <img src="../static/image/background.jpeg" alt="Your Image Description">
+        <img src="../static/image/background.jpeg" alt="backgroundimage">
     </div>
 
-    <!--右侧用户输入信息区域-->
+    <!-- user input -->
     <div class="login_table">
-        <h1><b>Welcome to Login</b></h1>
+        <h1><b>Login</b></h1>
         <p>{{msg}}</p>
-        <form action="" method="post">
-            <div>
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" value="">
+        <form id="login-form" action="{{ url_for('login.login') }}" method="post" novalidate>
+            {{ form.hidden_tag() }}
+            <table>
+                <tr>
+                    <td>
+                        {{ form.username.label }}
+                    </td>
+                    <td>
+                        {{ form.username(placeholder="Username") }}
+                    </td>
+                    <td>
+                        {% for error in form.username.errors %}
+                        <span style="color: red;"> [{{ error}}]</span>
+                        {% endfor %}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        {{ form.password.label }}
+                    </td>
+                    <td>
+                        {{ form.password(placeholder="Password") }}
+                    </td>
+                    <td>
+                        {% for error in form.password.errors %}
+                        <span style="color: red;"> [{{ error}}]</span>
+                        {% endfor %}
+                    </td>
+                </tr>
+            </table>
+            
+            <div class="buttons">
+                <input value="Login" type="submit" id="login_btn">
             </div>
-            <div>
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" value="">
-            </div>
-            <button type="submit">Login</button>
+            <!-- <br class="clear"> -->
+    
         </form>
-   
 
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li style="color: red">{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
 
-        <!--注册按钮 -->
-        <p>Don't have an account? <a href="./register">Register</a></p>
+        <div class="reg-content">
+            <span>Don't have an account?</span> <a href="./register">Register</a>
+        </div>
+
     </div>
-    <!--页脚-->
+    
     <footer style="color: palevioletred;">This is Footer</footer>
 </body>
 </html>
