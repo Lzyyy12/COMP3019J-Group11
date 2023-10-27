@@ -9,9 +9,10 @@ bp = Blueprint("recipe", __name__, url_prefix="/api")
 def get_recipe():
     type = request.args.get("type")
     cplist = []
-
+    # Get the list of recipes from database
     recipe_objs = Recipe.query.all()
     for recipe in recipe_objs:
+        # Identify type of recipe
         if type == recipe.type or type == 'all':
             recipedata = {}
             recipedata['name'] = recipe.name

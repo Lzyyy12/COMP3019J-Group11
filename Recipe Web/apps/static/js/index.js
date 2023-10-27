@@ -17,21 +17,6 @@ navBtnDOM.addEventListener('click', () => {
   links.classList.toggle('show-links')
 })
 
-// function all_recipe() {
-//   var iframe = document.getElementById("recipeframe");
-//   iframe.setAttribute("src", "./api/get_recipe?type=all")
-// }
-
-// function eastern() {
-//   var iframe = document.getElementById("recipeframe");
-//   iframe.setAttribute("src", "./api/get_recipe?type=eastern")
-// }
-
-// function western() {
-//   var iframe = document.getElementById("recipeframe");
-//   iframe.setAttribute("src", "./api/get_recipe?type=western")
-// }
-
 // Get a list of navigation links and assign data-index attributes
 var navlist = document.querySelectorAll(".nav-link");
 for (let i = 0; i < navlist.length; i++) {
@@ -45,8 +30,7 @@ for (let i = 0; i < navlist.length; i++) {
       else
         navlist[i].style.color = "#FFF";
     }
-    
-// Update the color of the clicked link and adjust the iframe source accordingly
+    // Update the color of the clicked link and adjust the iframe source accordingly
     var iframe = document.getElementById("recipeframe");
     switch (index) {
       case "0":
