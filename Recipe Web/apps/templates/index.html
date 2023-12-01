@@ -47,8 +47,8 @@
         <div class="tags-container">
           <div class="tags-list">
             {% if islogin %}
-            <a href="./index.html" class="main">Main</a>
-            <a href="./post.html" class="post">Post</a>
+            <a href="./api/get_recipe?type=all" target="mainframe" class="main">Main</a>
+            <a href="./api/edit_recipe" target="mainframe" class="post">Post</a>
             <a href="./favorite.html" class="favorite">Favorite</a>
             <a href="./user.html" class="user">User</a>
             <a href="./api/logout" class="logout">Log out</a>
@@ -59,7 +59,7 @@
         </div>
         <!-- End of Tag Container -->
         
-        <iframe id="recipeframe" name="ifd" onload="this.height=ifd.document.body.scrollHeight"
+        <iframe id="recipeframe" name="mainframe" onload="this.height=mainframe.document.body.scrollHeight"
         src="./api/get_recipe?type=all" scrolling="no" frameborder="0" style="width:100%;"></iframe>
       </section>
     </main>

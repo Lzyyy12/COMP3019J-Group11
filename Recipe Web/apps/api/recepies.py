@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, Blueprint, render_template
+from flask import Flask, request, jsonify, Blueprint, render_template, session
 from apps.model.model import Recipe
 from apps import db
 import json
@@ -24,3 +24,11 @@ def get_recipe():
         }
     
     return render_template("recipe.html", **context)
+
+@bp.route("/edit_recipe", methods=["GET", "POST"])
+def edit_recipe():
+    if session.get('logged_in'):
+        if request.method == 'POST':
+            return 0
+        return render_template('edit_recipe.html')
+    return "please log in"
