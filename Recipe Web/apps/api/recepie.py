@@ -72,3 +72,22 @@ def upload():
             basepath, r'apps\static\image\recipes', f.filename)
         f.save(upload_path)
         return {'msg': 'ok', 'filename': f.filename}
+
+@bp.route("/search", methods=["GET"])
+def search():
+    keyword = request.args.get("keyword")
+    cplist = []
+    # Get the list of recipes from database
+    recipe_objs = Recipe.query.filter(Recipe.name.ilike(
+        '%{keyword}%'.format(keyword=keyword))).all()
+    for recipe in recipe_objs:
+        recipedata = {}
+        recipedata['name'] = recipe.name
+        recipedata['path'] = recipe.path
+        cplist.append(recipedata)
+
+    context = {
+        "cplist": cplist
+    }
+
+    return render_template("recipe.html", **context)
