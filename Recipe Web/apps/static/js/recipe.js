@@ -8,20 +8,8 @@ function addIngredient() {
 }
 
 function ajax_submit(username) {
-    let formData = new FormData;
-    let file = $('[name="photo"]')[0].files[0];
-    formData.append("file", file);
-    $.ajax({
-        url: "./upload",
-        data: formData,
-        type: "post",
-        async: false,
-        contentType: false,
-        processData: false,
-        success: function (msg) {
-            alert(msg.filename);
-            // $('[name="photo"]').val(msg)
-            // $("#imgId").prop("src", msg)
-        }
-    });
+    var input = document.getElementById("search").value;
+    var url = "./api/search?keyword=" + input;
+    var iframe = document.getElementById("recipeframe");
+    iframe.setAttribute("src", url)
 }
