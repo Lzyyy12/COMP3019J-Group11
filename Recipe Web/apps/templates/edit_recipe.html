@@ -31,6 +31,10 @@
     <input type="button" value="Add Ingredient" onclick="addIngredient()">
   </div>
 
+  <form action="{{ url_for('recipe.edit_recipe') }}" method="post">
+    <input type="submit" value="submit">
+  </form>
+  
 </body>
 
 </html>
