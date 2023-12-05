@@ -1,3 +1,5 @@
+
+
 // Function to get an element by its selector, throwing an error if not found
 const getElement = (selector) => {
   const element = document.querySelector(selector);
@@ -44,4 +46,17 @@ for (let i = 0; i < navlist.length; i++) {
         break;
     }
   };
+}
+
+function search() {
+  var input = document.getElementById("search").value;
+  var url = "/api/search?keyword=" + input;
+  $.ajax({
+     url: url,
+     type: "get",
+     success: function (msg) {
+      alert(msg.filename);
+    }
+  });
+
 }
