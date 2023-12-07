@@ -48,10 +48,10 @@
         <div class="tags-container">
           <div class="tags-list">
             {% if islogin %}
-            <a href="./api/get_recipe?type=all" target="mainframe" class="main">Main</a>
-            <a href="./api/edit_recipe" target="mainframe" class="post">Post</a>
-            <a href="./favorite.html" class="favorite">Favorite</a>
-            <a href="./user.html" class="user">User</a>
+            <a href="./api/get_recipe?type=all" target="mainframe" class="main" onclick="showNavLinks()">Main</a>
+            <a href="./api/edit_recipe" target="mainframe" class="post" onclick="hideNavLinks()">Post</a>
+            <a href="./favorite.html" class="favorite" onclick="hideNavLinks()">Favorite</a>
+            <a href="./user.html" class="user" onclick="hideNavLinks()">User</a>
             <a href="./api/logout" class="logout">Log out</a>
             {% else %}
             <a href="./api/login" target="_self" class="login">Log in</a>
