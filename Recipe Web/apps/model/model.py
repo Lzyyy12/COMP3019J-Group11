@@ -7,6 +7,7 @@ class User(db.Model):
     name = db.Column(db.String(255), unique=True)
     password = db.Column(db.String(255), nullable=False)
     photo = db.Column(db.String(255), nullable=False)
+    type = db.Column(db.Integer, autoincrement=False, nullable=False)
 
     def __repr__(self):
         return '<User %r>' % self.name

@@ -30,7 +30,11 @@ def login():
                 # If username and password match an existing user, log in the user
                 session["username"] = username
                 session['logged_in'] = user_obj.id
-                return redirect('/')
+                if user_obj.type == 0:
+                    return redirect('/')
+                else:
+                    #return render_template('admin.html', form=form, **context)
+                    return redirect('/admin')
             # If login fails, show an error message using flash
             flash('Username not exist or wrong password，please input again to login!', 'error')
         else:
@@ -68,7 +72,7 @@ def register():
             flash('Username already exists. Please choose a different username.', 'error')
         else:
             # If all checks pass, create a new user and add it to the database
-            new_user = User(name=username, password=hashed_password)
+            new_user = User(name=username, password=hashed_password, type=0)
             db.session.add(new_user)
             db.session.commit()
             flash('Registration successful. You can now log in.', 'success')

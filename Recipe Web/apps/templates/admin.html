@@ -8,7 +8,7 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="../static/image/huluobu.svg" type="image/x-icon" />
     <!-- Main CSS -->
-    <link rel="stylesheet" href="../static/css/index.css" />
+    <link rel="stylesheet" href="../static/css/admin.css" />
   </head>
   <body>
     <!-- Navigation: logo and the type of dish-->
@@ -22,36 +22,19 @@
             <i class="fas fa-align-justify"></i>
           </button>
         </div>
-        <div class="nav-links">
-          <a onclick="all_recipe()" class="nav-link" style="color: #FFFA05"> All </a>
-          <a onclick="eastern()" class="nav-link"> Eastern </a>
-          <a onclick="western()" class="nav-link"> Western </a>
-        </div>
       </div>
     </nav>
     <!-- End of Navigation -->
 
     <!-- Main Content -->
     <main class="page">
-      <header class="hero">
-        
-        <!-- <div class="search">
-          <input type="text" id="search" value="" class="search_input" placeholder="Search..." />
-          <div class="search_button" onclick="search()">Search</div>
-        </div> -->
-       
-      </header>
-      <!-- End of Header -->
-
       <section class="recipes-container">
         <!-- Tag Container -->
         <div class="tags-container">
           <div class="tags-list">
             {% if islogin %}
-            <a href="./api/get_recipe?type=all" target="mainframe" class="main">Main</a>
-            <a href="./api/edit_recipe" target="mainframe" class="post">Post</a>
-            <a href="./favorite.html" class="favorite">Favorite</a>
-            <a href="./user.html" class="user">User</a>
+            <a href="./api/manage_user" target="mainframe" class="main">Manage User</a>
+            <a href="./api/manage_recipe" target="mainframe" class="post">Manage Recipe</a>
             <a href="./api/logout" class="logout">Log out</a>
             {% else %}
             <a href="./api/login" target="_self" class="login">Log in</a>
@@ -59,20 +42,13 @@
           </div>
         </div>
         <!-- End of Tag Container -->
-        
-        <iframe id="recipeframe" name="mainframe" onload="this.height=mainframe.document.body.scrollHeight"
-        src="./api/get_recipe?type=all" scrolling="no" frameborder="0" style="width:100%;"></iframe>
-      </section>
-    </main>
-    <!-- End of Main Content -->
 
-    <!-- Footer -->
-    <footer class="page-footer">
-      <p>
-        &copy; <span id="date">2023</span>
-      </p>
-    </footer>
+        <iframe id="manageframe" name="mainframe" onload="this.height=mainframe.document.body.scrollHeight"
+        src="./api/manage_user" scrolling="no" frameborder="0" style="width:100%;"></iframe>
+      </section>  
+    </main>
+
     <script src="../static/js/jquery-1.12.4.min.js"></script>
-    <script src="../static/js/index.js"></script>
+    <script src="../static/js/admin.js"></script>
   </body>
 </html>
