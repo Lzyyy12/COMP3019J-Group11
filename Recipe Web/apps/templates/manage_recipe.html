@@ -3,8 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="../static/css/index.css" />
-  <script src="../static/js/recipe.js"></script>
+  <link rel="stylesheet" href="../static/css/admin.css" />
   <script src="../static/js/jquery-1.12.4.min.js"></script>
 </head>
 
@@ -19,11 +18,7 @@
 
   <!-- recipes list -->
   <div id="recipes" class="recipes-list">
-    {% for cp in cplist %}
-    <a href="single-recipe.html" class="recipe">
-      <img src = {{ cp.path }} class="img recipe-img" alt="" />
-      <h5>{{ cp.name }}</h5>
-      {% endfor %}
+    These are recipes to manage.
   </div>
   <!-- end of recipes list -->
 

@@ -86,8 +86,4 @@ def search():
         recipedata['path'] = recipe.path
         cplist.append(recipedata)
 
-    context = {
-        "cplist": cplist
-    }
-
-    return render_template("recipe.html", **context)
+    return cplist
