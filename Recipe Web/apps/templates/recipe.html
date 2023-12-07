@@ -7,6 +7,15 @@
 </head>
 
 <body>
+
+  <main class="page">
+  <header class="hero">
+    <!-- search bar -->
+    <div class="search">
+      <input type="text" id="search" value="" class="search_input" placeholder="Search..." />
+      <div class="search_button" onclick="search()">Search</div>
+    </div>
+  </header>
   <!-- recipes list -->
   <div id="recipes" class="recipes-list">
     {% for cp in cplist %}
@@ -16,7 +25,7 @@
       {% endfor %}
   </div>
   <!-- end of recipes list -->
-
+  </main>
 </body>
 
 </html>

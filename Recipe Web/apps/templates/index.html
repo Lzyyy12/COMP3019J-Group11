@@ -9,6 +9,7 @@
     <link rel="shortcut icon" href="../static/image/huluobu.svg" type="image/x-icon" />
     <!-- Main CSS -->
     <link rel="stylesheet" href="../static/css/index.css" />
+   
   </head>
   <body>
     <!-- Navigation: logo and the type of dish-->
@@ -33,13 +34,13 @@
 
     <!-- Main Content -->
     <main class="page">
-      <header class="hero">
-        <!-- search bar -->
+      <!-- <header class="hero">
+      
         <div class="search">
           <input type="text" id="search" value="" class="search_input" placeholder="Search..." />
           <div class="search_button" onclick="search()">Search</div>
         </div>
-      </header>
+      </header> -->
       <!-- End of Header -->
 
       <section class="recipes-container">
@@ -48,9 +49,9 @@
           <div class="tags-list">
             {% if islogin %}
             <a href="./api/get_recipe?type=all" target="mainframe" class="main">Main</a>
-            <a href="./api/edit_recipe" target="mainframe" class="post">Post</a>
-            <a href="./favorite.html" class="favorite">Favorite</a>
-            <a href="./user.html" class="user">User</a>
+            <a href="./api/edit_recipe" target="mainframe" class="post" onclick="hideNavLinks()">Post</a>
+            <a href="./favorite.html" class="favorite" onclick="hideNavLinks()">Favorite</a>
+            <a href="./user.html" class="user" onclick="hideNavLinks()">User</a>
             <a href="./api/logout" class="logout">Log out</a>
             {% else %}
             <a href="./api/login" target="_self" class="login">Log in</a>

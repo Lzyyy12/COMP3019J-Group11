@@ -194,7 +194,7 @@ Hero
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: right;
+  justify-content: center;
   border-radius: var(--borderRadius);
 }
 
@@ -208,9 +208,9 @@ Hero
   background-color: #787a7c;
   color: #fff;
   cursor: pointer;
-  margin-left: 2%;
+  margin-left: 3%;
   border-radius: 6px;
-  width: 7%;
+  width: 10%;
   text-align: center;
 }
 

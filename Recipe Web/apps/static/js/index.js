@@ -1,5 +1,7 @@
 
-
+function hideNavLinks() {
+  document.querySelector('.nav-links').style.display = 'none';
+}
 // Function to get an element by its selector, throwing an error if not found
 const getElement = (selector) => {
   const element = document.querySelector(selector);
