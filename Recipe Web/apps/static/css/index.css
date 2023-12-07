@@ -139,7 +139,7 @@ Page
 }
 
 .page {
-  padding-top: 2rem;
+
   min-height: calc(100vh - (6rem + 4rem));
 }
 
@@ -298,13 +298,13 @@ Recipes
   font-weight: bold;
 }
 
-.recipe p {
-  margin-bottom: 0;
-  line-height: 1;
-  color: var(--grey-500);
-  margin-top: 0.5rem;
-  letter-spacing: var(--letterSpacing);
-}
+/*.recipe p {*/
+/*  margin-bottom: 0;*/
+/*  line-height: 1;*/
+/*  color: var(--grey-500);*/
+/*  margin-top: 0.5rem;*/
+/*  letter-spacing: var(--letterSpacing);*/
+/*}*/
 
 @media screen and (min-width: 576px) {
   .recipes-list {

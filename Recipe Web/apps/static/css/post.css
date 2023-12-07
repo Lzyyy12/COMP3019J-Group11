@@ -1,0 +1,79 @@
+.header {
+  display: flex; /* 使用 Flexbox 布局 */
+  justify-content: space-between; /* 两端对齐，中间留空 */
+  border-bottom: 1px solid gray; /* 添加黑色边框 */
+  padding: 10px; /* 添加一些内边距，让布局更加美观 */
+  align-items: center; /* 垂直居中对齐子元素 */
+}
+
+.name_input {
+  margin-right: 20px; /* 添加右边距 */
+  margin-left: 5px; /* 添加左边距 */
+  font-size: 25px; /* 设置字体大小 */
+}
+
+.types {
+  font-size: 20px; /* 设置字体大小 */
+  display: flex; /* 使单选按钮水平排列 */
+  flex-direction: row; /* 将单选按钮水平排列 */
+}
+.type {
+    padding: 0;
+    border-top: none;
+    margin-left: 2rem;
+  }
+/* 增加一个伪元素在单选按钮后面 */
+.type input[type="radio"] + span::after {
+  content: ''; /* 伪元素的内容 */
+  display: inline-block; /* 使伪元素像块元素一样排列 */
+  width: 0.5rem; /* 你想要的空间大小 */
+  height: 1px; /* 使伪元素不可见 */
+}
+
+/* 为每个单选按钮后的文字添加span标签 */
+.type input[type="radio"] + span {
+  padding-left: 10px; /* 或者你想要的任何大小 */
+}
+
+
+
+.upload_picture {
+    border-bottom: 1px solid gray;
+    padding: 10px;
+    height: 40%/* 新添加的内边距 */
+}
+
+.upload_picture h3 {
+    display: inline-block; /* 使 h3 和按钮在同一行 */
+    margin-right: 10px; /* 为 h3 添加右边距 */
+}
+
+.upload_picture button {
+    display: inline-block; /* 使按钮和 h3 在同一行 */
+    vertical-align:center;
+    width: 15%;
+    border-radius: 7px;
+    /* 对齐到顶部 */
+}
+
+.recipe-img {
+    margin-top: 1rem;
+  height: 15rem;
+  border-radius: var(--borderRadius);
+  margin-bottom: 1rem;
+  display: block; /* 使图片独占一行 */
+}
+
+.add_ingredient{
+    border-bottom: 1px solid gray;
+    padding: 10px;
+    height: 40%/* 新添加的内边距 */
+}
+.submitBtn {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px; /* 或足够的边距以适当分隔上传区域和提交按钮 */
+}
+
+
+

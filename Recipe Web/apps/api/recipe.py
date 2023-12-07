@@ -59,7 +59,8 @@ def edit_recipe():
                 db.session.commit()
 
                 flash('Recipe added successfully!', 'success')
-            return redirect('/')  # 跳转
+            # return redirect(url_for('recipe.get_recipe', type='all'))  # 跳转
+            return redirect("/")
         return render_template('edit_recipe.html')
     return "please log in"
 
