@@ -17,6 +17,7 @@
 </style>
 
 <body>
+ <main class="page">
   <form action="{{ url_for('recipe.edit_recipe') }}" method="post" enctype="multipart/form-data">
     <div class="header">
         <input type="text" id="recipe_name" name="recipe_name" value="" class="name_input" placeholder="Name:" />
@@ -40,14 +41,14 @@
     </div>
 </div>
 
-      <div class="text">
-    <input type="text" id="recipe_context" name="recipe_description" value="" class="context" placeholder="Steps:" />
-</div>
+   <div class="text">
+  <textarea id="recipe_context" name="recipe_context" class="context" placeholder="Steps:" rows="4" cols="50"></textarea>
+    </div>
 
 
     <div class="add_ingredient">
   <h3>Add Ingredient:</h3>
-  <table id="ingredientsTable">
+  <table id="ingredientsTable" class="ingredientsTable">
     <thead>
       <tr>
         <th>Ingredient</th>
@@ -68,10 +69,11 @@
   <button type="button" id="addRowButton">Add Row</button>
 </div>
 
-<div>
+<div class="submit">
   <button type="submit">Submit</button>
 </div>
 </form>
+</main>
 </body>
 
 </html>

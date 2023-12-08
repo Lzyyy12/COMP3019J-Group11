@@ -1,3 +1,20 @@
+:root {
+  --transition: 0.3s ease-in-out all;
+}
+
+.img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+html, body {
+  height: 100%; /* 确保 html 和 body 元素占满整个视口 */
+  overflow-y: auto; /* 允许在 Y 轴出现滚动条 */
+}
+.page {
+
+  min-height: calc(100vh - (6rem + 4rem));
+}
 .header {
   display: flex; /* 使用 Flexbox 布局 */
   justify-content: space-between; /* 两端对齐，中间留空 */
@@ -40,7 +57,7 @@
 .upload_picture {
     border-bottom: 1px solid gray;
     padding: 10px;
-    height:18rem/* 新添加的内边距 */
+    /* 新添加的内边距 */
 }
 
 .upload_picture h3 {
@@ -52,7 +69,7 @@
     display: inline-block; /* 使按钮和 h3 在同一行 */
     vertical-align:center;
     width: 15%;
-    height: 25px;
+
     border-radius: 7px;
     /* 对齐到顶部 */
 }
@@ -67,7 +84,7 @@
 .recipe-img {
   height: 15rem;
   border-radius: var(--borderRadius);
-  display: block; /* 图片作为块级元素 */
+  margin-bottom: 1rem;
 }
 
 /*@media screen and (min-width: 576px) {*/
@@ -82,7 +99,7 @@
   justify-content: space-between; /* 两端对齐，中间留空 */
   border-bottom: 1px solid gray; /* 添加黑色边框 */
   padding: 5px; /* 添加一些内边距，让布局更加美观 */
-    height: 10rem;/* 垂直居中对齐子元素 */
+    /* 垂直居中对齐子元素 */
 }
 .context{
    margin-right: 20px; /* 添加右边距 */
@@ -97,15 +114,17 @@
 /*}*/
 
 .add_ingredient{
-    border-bottom: 1px solid gray;
-    padding: 10px;
-    /* 新添加的内边距 */
+  overflow-y: auto;
+    /* 内容超出时显示垂直滚动条 */
 }
+    /* 新添加的内边距 */
+
 
 /* 为整个表格添加边框样式 */
 #ingredientsTable {
+    overflow: auto;
   border-collapse: collapse; /* 确保边框之间没有空隙 */
-  width: 100%; /* 表格宽度 */
+  width: 70%; /* 表格宽度 */
   margin-top: 10px; /* 表格上方的边距 */
 }
 
@@ -145,10 +164,35 @@
   margin-top: 15px;
     font-size: 16px;
     width: 25%;
-    height: 40px;
+
     border-radius: 7px;
     /* 或足够的边距以适当分隔上传区域和提交按钮 */
 }
+
+.page-footer {
+  text-align: center;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--black);
+  color: var(--white);
+}
+
+.page-footer h5 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.page-footer p {
+  margin-bottom: 0;
+}
+
+.page-footer .footer-logo,
+.page-footer a {
+  color: var(--primary-500);
+}
+
 
 
 
