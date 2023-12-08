@@ -5,6 +5,23 @@ function hideNavLinks() {
 function showNavLinks() {
   document.querySelector('.nav-links').style.display = 'flex';
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    var tags = document.querySelectorAll('.tags-list a'); // 获取所有标签
+
+    tags.forEach(function(tag) {
+        tag.addEventListener('click', function() {
+            // 首先移除所有按钮的 'active-tag' 类
+            tags.forEach(function(t) {
+                t.classList.remove('active-tag');
+            });
+
+            // 然后给当前点击的按钮添加 'active-tag' 类
+            tag.classList.add('active-tag');
+        });
+    });
+});
+
 // Function to get an element by its selector, throwing an error if not found
 const getElement = (selector) => {
   const element = document.querySelector(selector);

@@ -2,14 +2,14 @@
   display: flex; /* 使用 Flexbox 布局 */
   justify-content: space-between; /* 两端对齐，中间留空 */
   border-bottom: 1px solid gray; /* 添加黑色边框 */
-  padding: 10px; /* 添加一些内边距，让布局更加美观 */
+  padding: 5px; /* 添加一些内边距，让布局更加美观 */
   align-items: center; /* 垂直居中对齐子元素 */
 }
 
 .name_input {
   margin-right: 20px; /* 添加右边距 */
   margin-left: 5px; /* 添加左边距 */
-  font-size: 25px; /* 设置字体大小 */
+  font-size: 20px; /* 设置字体大小 */
 }
 
 .types {
@@ -40,7 +40,7 @@
 .upload_picture {
     border-bottom: 1px solid gray;
     padding: 10px;
-    height: 40%/* 新添加的内边距 */
+    height:18rem/* 新添加的内边距 */
 }
 
 .upload_picture h3 {
@@ -52,27 +52,102 @@
     display: inline-block; /* 使按钮和 h3 在同一行 */
     vertical-align:center;
     width: 15%;
+    height: 25px;
     border-radius: 7px;
     /* 对齐到顶部 */
 }
 
+/* 新的图片容器样式 */
+.image-container {
+  display: flex; /* 使用 Flexbox 布局 */
+  justify-content: center; /* 水平居中 */
+  margin-top: 0.75rem; /* 上边距 */
+}
+
 .recipe-img {
-    margin-top: 1rem;
   height: 15rem;
   border-radius: var(--borderRadius);
-  margin-bottom: 1rem;
-  display: block; /* 使图片独占一行 */
+  display: block; /* 图片作为块级元素 */
 }
+
+/*@media screen and (min-width: 576px) {*/
+
+/*  .recipe-img {*/
+/*    height: 10rem;*/
+/*  }*/
+/*}*/
+
+.text{
+     display: flex; /* 使用 Flexbox 布局 */
+  justify-content: space-between; /* 两端对齐，中间留空 */
+  border-bottom: 1px solid gray; /* 添加黑色边框 */
+  padding: 5px; /* 添加一些内边距，让布局更加美观 */
+    height: 10rem;/* 垂直居中对齐子元素 */
+}
+.context{
+   margin-right: 20px; /* 添加右边距 */
+  margin-left: 5px; /* 添加左边距 */
+  font-size: 20px;
+    align-self: flex-start;/* 设置字体大小 */
+}
+
+/*.add_ingredient h3 {*/
+/*    display: inline-block; !* 使 h3 和按钮在同一行 *!*/
+/*    margin-right: 10px; !* 为 h3 添加右边距 *!*/
+/*}*/
 
 .add_ingredient{
     border-bottom: 1px solid gray;
     padding: 10px;
-    height: 40%/* 新添加的内边距 */
+    /* 新添加的内边距 */
 }
-.submitBtn {
+
+/* 为整个表格添加边框样式 */
+#ingredientsTable {
+  border-collapse: collapse; /* 确保边框之间没有空隙 */
+  width: 100%; /* 表格宽度 */
+  margin-top: 10px; /* 表格上方的边距 */
+}
+
+/* 为表格的单元格和标题单元格添加边框 */
+#ingredientsTable th,
+#ingredientsTable td {
+  border: 1px solid #ddd; /* 边框样式 */
+  padding: 8px; /* 单元格内边距 */
+}
+
+/* 为表格的头部单元格添加样式 */
+#ingredientsTable th {
+  background-color: #f2f2f2; /* 背景颜色 */
+  color: black; /* 文本颜色 */
+}
+
+/* 表格行的悬停效果 */
+#ingredientsTable tr:hover {
+  background-color: #ddd; /* 悬停时的背景颜色 */
+}
+
+/* 表格输入框样式 */
+#ingredientsTable input[type="text"] {
+  width: 100%; /* 输入框宽度 */
+  border: none; /* 移除输入框的边框 */
+  padding: 5px; /* 输入框内边距 */
+}
+
+.submit{
+    justify-content: center;
+    display: flex;
+}
+.submit button {
   display: flex;
   justify-content: center;
-  margin-top: 10px; /* 或足够的边距以适当分隔上传区域和提交按钮 */
+    align-items: center;
+  margin-top: 15px;
+    font-size: 16px;
+    width: 25%;
+    height: 40px;
+    border-radius: 7px;
+    /* 或足够的边距以适当分隔上传区域和提交按钮 */
 }
 
 
