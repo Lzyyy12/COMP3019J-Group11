@@ -16,6 +16,12 @@
     </div>
   </header>
 
+  <style>
+    .btn_delete {
+      padding: 5px 5px;
+    }
+  </style>
+
   <!-- recipes list -->
   <div id="recipes" class="recipes-list">
 
@@ -34,7 +40,7 @@
           <td>{{ cp.name }}</td>
           <td>{{ cp.photo }}</td>
           <td>
-            <input type="button" value="Delete"/>
+            <input type="button" class="btn_delete" user-id={{ cp.id }} value="Delete"/>
           </td>
         </tr>
       {% endfor %}
@@ -43,6 +49,7 @@
   </div>
   <!-- end of recipes list -->
 
+  <script src="../static/js/admin.js"></script>
 </body>
 
 </html>

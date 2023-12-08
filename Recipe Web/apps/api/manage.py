@@ -28,15 +28,32 @@ def manage_user():
     
     return render_template("manage_user.html", **context)
 
+@bp.route("/delete_user", methods=["POST"])
+def delete_user():
+    userId = request.form['userId']
+    del_count = db.session.query(User).filter(User.id == userId).delete()
+    db.session.commit()
+    if del_count == 1 :
+        return "delete succeeded"
+    return "delete failed"
+
 @bp.route("/manage_recipe", methods=["GET"])
 def manage_recipe():
     cplist = []
-
+    # Get the list of recipes from database
+    user_objs = User.query.all()
+    for user in user_objs:
+        userdata = {}
+        userdata['id'] = user.id
+        userdata['name'] = user.name
+        userdata['photo'] = user.photo
+        cplist.append(userdata)
+   
     context = {
         "cplist": cplist
         }
     
-    return render_template("manage_recipe.html", **context)
+    return render_template("manage_user.html", **context)
 
 
 @bp.route("/search", methods=["GET"])
