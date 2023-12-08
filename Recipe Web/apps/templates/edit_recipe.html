@@ -35,15 +35,13 @@
     <h3>Upload Image:</h3>
 
     <input type="file" name="photo" multiple>
-    <button style="margin-top: 12px;border: 1px solid black;"
-    onclick="ajax_submit('${loginUser.username }');">upload image</button>
     <div class="image-container">
       <img src="../static/image/recipes/recipe1.png" class="recipe-img" alt="" />
     </div>
 </div>
 
       <div class="text">
-    <input type="text" id="recipe_context" value="" class="context" placeholder="Steps:" />
+    <input type="text" id="recipe_context" name="recipe_description" value="" class="context" placeholder="Steps:" />
 </div>
 
 
@@ -70,10 +68,9 @@
   <button type="button" id="addRowButton">Add Row</button>
 </div>
 
-
-   <form action="{{ url_for('recipe.edit_recipe') }}" method="post" class="submit">
-    <button type="submit">Submit</button>
-  </form>
+<div>
+  <button type="submit">Submit</button>
+</div>
 </form>
 </body>
 

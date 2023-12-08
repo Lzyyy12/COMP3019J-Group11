@@ -27,7 +27,7 @@ CREATE TABLE ingredient(
     recipe_id INT NOT NULL,
     name VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
     amount VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci,
-    FOREIGN KEY (recipe_id) REFERENCES Recipe(id)
+    FOREIGN KEY (recipe_id) REFERENCES Recipes(id)
 );
 
 INSERT INTO recipes (name, path, type)

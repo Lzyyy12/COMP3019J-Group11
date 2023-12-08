@@ -42,10 +42,11 @@ def edit_recipe():
         if request.method == 'POST':
             # Get recipe name and recipe type
             recipe_name = request.form.get('recipe_name')
-            recipe_type = request.form.get('recipe_type')
+            recipe_type = request.form.get('type')
+            recipe_description = request.form.get('recipe_description')
 
             # Get the image file
-            recipe_image = request.files['recipe_image']
+            recipe_image = request.files['photo']
 
             # Give the image an unique filename
             filename = str(uuid.uuid4()) + '_' + recipe_image.filename
@@ -57,7 +58,7 @@ def edit_recipe():
             recipe_image.save(upload_path)
 
             # Save data to the database
-            new_recipe = Recipe(name=recipe_name, path=save_path, type=recipe_type)
+            new_recipe = Recipe(name=recipe_name, path=save_path, type=recipe_type, description=recipe_description)
             db.session.add(new_recipe)
             db.session.commit()
 
