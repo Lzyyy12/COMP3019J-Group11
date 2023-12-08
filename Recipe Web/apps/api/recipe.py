@@ -40,6 +40,7 @@ class RecipeForm(FlaskForm):
 def edit_recipe():
     if session.get('logged_in'):
         if request.method == 'POST':
+            # Get recipe name and recipe type
             recipe_name = request.form.get('recipe_name')
             recipe_type = request.form.get('recipe_type')
 

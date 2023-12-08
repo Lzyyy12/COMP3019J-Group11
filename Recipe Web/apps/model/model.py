@@ -18,6 +18,7 @@ class Recipe(db.Model):
     name = db.Column(db.String(255), unique=False, nullable=False)
     path = db.Column(db.String(255), nullable=True)
     type = db.Column(db.String(255), nullable=True)
+    description = db.Column(db.String(255), nullable=True)
 
     def __repr__(self):
         return '<Recipe %r>' % self.name

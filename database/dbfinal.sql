@@ -17,7 +17,8 @@ CREATE TABLE recipes (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
     path VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci, 
-    type VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci
+    type VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci,
+    description VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci
 );
 
 DROP TABLE IF EXISTS ingredient;
