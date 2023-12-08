@@ -31,8 +31,8 @@ def get_recipe():
     return render_template("recipe.html", **context)
 
 class RecipeForm(FlaskForm):
-    name = StringField('name', validators=[validators.DataRequired()])
-    image = FileField('image', validators=[FileRequired()])
+    recipe_name = StringField('name', validators=[validators.DataRequired()])
+    recipe_image = FileField('image', validators=[FileRequired()])
     recipe_type = SelectField('type', choices=[('eastern', 'Eastern'), ('western', 'Western')],
                               validators=[validators.DataRequired()])
 
@@ -40,39 +40,30 @@ class RecipeForm(FlaskForm):
 def edit_recipe():
     if session.get('logged_in'):
         if request.method == 'POST':
-            form = RecipeForm()
+            recipe_name = request.form.get('recipe_name')
+            recipe_type = request.form.get('recipe_type')
 
-            if form.validate_on_submit():
-                name = form.name.data
-                image = form.image.data
-                recipe_type = form.recipe_type.data
+            # Get the image file
+            recipe_image = request.files['recipe_image']
 
-                # 保存文件到服务器
+            # Give the image an unique filename
+            filename = str(uuid.uuid4()) + '_' + recipe_image.filename
 
-                filename = secure_filename(str(uuid.uuid4()) + '_' + image.filename)
-                file_path = os.path.join(app.config['UPLOAD_IMAGE_FOLDER'], filename)
-                image.save(file_path)
+            # Save the image to system
+            basepath = os.getcwd()
+            upload_path = os.path.join(basepath, 'Recipe Web/apps/static/image/recipes', filename)
+            save_path = os.path.join('../static/image/recipes', filename)
+            recipe_image.save(upload_path)
 
-                # 将文件路径存储到数据库
-                new_recipe = Recipe(name=name, path=file_path, type=recipe_type)
-                db.session.add(new_recipe)
-                db.session.commit()
+            # Save data to the database
+            new_recipe = Recipe(name=recipe_name, path=save_path, type=recipe_type)
+            db.session.add(new_recipe)
+            db.session.commit()
 
-                flash('Recipe added successfully!', 'success')
-            # return redirect(url_for('recipe.get_recipe', type='all'))  # 跳转
+            flash('Recipe added successfully!', 'success')
             return redirect("/")
-        return render_template('edit_recipe.html')
+        return render_template("edit_recipe.html")
     return "please log in"
-
-@bp.route('/upload', methods=['POST'])
-def upload():
-    if request.method == 'POST':
-        f = request.files['file']
-        basepath = os.getcwd()
-        upload_path = os.path.join(
-            basepath, r'apps\static\image\recipes', f.filename)
-        f.save(upload_path)
-        return {'msg': 'ok', 'filename': f.filename}
 
 @bp.route("/search", methods=["GET"])
 def search():
