@@ -4,7 +4,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SelectField, FileField, validators
 from flask_wtf.file import FileRequired, FileAllowed
 from werkzeug.utils import secure_filename
-from apps.model.model import Recipe
+from apps.model.model import User, Recipe
 from apps import db
 import json, os
 
@@ -13,7 +13,15 @@ bp = Blueprint("manage", __name__, url_prefix="/api")
 @bp.route("/manage_user", methods=["GET"])
 def manage_user():
     cplist = []
-
+    # Get the list of users from database
+    user_objs = User.query.all()
+    for user in user_objs:
+        userdata = {}
+        userdata['id'] = user.id
+        userdata['name'] = user.name
+        userdata['photo'] = user.photo
+        cplist.append(userdata)
+   
     context = {
         "cplist": cplist
         }

@@ -18,7 +18,28 @@
 
   <!-- recipes list -->
   <div id="recipes" class="recipes-list">
-    These are users not recipes.
+
+    <div class="table-box"><table>
+      <tr>
+          <th id="user-id">ID</th>
+          <th id="user-name">Name</th>
+          <th id="user-photo">Photo</th>
+          <th id="opt-delete"></th>
+      
+      </tr>
+
+      {% for cp in cplist %}
+        <tr>
+          <td>{{ cp.id }}</td>
+          <td>{{ cp.name }}</td>
+          <td>{{ cp.photo }}</td>
+          <td>
+            <input type="button" value="Delete"/>
+          </td>
+        </tr>
+      {% endfor %}
+
+  </table></div>
   </div>
   <!-- end of recipes list -->
 
