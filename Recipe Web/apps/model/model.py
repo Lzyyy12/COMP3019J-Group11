@@ -26,7 +26,7 @@ class Recipe(db.Model):
 class Ingredient(db.Model):
     __tablename__ = 'ingredient'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    recipe_id = db.Column(db.Integer, db.ForeignKey('recipe.id'), nullable=False)
+    recipe_id = db.Column(db.Integer, db.ForeignKey('recipes.id'), nullable=False)
     name = db.Column(db.String(255), nullable=False)
     amount = db.Column(db.String(255), nullable=True)
     

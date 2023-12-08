@@ -4,7 +4,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SelectField, FileField, validators
 from flask_wtf.file import FileRequired, FileAllowed
 from werkzeug.utils import secure_filename
-from apps.model.model import Recipe
+from apps.model.model import Recipe, Ingredient
 from apps import db
 import json, os
 
@@ -40,10 +40,13 @@ class RecipeForm(FlaskForm):
 def edit_recipe():
     if session.get('logged_in'):
         if request.method == 'POST':
-            # Get recipe name and recipe type
+            # Get data
             recipe_name = request.form.get('recipe_name')
             recipe_type = request.form.get('type')
             recipe_description = request.form.get('recipe_description')
+
+            ingredients = request.form.getlist('ingredient[]')
+            amounts = request.form.getlist('amount[]')
 
             # Get the image file
             recipe_image = request.files['photo']
@@ -57,10 +60,17 @@ def edit_recipe():
             save_path = os.path.join('../static/image/recipes', filename)
             recipe_image.save(upload_path)
 
-            # Save data to the database
+            # Save recipe data to the database
             new_recipe = Recipe(name=recipe_name, path=save_path, type=recipe_type, description=recipe_description)
             db.session.add(new_recipe)
             db.session.commit()
+
+            # Save ingredient data to database
+            recipe_id = new_recipe.id
+            for ingredient, amount in zip(ingredients, amounts):
+                new_ingredient = Ingredient(recipe_id=recipe_id, name=ingredient, amount=amount)
+                db.session.add(new_ingredient)
+                db.session.commit()
 
             flash('Recipe added successfully!', 'success')
             return redirect("/")

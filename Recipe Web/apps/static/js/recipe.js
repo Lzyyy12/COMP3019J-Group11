@@ -33,6 +33,7 @@ function search() {
         }
     });
 }
+
 document.addEventListener('DOMContentLoaded', function() {
   // 获取添加行按钮
   var addButton = document.getElementById('addRowButton');
