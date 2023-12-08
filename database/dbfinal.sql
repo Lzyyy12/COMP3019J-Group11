@@ -20,10 +20,14 @@ CREATE TABLE recipes (
     type VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci
 );
 
-INSERT INTO users (name, password, type)
-VALUES
-    ('123456', '123456', 0),
-    ('admin0', '123456', 1);
+DROP TABLE IF EXISTS ingredient;
+CREATE TABLE ingredient(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    recipe_id INT NOT NULL,
+    name VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+    amount VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci,
+    FOREIGN KEY (recipe_id) REFERENCES Recipe(id)
+);
 
 INSERT INTO recipes (name, path, type)
 VALUES
