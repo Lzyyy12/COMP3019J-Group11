@@ -24,22 +24,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Function to get an element by its selector, throwing an error if not found
 const getElement = (selector) => {
-  const element = document.querySelector(selector);
+  const element = document.querySelector(selector)
 
-  if (element) return element;
+  if (element) return element
   throw Error(
     `Please double check your class names, there is no ${selector} class`
-  );
+  )
 }
 
-// Get the navigation links and the navigation button elements
-const links = getElement('.nav-links');
-const navBtnDOM = getElement('.nav-btn');
+const links = getElement('.nav-links')
+const navBtnDOM = getElement('.nav-btn')
 
-// Add a click event listener to the navigation button to toggle the class for showing links
 navBtnDOM.addEventListener('click', () => {
   links.classList.toggle('show-links')
 })
+
 
 // Get a list of navigation links and assign data-index attributes
 var navlist = document.querySelectorAll(".nav-link");
@@ -66,9 +65,22 @@ for (let i = 0; i < navlist.length; i++) {
       case "2":
         iframe.setAttribute("src", "./api/get_recipe?type=western")
         break;
+
     }
   };
 }
+document.getElementById('toggle-mode').addEventListener('click', function() {
+  var modeText = document.getElementById('toggle-mode');
+  document.body.classList.toggle('dark-mode');
+
+  // 检查当前是否已经应用了深夜模式
+  if (document.body.classList.contains('dark-mode')) {
+    modeText.textContent = 'Light Mode'; // 如果是深夜模式，改为 "Light Mode"
+  } else {
+    modeText.textContent = 'Dark Mode'; // 否则，改为 "Black Mode"
+  }
+});
+
 
 // function search() {
 //   var input = document.getElementById("search").value;

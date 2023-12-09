@@ -26,6 +26,10 @@
           <a onclick="all_recipe()" class="nav-link" style="color: #FFFA05"> All </a>
           <a onclick="eastern()" class="nav-link"> Eastern </a>
           <a onclick="western()" class="nav-link"> Western </a>
+            <div class="nav-link contact-link">
+            <a  class="btn"> Cancel an account </a>
+          </div>
+{#            #}
         </div>
       </div>
     </nav>
@@ -52,6 +56,7 @@
             <a href="./api/add_recipe" target="mainframe" class="post" onclick="hideNavLinks()">Post</a>
             <a href="./api/get_posted_recipe" target="mainframe" class="user" onclick="hideNavLinks()">View Posted</a>
             <a href="./api/get_favorite" target="mainframe" class="favorite" onclick="hideNavLinks()">Favorite</a>
+            <a href="#" id="toggle-mode">Dark Mode</a>
             <a href="./api/logout" class="logout">Log out</a>
             {% else %}
             <a href="./api/get_recipe?type=all" target="mainframe" class="main" onclick="showNavLinks()">Main</a>
