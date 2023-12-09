@@ -10,6 +10,8 @@ class User(db.Model):
     photo = db.Column(db.String(255), nullable=False)
     type = db.Column(db.Integer, autoincrement=False, nullable=False)
     recipes = db.relationship('Recipe', backref='user')
+    favorites = db.relationship('Favorite', backref='user')
+    
     def __repr__(self):
         return '<User %r>' % self.name
 
@@ -35,3 +37,12 @@ class Ingredient(db.Model):
 
     def __repr__(self):
         return '<Ingredient %r>' % self.name
+
+class Favorite(db.Model):
+    __tablename__ = 'favorites'
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+    recipe_id = db.Column(db.Integer, db.ForeignKey('recipes.id'), nullable=False)
+
+    def __repr__(self):
+        return '<Favorite %r>' % self.name

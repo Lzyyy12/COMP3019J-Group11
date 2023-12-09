@@ -8,33 +8,32 @@
   <script src="../static/js/jquery-1.12.4.min.js"></script>
 </head>
 
-<style>
-  * {
-    outline: 0;
-    padding: 0;
-    margin: 0;
-    border: 0;
-    }
-</style>
-
 <body>
-<main class="page">
-
-
-  <header class="hero recipes-container" style="margin-top: 20px;">
-    <div>
-      user favorite
+  <main class="page">
+  
+  
+    <header class="hero recipes-container" style="margin-top: 20px;">
+      <!-- search bar -->
+      <div class="search">
+        <input type="text" id="search" value="" class="search_input" style="width: 100%;" placeholder="Search..." />
+        <div class="search_button" onclick="search()">Search</div>
+      </div>
+    </header>
+  
+    <!-- recipes list -->
+    <div id="recipes" class="recipes-list">
+      {% if cplist %}
+      {% for cp in cplist %}
+      <a href="{{ url_for('recipe.recipe_detail', recipe_id=cp.id) }}" class="recipe">
+        <img src="{{ cp.path }}" class="img recipe-img" alt="" />
+        <h5>{{ cp.name }}</h5>
+      </a>
+      {% endfor %}
+      {% else %}
+      <p>No recipes found.</p>
+      {% endif %}
     </div>
-  </header>
-
-  <!-- recipes list -->
-  <div id="recipes" class="recipes-list">
-    {% for cp in cplist %}
-      <a href="single-recipe.html" class="recipe">
-      <img src = {{ cp.path }} class="img recipe-img" alt="" />
-      <h5>{{ cp.name }}</h5>
-    {% endfor %}
-  </div>
-</main>
+    <!-- end of recipes list -->
+  </main>
 </body>
 </html>

@@ -23,7 +23,17 @@
         <img src="{{ recipe.path }}" class="img recipe-img" alt="" />
       <p>Type: {{ recipe.type }}</p>
       <p>Description: {{ recipe.description }}</p>
-        <button type="button" class="favorite">Favorite</button>
+      {% if session.get('logged_in') %}
+        {% if recipe.is_favorited %}
+          <form action="{{ url_for('recipe.unfavorite_recipe', recipe_id=recipe.id) }}" method="post">
+            <button type="submit" class="favorite">Unfavorite</button>
+          </form>
+        {% else %}
+          <form action="{{ url_for('recipe.favorite_recipe', recipe_id=recipe.id) }}" method="post">
+            <button type="submit" class="favorite">Favorite</button>
+          </form>
+        {% endif %}
+      {% endif %}
     </div>
 
     <div id="ingredients-table" class="ingredients-table">
@@ -46,6 +56,16 @@
       </table>
     </div>
   </main>
+
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class="flashes">
+      {% for message in messages %}
+        <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+  {% endwith %}
 </body>
 
 </html>
