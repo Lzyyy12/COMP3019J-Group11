@@ -192,6 +192,7 @@ def get_favorite():
     
     return render_template("favorite.html", **context)
 
+
 @bp.route("/favorite/<int:recipe_id>", methods=["POST"])
 def favorite_recipe(recipe_id):
     if not session.get('logged_in'):
@@ -204,6 +205,7 @@ def favorite_recipe(recipe_id):
 
     flash('Recipe added to favorites!', 'success')
     return redirect(url_for('recipe.recipe_detail', recipe_id=recipe_id))
+
 
 @bp.route("/unfavorite/<int:recipe_id>", methods=["POST"])
 def unfavorite_recipe(recipe_id):
