@@ -44,3 +44,11 @@ VALUES
     ('pizza', '1', '../static/image/recipes/recipe4.png', 'western'),
     ('dessert', '1', '../static/image/recipes/recipe5.png', 'western'),
     ('macaron', '1', '../static/image/recipes/recipe6.png', 'western');
+
+INSERT INTO ingredient (recipe_id, name, amount)
+VALUES
+    ('1', 'meat', '50g'),
+    ('1', 'flower', '50g'),
+    ('1', 'egg', '2'),
+    ('2', 'vegetable', '200g'),
+    ('2', 'egg', '1');
