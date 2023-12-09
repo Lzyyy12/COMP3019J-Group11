@@ -35,6 +35,7 @@ def get_recipe():
 def recipe_detail(recipe_id):
     # Get the details of the selected recipe from the database
     recipe = Recipe.query.get(recipe_id)  
+    ingredients = recipe.ingredients
 
     context = {
         "recipe": {
@@ -42,7 +43,8 @@ def recipe_detail(recipe_id):
             "path": recipe.path,
             "type": recipe.type,
             "description": recipe.description,
-        }
+        },
+        "ingredients": ingredients
     }
 
     return render_template("recipe_detail.html", **context)

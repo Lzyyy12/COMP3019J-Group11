@@ -1,4 +1,5 @@
 from apps import db
+from sqlalchemy.orm import relationship
 
 
 class User(db.Model):
@@ -19,6 +20,7 @@ class Recipe(db.Model):
     path = db.Column(db.String(255), nullable=True)
     type = db.Column(db.String(255), nullable=False)
     description = db.Column(db.String(255), nullable=True)
+    ingredients = relationship("Ingredient", back_populates="recipe")
 
     def __repr__(self):
         return '<Recipe %r>' % self.name
@@ -29,6 +31,7 @@ class Ingredient(db.Model):
     recipe_id = db.Column(db.Integer, db.ForeignKey('recipes.id'), nullable=False)
     name = db.Column(db.String(255), nullable=False)
     amount = db.Column(db.String(255), nullable=True)
+    recipe = relationship("Recipe", back_populates="ingredients")
     
     def __repr__(self):
         return '<Ingredient %r>' % self.name

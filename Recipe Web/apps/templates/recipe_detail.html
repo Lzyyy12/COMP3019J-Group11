@@ -24,6 +24,26 @@
       <p>Type: {{ recipe.type }}</p>
       <p>Description: {{ recipe.description }}</p>
     </div>
+
+    <div id="ingredients-table" class="ingredients-table">
+      <h3>Ingredients:</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Ingredient</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for ingredient in ingredients %}
+            <tr>
+              <td>{{ ingredient.name }}</td>
+              <td>{{ ingredient.amount }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
   </main>
 </body>
 
