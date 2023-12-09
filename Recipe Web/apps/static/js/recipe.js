@@ -65,3 +65,31 @@ document.addEventListener('DOMContentLoaded', function() {
     tableBody.appendChild(newRow);
   });
 });
+
+function handleFileSelected() {
+    var oFReader = new FileReader();
+        var file = document.getElementById('id_for_file').files[0];
+        oFReader.readAsDataURL(file);
+        oFReader.onloadend = function(oFRevent){
+            var filePath = oFRevent.target.result;
+
+            var image = document.getElementById("recipe-image");
+            image.setAttribute('src', filePath);
+        }
+}
+
+// function getPath(obj) {
+//     if(obj) {  
+//         if (window.navigator.userAgent.indexOf("MSIE")>=1) {  
+//             obj.select();  
+//             return document.selection.createRange().text;  
+//         }  
+//         else if(window.navigator.userAgent.indexOf("Firefox")>=1) {  
+//             if(obj.files) {  
+//             return obj.files.item(0).getAsDataURL();  
+//             }  
+//             return obj.value;  
+//         }  
+//         return obj.value;
+//     }  
+// }
