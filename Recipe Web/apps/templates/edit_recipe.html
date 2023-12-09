@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="../static/css/post.css" />
-  <script src="../static/js/recipe.js"></script>
   <script src="../static/js/jquery-1.12.4.min.js"></script>
+  <script src="../static/js/recipe.js"></script>
 </head>
 <style>
   * {
@@ -14,6 +14,20 @@
     margin: 0;
     border: 0;
     }
+    
+    #id_for_file { 
+      display: none; 
+    }
+    
+    label { 
+      margin-top: 1rem; 
+      font-weight: bold; 
+      cursor: pointer; 
+    }
+    
+    label:hover { 
+      color: #b1dfbb;
+    } 
 </style>
 
 <body>
@@ -35,9 +49,18 @@
     <div class="upload_picture">
     <h3>Upload Image:</h3>
 
-    <input type="file" name="photo" multiple>
+    <!-- <label for="file">choose recipe image</label> -->
+    <label for="id_for_file">
+      <input type="file" id="id_for_file" name="photo" onchange="handleFileSelected()" multiple>choose recipe image
+    </label>
+    
+    <!-- <div id="display-filename"></div> -->
     <div class="image-container">
-      <img src="../static/image/recipes/recipe1.png" class="recipe-img" alt="" />
+      <!-- <img src="../static/image/recipes/recipe1.png" class="recipe-img" alt="" /> -->
+      <img src="" id="recipe-image" class="recipe-img" alt="" />
+
+      <button style="margin-top: 12px;border: 1px solid black;" 
+      onclick="ajax_submit('${loginUser.username }');">upload image</button>
     </div>
 </div>
 
