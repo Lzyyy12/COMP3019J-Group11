@@ -8,15 +8,22 @@
   <script src="../static/js/jquery-1.12.4.min.js"></script>
 </head>
 
+<style>
+  * {
+    outline: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    }
+</style>
+
 <body>
 <main class="page">
 
 
   <header class="hero recipes-container" style="margin-top: 20px;">
-    <!-- search bar -->
-    <div class="search">
-      <input type="text" id="search" value="" class="search_input" style="width: 100%;" placeholder="Search..." />
-      <div class="search_button" onclick="search()">Search</div>
+    <div>
+      user favorite
     </div>
   </header>
 
@@ -28,7 +35,6 @@
       <h5>{{ cp.name }}</h5>
     {% endfor %}
   </div>
-  <!-- end of recipes list -->
 </main>
 </body>
 </html>

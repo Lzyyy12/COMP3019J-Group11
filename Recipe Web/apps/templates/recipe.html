@@ -23,7 +23,7 @@
   <!-- recipes list -->
   <div id="recipes" class="recipes-list">
     {% for cp in cplist %}
-      <a href="single-recipe.html" class="recipe">
+      <a href="./api/recipe_detail" class="recipe">
       <img src = "{{ cp.path }}" class="img recipe-img" alt="" />
       <h5>{{ cp.name }}</h5>
     {% endfor %}

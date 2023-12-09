@@ -30,6 +30,25 @@ def get_recipe():
     
     return render_template("recipe.html", **context)
 
+@bp.route("/recipe_detail", methods=["GET"])
+def recipe_detail():
+    cplist = []
+    # Get the list of recipes from database
+    recipe_objs = Recipe.query.all()
+    for recipe in recipe_objs:
+        recipedata = {}
+        recipedata['name'] = recipe.name
+        recipedata['path'] = recipe.path
+        recipedata['type'] = recipe.type
+        recipedata['description'] = recipe.description
+        cplist.append(recipedata)
+   
+    context = {
+        "cplist": cplist
+        }
+    
+    return render_template("recipe_detail.html", **context)
+
 class RecipeForm(FlaskForm):
     recipe_name = StringField('name', validators=[validators.DataRequired()])
     recipe_image = FileField('image', validators=[FileRequired()])
@@ -63,7 +82,8 @@ def edit_recipe():
             db.session.commit()
 
             flash('Recipe added successfully!', 'success')
-            return redirect("/")
+            # return redirect("/")
+            return render_template("recipe.html")
         return render_template("edit_recipe.html")
     return "please log in"
 
@@ -82,42 +102,22 @@ def search():
 
     return cplist
 
-@bp.route("/view_recipe", methods=["GET"])
-def view_recipe():
-    type = request.args.get("type")
+@bp.route("/view_posted", methods=["GET"])
+def view_posted():
     cplist = []
-    # Get the list of recipes from database
-    recipe_objs = Recipe.query.all()
-    for recipe in recipe_objs:
-        # Identify type of recipe
-        if type == recipe.type or type == 'all':
-            recipedata = {}
-            recipedata['name'] = recipe.name
-            recipedata['path'] = recipe.path
-            cplist.append(recipedata)
    
     context = {
         "cplist": cplist
         }
     
-    return render_template("recipe.html", **context)
+    return render_template("view_posted.html", **context)
 
 @bp.route("/get_favorite", methods=["GET"])
 def get_favorite():
-    type = request.args.get("type")
     cplist = []
-    # Get the list of recipes from database
-    recipe_objs = Recipe.query.all()
-    for recipe in recipe_objs:
-        # Identify type of recipe
-        if type == recipe.type or type == 'all':
-            recipedata = {}
-            recipedata['name'] = recipe.name
-            recipedata['path'] = recipe.path
-            cplist.append(recipedata)
    
     context = {
         "cplist": cplist
         }
     
-    return render_template("recipe.html", **context)
+    return render_template("favorite.html", **context)
