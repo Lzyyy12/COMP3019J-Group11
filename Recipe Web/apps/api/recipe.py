@@ -114,7 +114,7 @@ def add_recipe():
             recipe_id = new_recipe.id
             for ingredient, amount in zip(ingredients, amounts):
                 new_ingredient = Ingredient(
-                    recipe_id=recipe_id, user_id=user_id, name=ingredient, amount=amount)
+                    recipe_id=recipe_id, name=ingredient, amount=amount)
                 db.session.add(new_ingredient)
                 db.session.commit()
 
