@@ -24,12 +24,11 @@ def get_recipe():
             recipedata['name'] = recipe.name
             recipedata['path'] = recipe.path
             cplist.append(recipedata)
-   
     context = {
         "cplist": cplist
         }
-    
     return render_template("recipe.html", **context)
+
 
 @bp.route("/get_posted_recipe", methods=["GET"])
 def get_posted_recipe():
@@ -48,6 +47,7 @@ def get_posted_recipe():
     context = {"cplist": cplist}
 
     return render_template("view_posted.html", **context)
+
 
 @bp.route("/recipe_detail/<int:recipe_id>", methods=["GET"])
 def recipe_detail(recipe_id):
@@ -74,6 +74,7 @@ def recipe_detail(recipe_id):
 
     return render_template("recipe_detail.html", **context)
 
+
 def recipe_favorited(recipe_id):
     if not session.get('logged_in'):
         return False
@@ -89,48 +90,50 @@ class RecipeForm(FlaskForm):
     recipe_type = SelectField('type', choices=[('eastern', 'Eastern'), ('western', 'Western')],
                               validators=[validators.DataRequired()])
 
-@bp.route("/edit_recipe", methods=["GET", "POST"])
-def edit_recipe():
+@bp.route("/add_recipe", methods=["GET", "POST"])
+def add_recipe():
     if session.get('logged_in'):
+        user_id = session.get('logged_in')
         if request.method == 'POST':
             # Get data
-            user_id = session['logged_in']
             recipe_name = request.form.get('recipe_name')
             recipe_type = request.form.get('type')
             recipe_description = request.form.get('recipe_context')
+            recipe_image = request.form.get('imagepath')
 
             ingredients = request.form.getlist('ingredient[]')
             amounts = request.form.getlist('amount[]')
 
-            # Get the image file
-            recipe_image = request.files['photo']
-
-            # Give the image an unique filename
-            filename = str(uuid.uuid4()) + '_' + recipe_image.filename
-
-            # Save the image to system
-            basepath = os.getcwd()
-            upload_path = os.path.join(basepath, 'Recipe Web/apps/static/image/recipes', filename)
-            save_path = os.path.join('../static/image/recipes', filename)
-            recipe_image.save(upload_path)
-
             # Save recipe data to the database
-            new_recipe = Recipe(name=recipe_name, user_id=user_id, path=save_path, type=recipe_type, description=recipe_description)
+            new_recipe = Recipe(user_id=user_id, name=recipe_name, path=recipe_image,
+                                type=recipe_type, description=recipe_description)
             db.session.add(new_recipe)
             db.session.commit()
 
             # Save ingredient data to database
             recipe_id = new_recipe.id
             for ingredient, amount in zip(ingredients, amounts):
-                new_ingredient = Ingredient(recipe_id=recipe_id, name=ingredient, amount=amount)
+                new_ingredient = Ingredient(
+                    recipe_id=recipe_id, user_id=user_id, name=ingredient, amount=amount)
                 db.session.add(new_ingredient)
                 db.session.commit()
 
             flash('Recipe added successfully!', 'success')
-            # return redirect("/")
-            return render_template("recipe.html")
-        return render_template("edit_recipe.html")
+            return redirect("/api/get_recipe?type=all")
+        return render_template("add_recipe.html")
     return "please log in"
+
+
+@bp.route('/upload', methods=['POST'])
+def upload():
+    if request.method == 'POST':
+        f = request.files['file']
+        basepath = os.getcwd()
+        upload_path = os.path.join(
+            basepath, r'apps\static\image\recipes', f.filename)
+        f.save(upload_path)
+        return {'msg': 'ok', 'filename': r'/static/image/recipes/'+f.filename}
+
 
 @bp.route("/search", methods=["GET"])
 def search():
@@ -147,6 +150,18 @@ def search():
 
     return cplist
 
+
+@bp.route("/view_posted", methods=["GET"])
+def view_posted():
+    cplist = []
+   
+    context = {
+        "cplist": cplist
+        }
+    
+    return render_template("view_posted.html", **context)
+
+  
 @bp.route("/get_favorite", methods=["GET"])
 def get_favorite():
     # Get the user's ID

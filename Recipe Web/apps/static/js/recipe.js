@@ -78,18 +78,20 @@ function handleFileSelected() {
         }
 }
 
-// function getPath(obj) {
-//     if(obj) {  
-//         if (window.navigator.userAgent.indexOf("MSIE")>=1) {  
-//             obj.select();  
-//             return document.selection.createRange().text;  
-//         }  
-//         else if(window.navigator.userAgent.indexOf("Firefox")>=1) {  
-//             if(obj.files) {  
-//             return obj.files.item(0).getAsDataURL();  
-//             }  
-//             return obj.value;  
-//         }  
-//         return obj.value;
-//     }  
-// }
+function uploadimage(username) {
+    var formData = new FormData;
+    var file = $('[name="photo"]')[0].files[0];
+    formData.append("file", file);
+    $.ajax({
+        url: "/api/upload",
+        data: formData,
+        type: "post",
+        async: false,
+        contentType: false,
+        processData: false,
+        success: function (msg) {
+            alert("image upload sucecced");
+            $('[name="imagepath"]').val(msg.filename);
+        }
+    });
+}
