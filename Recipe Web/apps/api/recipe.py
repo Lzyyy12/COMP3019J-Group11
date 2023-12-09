@@ -4,7 +4,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SelectField, FileField, validators
 from flask_wtf.file import FileRequired, FileAllowed
 from werkzeug.utils import secure_filename
-from apps.model.model import Recipe, Ingredient
+from apps.model.model import Favorite, Recipe, Ingredient, User
 from apps import db
 import json, os
 
@@ -54,17 +54,34 @@ def recipe_detail(recipe_id):
     # Get the details of the selected recipe from the database
     recipe = Recipe.query.get(recipe_id) 
 
+    # Check if the current user has already favorited this recipe
+    is_favorited = False
+    if session.get('logged_in'):
+        user_id = session['logged_in']
+        is_favorited = Favorite.query.filter_by(user_id=user_id, recipe_id=recipe_id).first() is not None
+
     context = {
         "recipe": {
+            "id" : recipe.id,
             "name": recipe.name,
             "path": recipe.path,
             "type": recipe.type,
             "description": recipe.description,
-            "ingredients": recipe.ingredients
+            "ingredients": recipe.ingredients,
+            "is_favorited": is_favorited
         },
     }
 
     return render_template("recipe_detail.html", **context)
+
+def recipe_favorited(recipe_id):
+    if not session.get('logged_in'):
+        return False
+
+    user_id = session.get('logged_in')
+    user = User.query.get(user_id)
+    return user and user.has_favorite(recipe_id)
+
 
 class RecipeForm(FlaskForm):
     recipe_name = StringField('name', validators=[validators.DataRequired()])
@@ -130,22 +147,59 @@ def search():
 
     return cplist
 
-@bp.route("/view_posted", methods=["GET"])
-def view_posted():
-    cplist = []
-   
-    context = {
-        "cplist": cplist
-        }
-    
-    return render_template("view_posted.html", **context)
-
 @bp.route("/get_favorite", methods=["GET"])
 def get_favorite():
+    # Get the user's ID
+    user_id = session['logged_in']
+
+    # Query the favorites for the current user
+    favorites = Favorite.query.filter_by(user_id=user_id).all()
+
     cplist = []
-   
+    for favorite in favorites:
+        # Retrieve the details of the favorited recipe
+        recipe = Recipe.query.get(favorite.recipe_id)
+        
+        # Add recipe details to the list
+        recipedata = {
+            "id": recipe.id,
+            "name": recipe.name,
+            "path": recipe.path,
+            "type": recipe.type,
+            "description": recipe.description,
+            "ingredients": recipe.ingredients
+        }
+        cplist.append(recipedata)
+
     context = {
         "cplist": cplist
-        }
+    }
     
     return render_template("favorite.html", **context)
+
+@bp.route("/favorite/<int:recipe_id>", methods=["POST"])
+def favorite_recipe(recipe_id):
+    if not session.get('logged_in'):
+        return redirect(url_for('login'))
+
+    user_id = session.get('logged_in')
+    favorite = Favorite(user_id=user_id, recipe_id=recipe_id)
+    db.session.add(favorite)
+    db.session.commit()
+
+    flash('Recipe added to favorites!', 'success')
+    return redirect(url_for('recipe.recipe_detail', recipe_id=recipe_id))
+
+@bp.route("/unfavorite/<int:recipe_id>", methods=["POST"])
+def unfavorite_recipe(recipe_id):
+    if not session.get('logged_in'):
+        return redirect(url_for('login'))
+
+    user_id = session.get('logged_in')
+    favorite = Favorite.query.filter_by(user_id=user_id, recipe_id=recipe_id).first()
+    if favorite:
+        db.session.delete(favorite)
+        db.session.commit()
+        flash('Recipe removed from favorites!', 'success')
+
+    return redirect(url_for('recipe.recipe_detail', recipe_id=recipe_id))
