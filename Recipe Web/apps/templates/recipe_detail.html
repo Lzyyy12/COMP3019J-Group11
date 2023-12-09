@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../static/css/post.css" />
+  <script src="../static/js/recipe.js"></script>
+  <script src="../static/js/jquery-1.12.4.min.js"></script>
+</head>
+<style>
+  * {
+    outline: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    }
+</style>
+
+<body>
+  <form action="{{ url_for('recipe.edit_recipe') }}" method="post" enctype="multipart/form-data">
+    <div class="header">
+        <input type="text" id="recipe_name" name="recipe_name" value="" class="name_input" placeholder="Name:" />
+          <div class="types">
+          <label class="type">
+            <input type="radio" name="type" value="eastern"><span>Eastern</span>
+          </label>
+          <label class="type">
+            <input type="radio" name="type" value="western"><span>Western</span>
+          </label>
+        </div>
+        
+    </div>
+
+    <div class="upload_picture">
+    <h3>Upload Image:</h3>
+
+    <input type="file" name="photo" multiple>
+    <div class="image-container">
+      <img src="../static/image/recipes/recipe1.png" class="recipe-img" alt="" />
+    </div>
+</div>
+
+      <div class="text">
+    <input type="text" id="recipe_context" name="recipe_description" value="" class="context" placeholder="Steps:" />
+</div>
+
+
+    <div class="add_ingredient">
+  <h3>Add Ingredient:</h3>
+  <table id="ingredientsTable">
+    <thead>
+      <tr>
+        <th>Ingredient</th>
+        <th>Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><input type="text" name="ingredient[]"></td>
+        <td><input type="text" name="amount[]"></td>
+      </tr>
+      <tr>
+        <td><input type="text" name="ingredient[]"></td>
+        <td><input type="text" name="amount[]"></td>
+      </tr>
+    </tbody>
+  </table>
+  <button type="button" id="addRowButton">Add Row</button>
+</div>
+
+<div>
+  <button type="submit">Submit</button>
+</div>
+</form>
+</body>
+
+</html>
