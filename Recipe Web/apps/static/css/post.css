@@ -108,50 +108,54 @@ html, body {
     align-self: flex-start;/* 设置字体大小 */
 }
 
-/*.add_ingredient h3 {*/
-/*    display: inline-block; !* 使 h3 和按钮在同一行 *!*/
-/*    margin-right: 10px; !* 为 h3 添加右边距 *!*/
-/*}*/
 
-.add_ingredient{
+.add_ingredient {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px solid gray;
   overflow-y: auto;
-    /* 内容超出时显示垂直滚动条 */
+  padding-bottom: 10px;
 }
-    /* 新添加的内边距 */
+.add_ingredient h3{
+    margin-top: 0.75rem;
+     margin-right: 20px; /* 添加右边距 */
+  margin-left: 5px; /* 添加左边距 */
+  font-size: 20px;
+    align-self: flex-start;/* 设置字体大小 */
+}
 
-
-/* 为整个表格添加边框样式 */
 #ingredientsTable {
-    overflow: auto;
-  border-collapse: collapse; /* 确保边框之间没有空隙 */
-  width: 70%; /* 表格宽度 */
-  margin-top: 10px; /* 表格上方的边距 */
+  border-collapse: collapse;
+  width: 70%;
+  margin-top: 10px;
 }
 
-/* 为表格的单元格和标题单元格添加边框 */
 #ingredientsTable th,
 #ingredientsTable td {
-  border: 1px solid #ddd; /* 边框样式 */
-  padding: 8px; /* 单元格内边距 */
+  border: 1px solid #ddd;
+  padding: 7px;
+  text-align: center; /* 居中显示单元格内容 */
 }
 
-/* 为表格的头部单元格添加样式 */
-#ingredientsTable th {
-  background-color: #f2f2f2; /* 背景颜色 */
-  color: black; /* 文本颜色 */
-}
-
-/* 表格行的悬停效果 */
-#ingredientsTable tr:hover {
-  background-color: #ddd; /* 悬停时的背景颜色 */
-}
-
-/* 表格输入框样式 */
 #ingredientsTable input[type="text"] {
-  width: 100%; /* 输入框宽度 */
-  border: none; /* 移除输入框的边框 */
-  padding: 5px; /* 输入框内边距 */
+  width: 90%;
+  border: none;
+  padding: 5px;
+  text-align: center; /* 输入框和内容居中 */
 }
+
+.add_ingredient button {
+  align-self: flex-start; /* 按钮对齐到左边 */
+  margin-top: 15px;
+  font-size: 16px;
+  width: 15%;
+  height: 1.5rem;
+  border-radius: 7px;
+  margin-left: 9rem; /* 左边距，将按钮放在左下角 */
+  margin-bottom: 0.5rem;
+}
+
 
 .submit{
     justify-content: center;
@@ -164,34 +168,12 @@ html, body {
   margin-top: 15px;
     font-size: 16px;
     width: 25%;
+  height: 2rem;
 
     border-radius: 7px;
     /* 或足够的边距以适当分隔上传区域和提交按钮 */
 }
 
-.page-footer {
-  text-align: center;
-  height: 4rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--black);
-  color: var(--white);
-}
-
-.page-footer h5 {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.page-footer p {
-  margin-bottom: 0;
-}
-
-.page-footer .footer-logo,
-.page-footer a {
-  color: var(--primary-500);
-}
 
 
 
