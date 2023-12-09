@@ -1,0 +1,70 @@
+/* 全局样式重置 */
+* {
+  outline: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+body {
+  font-family: Arial, sans-serif; /* 设置一个基本字体 */
+}
+
+.page {
+  display: flex; /* 使用 Flexbox 布局 */
+  flex-wrap: wrap; /* 允许内容换行 */
+  max-width: 1200px; /* 最大宽度限制 */
+  margin: 0 auto; /* 居中显示 */
+  padding: 20px; /* 页面内边距 */
+}
+
+.header {
+  flex: 1 1 50%; /* 占据一半宽度 */
+  padding: 20px;
+  border-bottom: 1px solid gray;/* 内边距 */
+}
+
+.img.recipe-img {
+  flex: 1 1 50%; /* 占据一半宽度 */
+  max-width: 100%; /* 确保图片不超过容器宽度 */
+  height: auto; /* 保持图片纵横比 */
+  padding: 20px; /* 图片内边距 */
+}
+
+h2.name_input {
+  font-size: 1.5rem; /* 标题字体大小 */
+  margin-bottom: 10px; /* 标题下方边距 */
+}
+
+.ingredients-table {
+  flex: 1 1 100%; /* 占据整行宽度 */
+  padding: 20px; /* 内边距 */
+}
+
+table {
+  width: 100%; /* 表格宽度 */
+  border-collapse: collapse; /* 边框合并 */
+  margin-top: 10px; /* 表格上方边距 */
+}
+
+th, td {
+  border: 1px solid #ddd; /* 单元格边框 */
+  padding: 8px; /* 单元格内边距 */
+  text-align: left; /* 文本左对齐 */
+}
+
+th {
+  background-color: #f2f2f2; /* 表头背景色 */
+}
+
+/* 响应式布局调整 */
+@media (max-width: 768px) {
+  .page {
+    flex-direction: column; /* 小屏设备上堆叠布局 */
+  }
+
+  .header,
+  .img.recipe-img {
+    flex: 1 1 100%; /* 小屏设备上占据整行宽度 */
+  }
+}

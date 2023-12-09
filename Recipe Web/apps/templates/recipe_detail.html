@@ -3,9 +3,9 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="../static/css/post.css" />
-  <script src="../static/js/recipe.js"></script>
+ <link rel="stylesheet" href="{{ url_for('static', filename='css/details.css') }}">
   <script src="../static/js/jquery-1.12.4.min.js"></script>
+  <script src="../static/js/recipe.js"></script>
 </head>
 <style>
   * {
@@ -18,11 +18,12 @@
 
 <body>
   <main class="page">
-    <div id="recipe-details" class="recipe-details">
-      <h5>{{ recipe.name }}</h5>
-      <img src="{{ recipe.path }}" class="img recipe-img" alt="" />
+    <div class="header">
+      <h2 class="name_input">{{ recipe.name }}</h2>
+        <img src="{{ recipe.path }}" class="img recipe-img" alt="" />
       <p>Type: {{ recipe.type }}</p>
       <p>Description: {{ recipe.description }}</p>
+        <button type="button" class="favorite">Favorite</button>
     </div>
 
     <div id="ingredients-table" class="ingredients-table">
