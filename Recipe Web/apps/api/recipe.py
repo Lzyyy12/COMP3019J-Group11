@@ -20,6 +20,7 @@ def get_recipe():
         # Identify type of recipe
         if type == recipe.type or type == 'all':
             recipedata = {}
+            recipedata['id'] = recipe.id
             recipedata['name'] = recipe.name
             recipedata['path'] = recipe.path
             cplist.append(recipedata)
@@ -30,23 +31,20 @@ def get_recipe():
     
     return render_template("recipe.html", **context)
 
-@bp.route("/recipe_detail", methods=["GET"])
-def recipe_detail():
-    cplist = []
-    # Get the list of recipes from database
-    recipe_objs = Recipe.query.all()
-    for recipe in recipe_objs:
-        recipedata = {}
-        recipedata['name'] = recipe.name
-        recipedata['path'] = recipe.path
-        recipedata['type'] = recipe.type
-        recipedata['description'] = recipe.description
-        cplist.append(recipedata)
-   
+@bp.route("/recipe_detail/<int:recipe_id>", methods=["GET"])
+def recipe_detail(recipe_id):
+    # Get the details of the selected recipe from the database
+    recipe = Recipe.query.get(recipe_id)  
+
     context = {
-        "cplist": cplist
+        "recipe": {
+            "name": recipe.name,
+            "path": recipe.path,
+            "type": recipe.type,
+            "description": recipe.description,
         }
-    
+    }
+
     return render_template("recipe_detail.html", **context)
 
 class RecipeForm(FlaskForm):
@@ -62,7 +60,7 @@ def edit_recipe():
             # Get data
             recipe_name = request.form.get('recipe_name')
             recipe_type = request.form.get('type')
-            recipe_description = request.form.get('recipe_description')
+            recipe_description = request.form.get('recipe_context')
 
             ingredients = request.form.getlist('ingredient[]')
             amounts = request.form.getlist('amount[]')
