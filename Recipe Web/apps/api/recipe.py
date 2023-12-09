@@ -31,6 +31,24 @@ def get_recipe():
     
     return render_template("recipe.html", **context)
 
+@bp.route("/get_posted_recipe", methods=["GET"])
+def get_posted_recipe():
+    user_id = session["logged_in"]
+    user_recipes = Recipe.query.filter_by(user_id=user_id).all()
+
+    cplist = []
+    for recipe in user_recipes:
+        recipedata = {
+            "id": recipe.id,
+            "name": recipe.name,
+            "path": recipe.path
+        }
+        cplist.append(recipedata)
+
+    context = {"cplist": cplist}
+
+    return render_template("view_posted.html", **context)
+
 @bp.route("/recipe_detail/<int:recipe_id>", methods=["GET"])
 def recipe_detail(recipe_id):
     # Get the details of the selected recipe from the database
