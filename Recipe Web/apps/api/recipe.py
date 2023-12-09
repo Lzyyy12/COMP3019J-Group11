@@ -34,8 +34,7 @@ def get_recipe():
 @bp.route("/recipe_detail/<int:recipe_id>", methods=["GET"])
 def recipe_detail(recipe_id):
     # Get the details of the selected recipe from the database
-    recipe = Recipe.query.get(recipe_id)  
-    ingredients = recipe.ingredients
+    recipe = Recipe.query.get(recipe_id) 
 
     context = {
         "recipe": {
@@ -43,8 +42,8 @@ def recipe_detail(recipe_id):
             "path": recipe.path,
             "type": recipe.type,
             "description": recipe.description,
+            "ingredients": recipe.ingredients
         },
-        "ingredients": ingredients
     }
 
     return render_template("recipe_detail.html", **context)
@@ -60,6 +59,7 @@ def edit_recipe():
     if session.get('logged_in'):
         if request.method == 'POST':
             # Get data
+            user_id = session['logged_in']
             recipe_name = request.form.get('recipe_name')
             recipe_type = request.form.get('type')
             recipe_description = request.form.get('recipe_context')
@@ -80,7 +80,7 @@ def edit_recipe():
             recipe_image.save(upload_path)
 
             # Save recipe data to the database
-            new_recipe = Recipe(name=recipe_name, path=save_path, type=recipe_type, description=recipe_description)
+            new_recipe = Recipe(name=recipe_name, user_id=user_id, path=save_path, type=recipe_type, description=recipe_description)
             db.session.add(new_recipe)
             db.session.commit()
 

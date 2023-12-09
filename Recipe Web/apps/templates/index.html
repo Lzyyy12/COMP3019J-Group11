@@ -54,6 +54,8 @@
             <a href="./api/get_favorite" target="mainframe" class="favorite" onclick="hideNavLinks()">Favorite</a>
             <a href="./api/logout" class="logout">Log out</a>
             {% else %}
+            <a href="./api/get_recipe?type=all" target="mainframe" class="main" onclick="showNavLinks()">Main</a>
+            <a href="./api/login" target="_self" class="login">Post</a>
             <a href="./api/login" target="_self" class="login">Log in</a>
             {% endif %}
           </div>
