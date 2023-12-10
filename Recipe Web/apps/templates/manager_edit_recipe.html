@@ -92,8 +92,8 @@
                     <tbody>
                         {% for ingredient in recipe.ingredients %}
                         <tr>
-                            <td><input type="text" value="{{ingredient.name}}" name="ignames"></td>
-                            <td><input type="text" value="{{ingredient.amount}}" name="igamounts"></td>
+                            <td><input type="text" value="{{ingredient.name}}" name="ingredient[]"></td>
+                            <td><input type="text" value="{{ingredient.amount}}" name="amount[]"></td>
                         </tr>
                         {% endfor %}
                     </tbody>

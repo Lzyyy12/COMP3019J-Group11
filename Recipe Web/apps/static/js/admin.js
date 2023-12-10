@@ -43,3 +43,53 @@ function hideNavLinks() {
 function showNavLinks() {
   document.querySelector('.nav-links').style.display = 'flex';
 }
+
+// Get a list of navigation links and assign data-index attributes
+var navlist = document.querySelectorAll(".nav-link");
+for (let i = 0; i < navlist.length; i++) {
+  navlist[i].setAttribute("data-index", i);
+  navlist[i].onclick = function () {
+    var index = this.getAttribute("data-index");
+
+    for (let i = 0; i < navlist.length; i++) {
+      if (index == i)
+        navlist[i].style.color = "#FFFA05";
+      else
+        navlist[i].style.color = "#FFF";
+    }
+    // Update the color of the clicked link and adjust the iframe source accordingly
+    var iframe = document.getElementById("manageframe");
+    switch (index) {
+      case "0":
+        iframe.setAttribute("src", "./api/manage_recipe?type=all")
+        break;
+      case "1":
+        iframe.setAttribute("src", "./api/manage_recipe?type=eastern")
+        break;
+      case "2":
+        iframe.setAttribute("src", "./api/manage_recipe?type=western")
+        break;
+
+    }
+  };
+}
+
+function search_recipe() {
+  var input = document.getElementById("search_recipe").value;
+  var url = "./search_recipe?keyword=" + input;
+  $.ajax({
+      url: url,
+      type: "get",
+      success: function (response) {
+          var recipes = document.getElementById("recipes");
+
+          var html = '';
+          response.forEach(function (item, index) {
+              html = html + '<a href="./manage_edit_recipe/' + item.id + '"class="recipe">'
+                  + '<img src=' + item.path + ' class="img recipe-img" alt="" />'
+                  + '<h5>' + item.name + '</h5></a>';
+          })
+          recipes.innerHTML = html;
+      }
+  });
+}

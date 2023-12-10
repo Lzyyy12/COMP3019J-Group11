@@ -1,4 +1,3 @@
-
 function hideNavLinks() {
   document.querySelector('.nav-links').style.display = 'none';
 }
@@ -90,12 +89,3 @@ document.addEventListener('DOMContentLoaded', (event) => {
     document.getElementById('toggle-mode').textContent = 'Light Mode';
   }
 });
-
-
-
-// function search() {
-//   var input = document.getElementById("search").value;
-//   var url = "./api/search?keyword=" + input;
-//   var iframe = document.getElementById("recipeframe");
-//   iframe.setAttribute("src", url)
-// }

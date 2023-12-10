@@ -49,16 +49,18 @@ def delete_user():
 
 @bp.route("/manage_recipe", methods=["GET"])
 def manage_recipe():
+    type = request.args.get("type")
     cplist = []
     # Get the list of recipes from database
     recipe_objs = Recipe.query.all()
     for recipe in recipe_objs:
-        recipedata = {}
-        recipedata['id'] = recipe.id
-        recipedata['name'] = recipe.name
-        recipedata['path'] = recipe.path
-        cplist.append(recipedata)
-
+        # Identify type of recipe
+        if type == recipe.type or type == 'all':
+            recipedata = {}
+            recipedata['id'] = recipe.id
+            recipedata['name'] = recipe.name
+            recipedata['path'] = recipe.path
+            cplist.append(recipedata)
     context = {
         "cplist": cplist
     }
@@ -68,7 +70,7 @@ def manage_recipe():
 def delete_recipe(recipe_id):
     recipe = Recipe.query.filter_by(id=recipe_id).first()
     if recipe:
-        Ingredient.query.filter(recipe_id == recipe_id).delete()
+        Ingredient.query.filter_by(recipe_id=recipe_id).delete()
         db.session.delete(recipe)
         db.session.commit()
     return redirect(url_for('manage.manage_recipe'))
@@ -84,19 +86,20 @@ def manage_edit_recipe(recipe_id):
             recipe_description = request.form.get('recipe_context')
             recipe_image = request.form.get('imagepath')
 
-            ignames = request.form.getlist('ignames')
-            igamounts = request.form.getlist('igamounts')
+            ignames = request.form.getlist('ingredient[]')
+            igamounts = request.form.getlist('amount[]')
 
             # Save recipe data to the database
             new_recipe = Recipe.query.filter_by(id=recipe_id) .first()
-            new_recipe.user_id = session.get('logged_in')
+            # new_recipe.user_id = session.get('logged_in')
             new_recipe.name = recipe_name
             new_recipe.path = recipe_image
             new_recipe.type = recipe_type
             new_recipe.description = recipe_description
             db.session.commit()
 
-            Ingredient.query.filter(recipe_id == recipe_id).delete()
+            # Ingredient.query.filter(recipe_id == recipe_id).delete()
+            Ingredient.query.filter_by(recipe_id=recipe_id).delete()
             db.session.commit()
             for name, amount in zip(ignames, igamounts):
                 new_ingredient = Ingredient(
@@ -127,8 +130,8 @@ def manage_edit_recipe(recipe_id):
             return render_template("manager_edit_recipe.html", **context)
     return "please log in"
 
-@bp.route("/search", methods=["GET"])
-def search():
+@bp.route("/search_recipe", methods=["GET"])
+def search_recipe():
     keyword = request.args.get("keyword")
     cplist = []
     # Get the list of recipes from database
