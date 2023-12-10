@@ -59,16 +59,17 @@
             <div class="upload_picture">
                 <!-- <from> -->
                 <h3>Upload Image:</h3>
-                <label for="id_for_file">
+                <label for="id_for_file" class="choose_file">
                     <input type="file" id="id_for_file" name="photo" onchange="handleFileSelected()" multiple>choose
                     recipe image
                 </label>
+                <button type="button" style="margin-top: 12px;border: 1px solid black;"
+                        onclick="uploadimage();">upload
+                        image</button>
                 <div class="image-container">
                     <img src="{{recipe.path}}" id="recipe-image" class="recipe-img" alt="" filepath="" />
                     <input type="text" name="imagepath" value="{{recipe.path}}" style="display:none;">
-                    <button type="button" style="margin-top: 12px;border: 1px solid black;"
-                        onclick="uploadimage();">upload
-                        image</button>
+
                 </div>
                 <!-- </from> -->
             </div>
@@ -103,6 +104,7 @@
 
             <div class="submit">
                 <button type="submit">Submit</button>
+                <button type="submit">Delete</button>
             </div>
         </form>
     </main>

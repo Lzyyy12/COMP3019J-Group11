@@ -7,9 +7,8 @@
   display: block;
   object-fit: cover;
 }
-
 /*
-=============== 
+===============
 Navbar
 ===============
 */
@@ -45,6 +44,7 @@ Navbar
 }
 
 .nav-btn {
+  margin-left: auto;
   padding: 0.15rem 0.75rem;
 }
 
@@ -54,14 +54,14 @@ Navbar
 
 .nav-links {
   height: 0;
-  overflow: hidden;
-  display: flex;
+  overflow: auto;
+  display: none;
   flex-direction: column;
   transition: var(--transition);
 }
 
 .show-links {
-  height: 23.9375rem;
+  height: 15rem;
 }
 
 .nav-link {
@@ -70,7 +70,7 @@ Navbar
   font-size: 1.25rem;
   text-transform: capitalize;
   letter-spacing: var(--letterSpacing);
-  padding: 3rem;
+  padding: 1rem;
   border-top: 1px solid var(--grey-500);
   transition: var(--transition);
   color: white;
@@ -86,6 +86,7 @@ Navbar
 .contact-link a {
   padding: 0.15rem 1rem;
 }
+
 
 @media screen and (min-width: 992px) {
   .navbar {
@@ -108,11 +109,15 @@ Navbar
   }
 
   .nav-links {
+    display: none;
     height: auto !important;
     flex-direction: row;
     align-items: center;
     width: 100%;
   }
+
+
+
 
   .nav-link {
     padding: 0;
@@ -121,13 +126,14 @@ Navbar
   }
 
   .contact-link {
+    font-size: 1rem;
     margin-right: 0;
     margin-left: auto;
   }
 }
 
 /*
-=============== 
+===============
 Page
 ===============
 */
@@ -139,12 +145,12 @@ Page
 }
 
 .page {
-  padding-top: 2rem;
+
   min-height: calc(100vh - (6rem + 4rem));
 }
 
 /*
-=============== 
+===============
 Footer
 ===============
 */
@@ -174,13 +180,13 @@ Footer
 }
 
 /*
-=============== 
+===============
 Hero
 ===============
 */
 
 .hero {
-  height: 0vh;
+
   position: relative;
   margin-bottom: 2rem;
   border-radius: var(--borderRadius);
@@ -194,7 +200,7 @@ Hero
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: right;
+  justify-content: center;
   border-radius: var(--borderRadius);
 }
 
@@ -208,9 +214,9 @@ Hero
   background-color: #787a7c;
   color: #fff;
   cursor: pointer;
-  margin-left: 2%;
+  margin-left: 3%;
   border-radius: 6px;
-  width: 7%;
+  width: 10%;
   text-align: center;
 }
 
@@ -226,8 +232,8 @@ Hero
 }
 
 /*
-=============== 
-Recipes 
+===============
+Recipes
 ===============
 */
 
@@ -257,6 +263,9 @@ Recipes
 .tags-list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+}
+.username {
+    color:#0056b3; /* 将 [Username的颜色] 替换为您想要的颜色代码 */
 }
 
 .tags-list a {
@@ -333,7 +342,8 @@ Recipes
   .tags-container {
     order: 0;
   }
-  
+
+
   .tags-list {
     display: grid;
     grid-template-columns: 1fr;
@@ -349,3 +359,24 @@ Recipes
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
+.dark-mode {
+  background-color: #333; /* 深色背景 */
+  color: #fff; /* 浅色文字 */
+  /* 其他深夜模式样式 */
+}
+
+.dark-mode p,
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode h5,
+.dark-mode h6,
+.dark-mode a,
+.dark-mode input,
+.dark-mode button
+/* 以及任何其他您希望在深夜模式下拥有白色文字的元素 */ {
+  color: #fff; /* 设置这些元素的文字颜色为白色 */
+}
+
+

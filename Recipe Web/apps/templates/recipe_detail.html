@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
  <link rel="stylesheet" href="{{ url_for('static', filename='css/details.css') }}">
   <script src="/static/js/jquery-1.12.4.min.js"></script>
+   <script src="{{ url_for('static', filename='js/model.js') }}"></script>
   <script src="{{ url_for('static', filename='js/recipe.js') }}"></script>
 <script src="{{ url_for('static', filename='js/index.js') }}"></script>
 
@@ -35,11 +36,7 @@
         <div class="text-content">
 
 {#        <h3>Description: {{ recipe.description }}</h3>#}
-          <p class="description">Light pollution harms health and the environment, but global assessments only measure light pollution levels,
-              lacking a comprehensive evaluation of its risk. The evaluation model was developed to assess direct and indirect influences
-              with 11 factors, ensuring mutual independence through the KMO test, assigning weights via the AHP model, and applying it to
-              49 cities globally based on varying urban levels. Using the TOPSIS model, we calculated comprehensive scores for each city
-              and applied K-Means clustering to categorize scores into different levels.</p>
+          <p class="description">{{ recipe.description }}</p>
           <h3 class="type">Type: {{ recipe.type }}</h3>
         <!-- Other content -->
       </div>
