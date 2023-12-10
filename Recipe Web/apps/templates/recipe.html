@@ -13,12 +13,15 @@
 <body>
 <main class="page">
 
+  <script>
+    var recipe_type = "{{ recipe_type }}";
+  </script>
 
   <header class="hero recipes-container" style="margin-top: 20px;">
     <!-- search bar -->
     <div class="search">
       <input type="text" id="search" value="" class="search_input" style="width: 100%;" placeholder="Search..." />
-      <div class="search_button" onclick="search()">Search</div>
+      <div class="search_button" onclick="search('all')">Search</div>
     </div>
   </header>
 

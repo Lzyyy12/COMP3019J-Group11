@@ -25,7 +25,8 @@ def get_recipe():
             recipedata['path'] = recipe.path
             cplist.append(recipedata)
     context = {
-        "cplist": cplist
+        "cplist": cplist,
+        "recipe_type": type
         }
     return render_template("recipe.html", **context)
 
@@ -73,16 +74,6 @@ def recipe_detail(recipe_id):
     }
 
     return render_template("recipe_detail.html", **context)
-
-
-def recipe_favorited(recipe_id):
-    if not session.get('logged_in'):
-        return False
-
-    user_id = session.get('logged_in')
-    user = User.query.get(user_id)
-    return user and user.has_favorite(recipe_id)
-
 
 class RecipeForm(FlaskForm):
     recipe_name = StringField('name', validators=[validators.DataRequired()])
@@ -139,28 +130,42 @@ def upload():
 @bp.route("/search", methods=["GET"])
 def search():
     keyword = request.args.get("keyword")
+    search_type = request.args.get("search_type")
     cplist = []
-    # Get the list of recipes from database
-    recipe_objs = Recipe.query.filter(Recipe.name.ilike(
-        '%{keyword}%'.format(keyword=keyword))).all()
+    if search_type == "all":
+        recipe_type = request.args.get("recipe_type")
+        print("Using specific recipe type:", recipe_type)
+        # Search in all recipes
+        if recipe_type in ["eastern", "western"]:
+            recipe_objs = Recipe.query.filter(
+                Recipe.name.ilike(f'%{keyword}%'),
+                Recipe.type == recipe_type
+            ).all()
+        else:
+            recipe_objs = Recipe.query.filter(
+                Recipe.name.ilike(f'%{keyword}%')
+            ).all()
+    elif search_type == "posted":
+        # Search in posted recipes
+        user_id = session.get("logged_in")
+        recipe_objs = Recipe.query.filter(
+            Recipe.user_id == user_id,
+            Recipe.name.ilike(f'%{keyword}%')
+        ).all()
+    elif search_type == "favorited":
+        # Search in favorited recipes
+        user_id = session.get("logged_in")
+        favorite_recipe_ids = [fav.recipe_id for fav in Favorite.query.filter_by(user_id=user_id).all()]
+        recipe_objs = Recipe.query.filter(
+            Recipe.id.in_(favorite_recipe_ids),
+            Recipe.name.ilike(f'%{keyword}%')
+        ).all()
+
     for recipe in recipe_objs:
-        recipedata = {}
-        recipedata['name'] = recipe.name
-        recipedata['path'] = recipe.path
+        recipedata = {"id": recipe.id, "name": recipe.name, "path": recipe.path}
         cplist.append(recipedata)
 
     return cplist
-
-
-@bp.route("/view_posted", methods=["GET"])
-def view_posted():
-    cplist = []
-   
-    context = {
-        "cplist": cplist
-        }
-    
-    return render_template("view_posted.html", **context)
 
   
 @bp.route("/get_favorite", methods=["GET"])

@@ -14,9 +14,10 @@ function ajax_submit(username) {
     iframe.setAttribute("src", url)
 }
 
-function search() {
+var recipe_type = "{{ recipe_type }}";
+function search(searchType) {
     var input = document.getElementById("search").value;
-    var url = "./search?keyword=" + input;
+    var url = "./search?keyword=" + input + "&search_type=" + searchType + "&recipe_type=" + recipe_type;
     $.ajax({
         url: url,
         type: "get",
@@ -25,7 +26,7 @@ function search() {
 
             var html = '';
             response.forEach(function (item, index) {
-                html = html + '<a href="single-recipe.html" class="recipe">'
+                html = html + '<a href="./recipe_detail/' + item.id + '" class="recipe">'
                     + '<img src=' + item.path + ' class="img recipe-img" alt="" />'
                     + '<h5>' + item.name + '</h5></a>';
             })
@@ -33,6 +34,7 @@ function search() {
         }
     });
 }
+
 document.addEventListener('DOMContentLoaded', function() {
   // 获取添加行按钮
   var addButton = document.getElementById('addRowButton');
