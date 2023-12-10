@@ -64,6 +64,15 @@ def manage_recipe():
     }
     return render_template("manage_recipe.html", **context)
 
+@bp.route("/delete_recipe/<int:recipe_id>", methods=["POST"])
+def delete_recipe(recipe_id):
+    recipe = Recipe.query.filter_by(id=recipe_id).first()
+    if recipe:
+        Ingredient.query.filter(recipe_id == recipe_id).delete()
+        db.session.delete(recipe)
+        db.session.commit()
+    return redirect(url_for('manage.manage_recipe'))
+
 
 @bp.route("/manage_edit_recipe/<int:recipe_id>", methods=["GET", "POST"])
 def manage_edit_recipe(recipe_id):
