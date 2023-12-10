@@ -26,10 +26,11 @@
           <a onclick="all_recipe()" class="nav-link" style="color: #FFFA05"> All </a>
           <a onclick="eastern()" class="nav-link"> Eastern </a>
           <a onclick="western()" class="nav-link"> Western </a>
-            <div class="nav-link contact-link">
-            <a  class="btn"> Cancel an account </a>
-          </div>
-{#            #}
+          {% if session.logged_in %}
+              <div class="nav-link contact-link">
+                  <a href="{{ url_for('login.cancel_account') }}" class="btn"> Cancel Account </a>
+              </div>
+          {% endif %}
         </div>
       </div>
     </nav>

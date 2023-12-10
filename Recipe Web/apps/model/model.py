@@ -10,7 +10,7 @@ class User(db.Model):
     photo = db.Column(db.String(255), nullable=False)
     type = db.Column(db.Integer, autoincrement=False, nullable=False)
     recipes = db.relationship('Recipe', backref='user')
-    favorites = db.relationship('Favorite', backref='user')
+    favorites = db.relationship('Favorite', backref='user', cascade='all, delete-orphan')
     
     def __repr__(self):
         return '<User %r>' % self.name
@@ -18,7 +18,7 @@ class User(db.Model):
 class Recipe(db.Model):
     __tablename__ = 'recipes'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=True)
     name = db.Column(db.String(255), unique=False, nullable=False)
     path = db.Column(db.String(255), nullable=True)
     type = db.Column(db.String(255), nullable=False)

@@ -89,3 +89,22 @@ def logout():
         session.pop('logged_in')
         # If the user is logged in, log them out and redirect to the homepage
         return redirect('/')
+    
+@bp.route('/cancel_account')
+def cancel_account():
+    user_id = session['logged_in']
+    user = User.query.get(user_id)
+
+    if user:
+        # Delete the user from the database
+        db.session.delete(user)
+        db.session.commit()
+
+        # Log the user out
+        session.pop('logged_in')
+
+        flash('Your account has been canceled successfully.', 'success')
+    else:
+        flash('Unable to find your account. Please try again.', 'error')
+
+    return redirect('/')
