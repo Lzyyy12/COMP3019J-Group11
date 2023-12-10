@@ -3,25 +3,33 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="/static/css/admin.css" />
+  <link rel="stylesheet" href="/static/css/index.css" />
+  <script src="/static/js/recipe.js"></script>
   <script src="/static/js/jquery-1.12.4.min.js"></script>
 </head>
 
 <body>
-  <header class="hero recipes-container" style="margin-top: 20px;">
-    <!-- search bar -->
-    <div class="search">
-      <input type="text" id="search" value="" class="search_input" style="width: 100%;" placeholder="Search..." />
-      <div class="search_button" onclick="search()">Search</div>
+  <main class="page">
+    <h1>click the RECIPE to edit</h1>
+
+    <header class="hero recipes-container" style="margin-top: 20px;">
+      <!-- search bar -->
+      <div class="search">
+        <input type="text" id="search" value="" class="search_input" style="width: 100%;" placeholder="Search..." />
+        <div class="search_button" onclick="search()">Search</div>
+      </div>
+    </header>
+
+    <!-- recipes list -->
+    <div id="recipes" class="recipes-list">
+      {% for cp in cplist %}
+      <a href="{{ url_for('manage.manage_edit_recipe', recipe_id=cp.id) }}" class="recipe">
+        <img src="{{ cp.path }}" class="img recipe-img" alt="" />
+        <h5>{{ cp.name }}</h5>
+        {% endfor %}
     </div>
-  </header>
-
-  <!-- recipes list -->
-  <div id="recipes" class="recipes-list">
-    These are recipes to manage.
-  </div>
-  <!-- end of recipes list -->
-
+    <!-- end of recipes list -->
+  </main>
 </body>
 
 </html>

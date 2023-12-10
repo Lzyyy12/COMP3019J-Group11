@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/css/post.css" />
+    <script src="/static/js/jquery-1.12.4.min.js"></script>
+    <script src="/static/js/recipe.js"></script>
+</head>
+<style>
+    * {
+        outline: 0;
+        padding: 0;
+        margin: 0;
+        border: 0;
+    }
+
+    #id_for_file {
+        display: none;
+    }
+
+    label {
+        margin-top: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    label:hover {
+        color: #b1dfbb;
+    }
+</style>
+
+<body>
+    <main class="page">
+        <form action="" method="post" enctype="multipart/form-data">
+
+            <div class="header">
+                <input type="text" id="recipe_name" name="recipe_name" value="{{recipe.name}}" class="name_input"
+                    placeholder="Name:" />
+                <div class="types">
+                    <label class="type">
+                        {% if recipe.type=='eastern' %}
+                        <input type="radio" name="type" value="eastern" checked="checked"><span>Eastern</span>
+                        {% else %}
+                        <input type="radio" name="type" value="eastern"><span>Eastern</span>
+                        {% endif %}
+                    </label>
+                    <label class="type">
+                        {% if recipe.type=='western' %}
+                        <input type="radio" name="type" value="western" checked="checked"><span>Western</span>
+                        {% else %}
+                        <input type="radio" name="type" value="western"><span>Western</span>
+                        {% endif %}
+                    </label>
+                </div>
+
+            </div>
+
+            <div class="upload_picture">
+                <!-- <from> -->
+                <h3>Upload Image:</h3>
+                <label for="id_for_file">
+                    <input type="file" id="id_for_file" name="photo" onchange="handleFileSelected()" multiple>choose
+                    recipe image
+                </label>
+                <div class="image-container">
+                    <img src="{{recipe.path}}" id="recipe-image" class="recipe-img" alt="" filepath="" />
+                    <input type="text" name="imagepath" value="{{recipe.path}}" style="display:none;">
+                    <button type="button" style="margin-top: 12px;border: 1px solid black;"
+                        onclick="uploadimage();">upload
+                        image</button>
+                </div>
+                <!-- </from> -->
+            </div>
+
+
+            <div class="text">
+                <textarea id="recipe_context" name="recipe_context" class="context" placeholder="Steps:" rows="4"
+                    cols="50" value="{{recipe.description}}"></textarea>
+            </div>
+
+
+            <div class="add_ingredient">
+                <h3>Add Ingredient:</h3>
+                <table id="ingredientsTable" class="ingredientsTable">
+                    <thead>
+                        <tr>
+                            <th>Ingredient</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for ingredient in recipe.ingredients %}
+                        <tr>
+                            <td><input type="text" value="{{ingredient.name}}" name="ignames"></td>
+                            <td><input type="text" value="{{ingredient.amount}}" name="igamounts"></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <button type="button" id="addRowButton">Add Row</button>
+            </div>
+
+            <div class="submit">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </main>
+</body>
+
+</html>
