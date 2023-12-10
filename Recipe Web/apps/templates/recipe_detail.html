@@ -21,6 +21,16 @@
 
 <body>
   <main class="page">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <ul class="flashes">
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+    {% endwith %}
+    
     <div class="header">
       <h1 class="name_input">{{ recipe.name }}</h1>
     </div>
@@ -77,15 +87,6 @@
     </div>
   </main>
 
-  {% with messages = get_flashed_messages() %}
-  {% if messages %}
-    <ul class="flashes">
-      {% for message in messages %}
-        <li>{{ message }}</li>
-      {% endfor %}
-    </ul>
-  {% endif %}
-  {% endwith %}
 </body>
 
 </html>
