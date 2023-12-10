@@ -115,6 +115,9 @@ Navbar
     width: 100%;
   }
 
+
+
+
   .nav-link {
     padding: 0;
     border-top: none;
@@ -260,6 +263,9 @@ Recipes
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
+.username {
+    color:#0056b3; /* 将 [Username的颜色] 替换为您想要的颜色代码 */
+}
 
 .tags-list a {
   text-transform: capitalize;
@@ -336,6 +342,7 @@ Recipes
     order: 0;
   }
 
+
   .tags-list {
     display: grid;
     grid-template-columns: 1fr;
@@ -350,11 +357,6 @@ Recipes
   .recipes-list {
     grid-template-columns: 1fr 1fr 1fr;
   }
-}
-.dark-mode {
-  background-color: #333; /* 深色背景 */
-  color: #fff; /* 浅色文字 */
-  /* 其他深夜模式样式 */
 }
 .dark-mode {
   background-color: #333; /* 深色背景 */

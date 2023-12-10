@@ -76,10 +76,21 @@ document.getElementById('toggle-mode').addEventListener('click', function() {
   // 检查当前是否已经应用了深夜模式
   if (document.body.classList.contains('dark-mode')) {
     modeText.textContent = 'Light Mode'; // 如果是深夜模式，改为 "Light Mode"
+    localStorage.setItem('theme', 'dark'); // 保存深夜模式设置
   } else {
-    modeText.textContent = 'Dark Mode'; // 否则，改为 "Black Mode"
+    modeText.textContent = 'Dark Mode'; // 否则，改为 "Dark Mode"
+    localStorage.removeItem('theme'); // 移除深夜模式设置
   }
 });
+
+// 页面加载时检查本地存储中的主题设置
+document.addEventListener('DOMContentLoaded', (event) => {
+  if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark-mode');
+    document.getElementById('toggle-mode').textContent = 'Light Mode';
+  }
+});
+
 
 
 // function search() {
