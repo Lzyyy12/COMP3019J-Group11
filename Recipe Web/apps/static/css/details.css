@@ -153,3 +153,22 @@ ul.flashes li {
     height: 15rem;
   }
 }
+.dark-mode {
+  background-color: #333; /* 深色背景 */
+  color: #fff; /* 浅色文字 */
+  /* 其他深夜模式样式 */
+}
+
+.dark-mode p,
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode h5,
+.dark-mode h6,
+.dark-mode a,
+.dark-mode input,
+.dark-mode button
+/* 以及任何其他您希望在深夜模式下拥有白色文字的元素 */ {
+  color: #fff; /* 设置这些元素的文字颜色为白色 */
+}

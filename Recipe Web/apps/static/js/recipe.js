@@ -95,14 +95,24 @@ function uploadimage(username) {
         }
     });
 }
-document.getElementById('toggle-mode').addEventListener('click', function() {
-  var modeText = document.getElementById('toggle-mode');
-  document.body.classList.toggle('dark-mode');
-
-  // 检查当前是否已经应用了深夜模式
-  if (document.body.classList.contains('dark-mode')) {
-    modeText.textContent = 'Light Mode'; // 如果是深夜模式，改为 "Light Mode"
-  } else {
-    modeText.textContent = 'Dark Mode'; // 否则，改为 "Black Mode"
+// 当本地存储发生变化时触发
+window.addEventListener('storage', function(event) {
+  if (event.key === 'theme') {
+    // 检查深夜模式的新值，并相应地更新页面
+    if (event.newValue === 'dark') {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
+  }
+});
+document.addEventListener('DOMContentLoaded', (event) => {
+  if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark-mode');
+    // 如果有切换按钮，也更新其文本
+    var modeText = document.getElementById('toggle-mode');
+    if (modeText) {
+      modeText.textContent = 'Light Mode';
+    }
   }
 });
