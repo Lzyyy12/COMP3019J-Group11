@@ -1,24 +1,18 @@
 from flask import Flask, url_for, jsonify
 from flask_sqlalchemy import SQLAlchemy
+from dotenv import load_dotenv
 from apps import config
+import os
 
-app = Flask(__name__, static_folder='./static')
-app.config.from_object(config)
-app.secret_key = '1qaz2wsx'  # 设置密钥
+app = Flask(__name__)
 
-HOSTNAME = '127.0.0.1'
-PORT = '3306'
-DATABASE = 'recipe_web'
-USERNAME = 'root'
-PASSWORD = '123456'
-DB_URI = 'mysql+pymysql://{}:{}@{}:{}/{}?charset=utf8'.format(
-    USERNAME, PASSWORD, HOSTNAME, PORT, DATABASE)
-app.config['SQLALCHEMY_DATABASE_URI'] = DB_URI
+app.config['STATIC_FOLDER'] = os.getenv('STATIC_FOLDER')
+app.config['UPLOAD_IMAGE_FOLDER'] = os.getenv('UPLOAD_IMAGE_FOLDER')
+app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DB_URI')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
-app.config['UPLOAD_IMAGE_FOLDER'] = 'apps/static/image/recipes'
 db = SQLAlchemy(app)
 
-# db.create_all()
 
 from apps.api.index import bp as index_bp
 from apps.api.login import bp as login_bp
