@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/static/css/post.css" />
     <script src="/static/js/jquery-1.12.4.min.js"></script>
-    <script src="/static/js/recipe.js"></script>
 </head>
 <style>
     * {
@@ -93,8 +92,8 @@
                     <tbody>
                         {% for ingredient in recipe.ingredients %}
                         <tr>
-                            <td><input type="text" value="{{ingredient.name}}" name="ignames"></td>
-                            <td><input type="text" value="{{ingredient.amount}}" name="igamounts"></td>
+                            <td><input type="text" value="{{ingredient.name}}" name="ingredient[]"></td>
+                            <td><input type="text" value="{{ingredient.amount}}" name="amount[]"></td>
                         </tr>
                         {% endfor %}
                     </tbody>
@@ -104,10 +103,16 @@
 
             <div class="submit">
                 <button type="submit">Submit</button>
-                <button type="submit">Delete</button>
             </div>
         </form>
+            
+        <form action="{{ url_for('manage.delete_recipe', recipe_id=recipe.id) }}" method="post">
+            <button type="submit" id="deleteButton">Delete</button>
+        </form>
+            
     </main>
+
+    <script src="/static/js/recipe.js"></script>
 </body>
 
 </html>

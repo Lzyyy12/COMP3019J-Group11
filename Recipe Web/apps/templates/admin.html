@@ -39,7 +39,7 @@
           <div class="tags-list">
             {% if islogin %}
             <a href="./api/manage_user" target="mainframe" class="post" onclick="hideNavLinks()">Manage User</a>
-            <a href="./api/manage_recipe" target="mainframe" class="user" onclick="showNavLinks()">Manage Recipe</a>
+            <a href="./api/manage_recipe?type=all" target="mainframe" class="user" onclick="showNavLinks()">Manage Recipe</a>
             <a href="./api/logout" class="logout">Log out</a>
             {% else %}
             <a href="./api/login" target="_self" class="login">Log in</a>

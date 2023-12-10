@@ -85,25 +85,7 @@ html, body {
       margin-left: 1rem;
   }
 }
-.dark-mode {
-  background-color: #333; /* 深色背景 */
-  color: #fff; /* 浅色文字 */
-  /* 其他深夜模式样式 */
-}
 
-.dark-mode p,
-.dark-mode h1,
-.dark-mode h2,
-.dark-mode h3,
-.dark-mode h4,
-.dark-mode h5,
-.dark-mode h6,
-.dark-mode a,
-.dark-mode input,
-.dark-mode button
-/* 以及任何其他您希望在深夜模式下拥有白色文字的元素 */ {
-  color: #fff; /* 设置这些元素的文字颜色为白色 */
-}
 
 
 
@@ -185,7 +167,7 @@ margin-left: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid #333333;
   overflow-y: auto;
   padding-bottom: 10px;
 }
@@ -205,7 +187,7 @@ margin-left: auto;
 
 #ingredientsTable th,
 #ingredientsTable td {
-  border: 1px solid #ddd;
+  border: 1px solid #333333;
   padding: 7px;
   text-align: center; /* 居中显示单元格内容 */
 }
@@ -246,6 +228,42 @@ margin-left: auto;
     /* 或足够的边距以适当分隔上传区域和提交按钮 */
 }
 
+.dark-mode {
+  background-color: #333; /* 深色背景 */
+  color: #fff; /* 浅色文字 */
+  /* 其他深夜模式样式 */
+}
+
+.dark-mode p,
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode h5,
+.dark-mode h6,
+.dark-mode a
+/* 以及任何其他您希望在深夜模式下拥有白色文字的元素 */ {
+  color: #fff; /* 设置这些元素的文字颜色为白色 */
+}
+.dark-mode .name_input{
+    background: #333;
+}
+.dark-mode .name_input::placeholder {
+  color:#f2f2f2;
+}
+.dark-mode textarea{
+    background: #333;
+}
+/* 深色模式下文本区域占位符的样式 */
+.dark-mode .context::placeholder {
+  color: #f2f2f2; /* 深色模式下的占位符颜色 */
+}
+/* 深色模式下表格边框的样式 */
+.dark-mode .ingredientsTable,
+.dark-mode .ingredientsTable th,
+.dark-mode .ingredientsTable td {
+  border-color: white; /* 设置边框颜色为白色 */
+}
 
 
 
