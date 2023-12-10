@@ -95,3 +95,14 @@ function uploadimage(username) {
         }
     });
 }
+document.getElementById('toggle-mode').addEventListener('click', function() {
+  var modeText = document.getElementById('toggle-mode');
+  document.body.classList.toggle('dark-mode');
+
+  // 检查当前是否已经应用了深夜模式
+  if (document.body.classList.contains('dark-mode')) {
+    modeText.textContent = 'Light Mode'; // 如果是深夜模式，改为 "Light Mode"
+  } else {
+    modeText.textContent = 'Dark Mode'; // 否则，改为 "Black Mode"
+  }
+});
