@@ -27,7 +27,7 @@
           <a onclick="eastern()" class="nav-link"> Eastern </a>
           <a onclick="western()" class="nav-link"> Western </a>
           {% if session.logged_in %}
-              <div class="nav-link contact-link">
+              <div class="contact-link">
                   <a href="{{ url_for('login.cancel_account') }}" class="btn"> Cancel Account </a>
               </div>
           {% endif %}
@@ -56,10 +56,12 @@
           {% endif %}
           <div class="tags-list">
             {% if islogin %}
+            <div class="change">
             <a href="./api/get_recipe?type=all" target="mainframe" class="main" onclick="showNavLinks()">Main</a>
             <a href="./api/add_recipe" target="mainframe" class="post" onclick="hideNavLinks()">Post</a>
             <a href="./api/get_posted_recipe" target="mainframe" class="user" onclick="showNavLinks()">View Posted</a>
             <a href="./api/get_favorite" target="mainframe" class="favorite" onclick="showNavLinks()">Favorite</a>
+            </div>
             <a href="#" id="toggle-mode">Dark Mode</a>
             <a href="./api/logout" class="logout">Log out</a>
             {% else %}

@@ -27,7 +27,7 @@
     {% for cp in cplist %}
       <a href="{{ url_for('recipe.recipe_detail', recipe_id=cp.id) }}" class="recipe">
       <img src = "{{ cp.path }}" class="img recipe-img" alt="" />
-      <h5>{{ cp.name }}</h5>
+      <h4>{{ cp.name }}</h4>
     {% endfor %}
   </div>
   <!-- end of recipes list -->
