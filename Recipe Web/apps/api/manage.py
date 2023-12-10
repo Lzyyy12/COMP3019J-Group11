@@ -19,7 +19,7 @@ def manage_user():
         userdata = {}
         userdata['id'] = user.id
         userdata['name'] = user.name
-        userdata['photo'] = user.photo
+        # userdata['photo'] = user.photo
         cplist.append(userdata)
    
     context = {
@@ -30,10 +30,19 @@ def manage_user():
 
 @bp.route("/delete_user", methods=["POST"])
 def delete_user():
-    userId = request.form['userId']
-    del_count = db.session.query(User).filter(User.id == userId).delete()
-    db.session.commit()
-    if del_count == 1 :
+    del_status = 0
+    del_userId = request.form['userId']
+    del_user = User.query.get(del_userId)
+    # del_count = db.session.query(User).filter(User.id == del_userId).count
+    if del_user.type != 1:
+        db.session.delete(del_user)
+        db.session.commit()
+        del_status = 1
+    else:
+        logging.warning("illegal deletion")
+        return "illegal deletion"
+    
+    if del_status == 1:
         return "delete succeeded"
     return "delete failed"
 
@@ -54,22 +63,6 @@ def manage_recipe():
         "cplist": cplist
     }
     return render_template("manage_recipe.html", **context)
-
-
-@bp.route("/search", methods=["GET"])
-def search():
-    keyword = request.args.get("keyword")
-    cplist = []
-    # Get the list of recipes from database
-    recipe_objs = Recipe.query.filter(Recipe.name.ilike(
-        '%{keyword}%'.format(keyword=keyword))).all()
-    for recipe in recipe_objs:
-        recipedata = {}
-        recipedata['name'] = recipe.name
-        recipedata['path'] = recipe.path
-        cplist.append(recipedata)
-
-    return cplist
 
 
 @bp.route("/manage_edit_recipe/<int:recipe_id>", methods=["GET", "POST"])
@@ -124,3 +117,18 @@ def manage_edit_recipe(recipe_id):
             }
             return render_template("manager_edit_recipe.html", **context)
     return "please log in"
+
+@bp.route("/search", methods=["GET"])
+def search():
+    keyword = request.args.get("keyword")
+    cplist = []
+    # Get the list of recipes from database
+    recipe_objs = Recipe.query.filter(Recipe.name.ilike(
+        '%{keyword}%'.format(keyword=keyword))).all()
+    for recipe in recipe_objs:
+        recipedata = {}
+        recipedata['name'] = recipe.name
+        recipedata['path'] = recipe.path
+        cplist.append(recipedata)
+
+    return cplist
