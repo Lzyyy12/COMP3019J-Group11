@@ -51,10 +51,11 @@
       <section class="recipes-container">
         <!-- Tag Container -->
         <div class="tags-container">
-        <h3 class="User">Hello, <span class="username">{{ session.username }}</span>!</h3>
+          {% if islogin %}
+          <h3 class="User">Hello, <span class="username">{{ session.username }}</span>!</h3>
+          {% endif %}
           <div class="tags-list">
             {% if islogin %}
-
             <a href="./api/get_recipe?type=all" target="mainframe" class="main" onclick="showNavLinks()">Main</a>
             <a href="./api/add_recipe" target="mainframe" class="post" onclick="hideNavLinks()">Post</a>
             <a href="./api/get_posted_recipe" target="mainframe" class="user" onclick="showNavLinks()">View Posted</a>
@@ -66,6 +67,15 @@
             <a href="./api/login" target="_self" class="login">Post</a>
             <a href="./api/login" target="_self" class="login">Log in</a>
             {% endif %}
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+              <ul class="flashes">
+                  {% for message in messages %}
+                    <li>{{ message }}</li>
+                  {% endfor %}
+              </ul>
+            {% endif %}
+            {% endwith %}
           </div>
         </div>
         <!-- End of Tag Container -->

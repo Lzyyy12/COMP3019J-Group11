@@ -119,7 +119,7 @@ def add_recipe():
                 db.session.commit()
 
             flash('Recipe added successfully!', 'success')
-            return redirect("/api/get_recipe?type=all")
+            return redirect(url_for('recipe.recipe_detail', recipe_id=recipe_id))
         return render_template("add_recipe.html")
     return "please log in"
 
