@@ -7,20 +7,21 @@ function showNavLinks() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    var tags = document.querySelectorAll('.tags-list a'); // 获取所有标签
+    var changeLinks = document.querySelectorAll('.tags-list .change a'); // 只获取前四个链接
 
-    tags.forEach(function(tag) {
-        tag.addEventListener('click', function() {
-            // 首先移除所有按钮的 'active-tag' 类
-            tags.forEach(function(t) {
-                t.classList.remove('active-tag');
+    changeLinks.forEach(function(link) {
+        link.addEventListener('click', function() {
+            // 首先移除所有前四个链接的 'active' 类
+            changeLinks.forEach(function(lnk) {
+                lnk.classList.remove('active');
             });
 
-            // 然后给当前点击的按钮添加 'active-tag' 类
-            tag.classList.add('active-tag');
+            // 然后给当前点击的链接添加 'active' 类
+            this.classList.add('active');
         });
     });
 });
+
 
 // Function to get an element by its selector, throwing an error if not found
 const getElement = (selector) => {

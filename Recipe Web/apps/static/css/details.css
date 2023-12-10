@@ -67,6 +67,8 @@ html, body {
     width: 20rem;
     height: auto;
   }
+
+
 }
 
 /* 标题样式 */
@@ -79,6 +81,7 @@ html, body {
 #ingredients-table {
     margin-bottom: 20px;
     margin-top: 1rem;
+
 }
 
 table {
@@ -90,20 +93,16 @@ table {
 th, td {
     border: 1px solid #ddd;
     padding: 8px;
-    text-align: left;
+    text-align: center;
+
 }
 
 th {
     background-color: #f2f2f2;
 }
-.favoriteBtn{
-    border-bottom: 1px solid gray;
-    margin-bottom: 1rem;
-}
-
 /* 按钮样式 */
 button.favorite {
-    background-color: #4CAF50;
+    background-color: #1E90FF;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -119,7 +118,7 @@ button.favorite {
 }
 
 button.favorite:hover {
-    background-color: #45a049;
+    background-color: #0000FF;
 }
 
 /* 消息闪现样式 */
@@ -166,9 +165,11 @@ ul.flashes li {
 .dark-mode h4,
 .dark-mode h5,
 .dark-mode h6,
-.dark-mode a,
-.dark-mode input,
-.dark-mode button
+.dark-mode a
 /* 以及任何其他您希望在深夜模式下拥有白色文字的元素 */ {
   color: #fff; /* 设置这些元素的文字颜色为白色 */
+}
+.dark-mode th {
+    background-color: #f2f2f2;
+    color: #333333;
 }

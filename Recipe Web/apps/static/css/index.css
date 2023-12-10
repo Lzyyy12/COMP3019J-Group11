@@ -84,6 +84,7 @@ Navbar
 }
 
 .contact-link a {
+  color: #0056b3;
   padding: 0.15rem 1rem;
 }
 
@@ -272,7 +273,6 @@ Recipes
   display: block;
   color: var(--grey-500);
   transition: var(--transition);
-  text-decoration: none;
   color: black;
   margin-bottom: 35px;
   margin-right: 10%;
@@ -287,6 +287,11 @@ Recipes
   background-color: #5f5d5d;
   color: #fff;
 }
+.tags-list .change a.active{
+  background-color: #5f5d5d; /* 您希望的背景颜色 */
+  color: #fff; /* 您希望的文字颜色 */
+}
+
 
 .recipe {
   display: block;
@@ -371,11 +376,21 @@ Recipes
 .dark-mode h4,
 .dark-mode h5,
 .dark-mode h6,
-.dark-mode a,
-.dark-mode input,
-.dark-mode button
+.dark-mode a
 /* 以及任何其他您希望在深夜模式下拥有白色文字的元素 */ {
   color: #fff; /* 设置这些元素的文字颜色为白色 */
+}
+.dark-mode .search_input {
+    background: #787a7c;
+}
+.dark-mode .search_input::placeholder {
+  color: #cccccc;
+}
+.dark-mode .username{
+  color: #FFFA05;
+}
+.dark-mode .contact-link a{
+  color: #0056b3;
 }
 
 
