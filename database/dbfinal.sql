@@ -47,12 +47,12 @@ VALUES
 
 INSERT INTO recipes (name, user_id, path, type)
 VALUES
-    ('noodle', '1', '../static/image/recipes/recipe1.png', 'eastern'),
-    ('skewers', '1', '../static/image/recipes/recipe2.png', 'eastern'),
-    ('beef_brisket_with_tomatop', '1', '../static/image/recipes/recipe3.png', 'western'),
-    ('pizza', '1', '../static/image/recipes/recipe4.png', 'western'),
-    ('dessert', '1', '../static/image/recipes/recipe5.png', 'western'),
-    ('macaron', '1', '../static/image/recipes/recipe6.png', 'western');
+    ('noodle', '1', '/static/image/recipes/recipe1.png', 'eastern'),
+    ('skewers', '1', '/static/image/recipes/recipe2.png', 'eastern'),
+    ('beef_brisket_with_tomatop', '1', '/static/image/recipes/recipe3.png', 'western'),
+    ('pizza', '1', '/static/image/recipes/recipe4.png', 'western'),
+    ('dessert', '1', '/static/image/recipes/recipe5.png', 'western'),
+    ('macaron', '1', '/static/image/recipes/recipe6.png', 'western');
 
 INSERT INTO ingredient (recipe_id, name, amount)
 VALUES

@@ -6,7 +6,7 @@ from flask_wtf.file import FileRequired, FileAllowed
 from werkzeug.utils import secure_filename
 from apps.model.model import User, Recipe, Ingredient
 from apps import db
-import json, os
+import json, os, logging
 
 bp = Blueprint("manage", __name__, url_prefix="/api")
 
@@ -108,6 +108,9 @@ def manage_edit_recipe(recipe_id):
         else:
             recipe = Recipe.query.get(recipe_id)
             # ingredients = recipe.ingredients
+
+            if recipe is None:
+                logging.error("recipe not found")
 
             context = {
                 "recipe": {
