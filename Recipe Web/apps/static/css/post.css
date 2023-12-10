@@ -1,6 +1,26 @@
 :root {
   --transition: 0.3s ease-in-out all;
 }
+* {
+        outline: 0;
+        padding: 0;
+        margin: 0;
+        border: 0;
+    }
+
+    #id_for_file {
+        display: none;
+    }
+
+    label {
+        margin-top: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    label:hover {
+        color: #b1dfbb;
+    }
 
 .img {
   width: 100%;
@@ -32,7 +52,8 @@ html, body {
 .types {
   font-size: 20px; /* 设置字体大小 */
   display: flex; /* 使单选按钮水平排列 */
-  flex-direction: row; /* 将单选按钮水平排列 */
+  flex-direction: row;
+    align-items: center/* 将单选按钮水平排列 */
 }
 .type {
     padding: 0;
@@ -51,6 +72,19 @@ html, body {
 .type input[type="radio"] + span {
   padding-left: 10px; /* 或者你想要的任何大小 */
 }
+@media screen and (max-width: 576px) {
+    .header{
+        padding: 3px;
+    }
+    .name_input {
+  margin-right: 5px; /* 添加右边距 */
+  margin-left: 5px; /* 添加左边距 */
+  font-size: 18px; /* 设置字体大小 */
+}
+  .type{
+      margin-left: 1rem;
+  }
+}
 
 
 
@@ -65,15 +99,22 @@ html, body {
     margin-right: 10px; /* 为 h3 添加右边距 */
 }
 
-.upload_picture button {
+.choose_file {
     display: inline-block; /* 使按钮和 h3 在同一行 */
     vertical-align:center;
-    width: 15%;
-
-    border-radius: 7px;
+    width: 30%;
+    margin-right: 3rem;
+    text-decoration: underline;
     /* 对齐到顶部 */
 }
-
+.upload_picture button{
+  display: inline-block; /* 使按钮和 h3 在同一行 */
+    vertical-align:center;
+    width: 15%;
+margin-left: auto;
+  height: 2rem;
+    border-radius: 7px;
+}
 /* 新的图片容器样式 */
 .image-container {
   display: flex; /* 使用 Flexbox 布局 */
@@ -82,9 +123,21 @@ html, body {
 }
 
 .recipe-img {
-  height: 15rem;
+  /*height: 15rem;*/
+  width : 32rem;
   border-radius: var(--borderRadius);
   margin-bottom: 1rem;
+}
+@media screen and (max-width: 576px) {
+    .upload_picture button{
+   width: 20%;
+        margin-left: auto;/* 设置字体大小 */
+}
+    .recipe-img {
+
+  width : 25rem;
+
+}
 }
 
 /*@media screen and (min-width: 576px) {*/
