@@ -53,6 +53,8 @@
         <div class="tags-container">
           <div class="tags-list">
             {% if islogin %}
+            <h3 class="User">UserName</h3>
+            <p class="id"> id:12345678</p>
             <a href="./api/get_recipe?type=all" target="mainframe" class="main" onclick="showNavLinks()">Main</a>
             <a href="./api/add_recipe" target="mainframe" class="post" onclick="hideNavLinks()">Post</a>
             <a href="./api/get_posted_recipe" target="mainframe" class="user" onclick="showNavLinks()">View Posted</a>
