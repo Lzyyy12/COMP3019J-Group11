@@ -128,11 +128,12 @@ def add_recipe():
 def upload():
     if request.method == 'POST':
         f = request.files['file']
+        filename = secure_filename(str(uuid.uuid4()) + '_' + f.filename)
         basepath = os.getcwd()
         upload_path = os.path.join(
-            basepath, r'apps\static\image\recipes', f.filename)
+            basepath, r'apps\static\image\recipes', filename)
         f.save(upload_path)
-        return {'msg': 'ok', 'filename': r'/static/image/recipes/'+f.filename}
+        return {'msg': 'ok', 'filename': r'/static/image/recipes/'+ filename}
 
 
 @bp.route("/search", methods=["GET"])

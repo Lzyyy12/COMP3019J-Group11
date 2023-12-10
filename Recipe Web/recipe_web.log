@@ -88,3 +88,212 @@ INFO 2023-12-10 12:24:08,746 [_internal.py]: 187 - _log -  * Restarting with sta
 INFO 2023-12-10 12:24:09,723 [app.py]: 6 - <module> - Recipe webapp startup
 WARNING 2023-12-10 12:24:09,740 [_internal.py]: 187 - _log -  * Debugger is active!
 INFO 2023-12-10 12:24:09,747 [_internal.py]: 187 - _log -  * Debugger PIN: 140-669-146
+INFO 2023-12-10 14:40:05,683 [app.py]: 6 - <module> - Recipe webapp startup
+WARNING 2023-12-10 14:40:05,713 [_internal.py]: 187 - _log -  * Debugger is active!
+INFO 2023-12-10 14:40:05,729 [_internal.py]: 187 - _log -  * Debugger PIN: 139-595-486
+INFO 2023-12-10 14:40:30,583 [app.py]: 6 - <module> - Recipe webapp startup
+INFO 2023-12-10 14:40:30,640 [_internal.py]: 187 - _log - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO 2023-12-10 14:40:30,642 [_internal.py]: 187 - _log - [33mPress CTRL+C to quit[0m
+INFO 2023-12-10 14:40:30,646 [_internal.py]: 187 - _log -  * Restarting with stat
+INFO 2023-12-10 14:40:31,627 [app.py]: 6 - <module> - Recipe webapp startup
+WARNING 2023-12-10 14:40:31,644 [_internal.py]: 187 - _log -  * Debugger is active!
+INFO 2023-12-10 14:40:31,660 [_internal.py]: 187 - _log -  * Debugger PIN: 139-595-486
+INFO 2023-12-10 14:40:51,322 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:40:51] "GET / HTTP/1.1" 200 -
+INFO 2023-12-10 14:40:51,609 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:40:51] "GET /api/get_recipe?type=all HTTP/1.1" 200 -
+INFO 2023-12-10 14:40:53,163 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:40:53] "[36mGET /static/image/logo.jpg HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:40:53,166 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:40:53] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:40:53,168 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:40:53] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:40:53,175 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:40:53] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:40:53,179 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:40:53] "[36mGET /static/image/main.jpg HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:40:53,193 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:40:53] "[36mGET /static/js/jquery-1.12.4.min.js HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:40:53,199 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:40:53] "[36mGET /static/js/jquery-1.12.4.min.js HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:40:53,211 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:40:53] "[36mGET /static/js/recipe.js HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:40:53,221 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:40:53] "[36mGET /static/image/recipes/recipe1.png HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:40:53,226 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:40:53] "[36mGET /static/image/recipes/recipe2.png HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:40:53,243 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:40:53] "[36mGET /static/image/recipes/recipe3.png HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:40:53,244 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:40:53] "[36mGET /static/image/recipes/recipe4.png HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:40:53,249 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:40:53] "[33mGET /static/image/recipes/1.png HTTP/1.1[0m" 404 -
+INFO 2023-12-10 14:40:53,249 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:40:53] "[36mGET /static/image/recipes/recipe6.png HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:40:53,250 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:40:53] "[36mGET /static/image/recipes/recipe5.png HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:40:53,257 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:40:53] "[33mGET /static/image/recipes/屏幕截图%202023-10-26%20195548.png HTTP/1.1[0m" 404 -
+INFO 2023-12-10 14:40:55,163 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:40:55] "GET /api/recipe_detail/1 HTTP/1.1" 200 -
+INFO 2023-12-10 14:40:55,189 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:40:55] "[36mGET /static/css/details.css HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:40:55,200 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:40:55] "[36mGET /static/js/jquery-1.12.4.min.js HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:40:55,202 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:40:55] "[36mGET /static/js/recipe.js HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:40:55,212 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:40:55] "[33mGET /api/static/image/recipes/recipe1.png HTTP/1.1[0m" 404 -
+INFO 2023-12-10 14:40:56,708 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:40:56] "GET /api/get_recipe?type=all HTTP/1.1" 200 -
+INFO 2023-12-10 14:40:56,728 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:40:56] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:40:56,740 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:40:56] "[36mGET /static/js/recipe.js HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:40:56,743 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:40:56] "[36mGET /static/js/jquery-1.12.4.min.js HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:40:56,758 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:40:56] "[36mGET /static/image/recipes/recipe1.png HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:40:56,761 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:40:56] "[36mGET /static/image/recipes/recipe2.png HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:40:56,774 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:40:56] "[36mGET /static/image/recipes/recipe3.png HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:40:56,778 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:40:56] "[36mGET /static/image/recipes/recipe4.png HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:40:56,780 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:40:56] "[36mGET /static/image/recipes/recipe5.png HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:40:56,783 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:40:56] "[36mGET /static/image/recipes/recipe6.png HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:40:56,789 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:40:56] "[33mGET /static/image/recipes/1.png HTTP/1.1[0m" 404 -
+INFO 2023-12-10 14:40:56,796 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:40:56] "[33mGET /static/image/recipes/屏幕截图%202023-10-26%20195548.png HTTP/1.1[0m" 404 -
+INFO 2023-12-10 14:40:57,291 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:40:57] "GET /api/login HTTP/1.1" 200 -
+INFO 2023-12-10 14:40:57,326 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:40:57] "[36mGET /static/css/login.css HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:40:57,354 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:40:57] "[36mGET /static/image/background.jpg HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:41:05,891 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:05] "POST /api/login HTTP/1.1" 200 -
+INFO 2023-12-10 14:41:05,932 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:05] "[36mGET /static/css/login.css HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:41:07,995 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:07] "GET /api/register HTTP/1.1" 200 -
+INFO 2023-12-10 14:41:08,021 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:08] "[36mGET /static/css/register.css HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:41:08,053 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:08] "[36mGET /static/image/background.jpg HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:41:18,764 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:18] "[32mPOST /api/register HTTP/1.1[0m" 302 -
+INFO 2023-12-10 14:41:18,780 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:18] "GET /api/login HTTP/1.1" 200 -
+INFO 2023-12-10 14:41:18,862 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:18] "[36mGET /static/css/login.css HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:41:28,171 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:28] "[32mPOST /api/login HTTP/1.1[0m" 302 -
+INFO 2023-12-10 14:41:28,191 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:28] "GET / HTTP/1.1" 200 -
+INFO 2023-12-10 14:41:28,287 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:28] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:41:28,291 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:28] "[36mGET /static/js/jquery-1.12.4.min.js HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:41:28,298 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:28] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:41:28,298 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:28] "[36mGET /static/image/logo.jpg HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:41:28,302 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:28] "GET /api/get_recipe?type=all HTTP/1.1" 200 -
+INFO 2023-12-10 14:41:28,311 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:28] "[36mGET /static/image/main.jpg HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:41:28,335 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:28] "[36mGET /static/js/recipe.js HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:41:28,337 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:28] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:41:28,343 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:28] "[36mGET /static/js/jquery-1.12.4.min.js HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:41:28,360 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:28] "[36mGET /static/image/recipes/recipe2.png HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:41:28,361 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:28] "[36mGET /static/image/recipes/recipe1.png HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:41:28,371 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:28] "[36mGET /static/image/recipes/recipe3.png HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:41:28,373 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:28] "[36mGET /static/image/recipes/recipe4.png HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:41:28,376 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:28] "[36mGET /static/image/recipes/recipe5.png HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:41:28,385 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:28] "[33mGET /static/image/recipes/1.png HTTP/1.1[0m" 404 -
+INFO 2023-12-10 14:41:28,387 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:28] "[36mGET /static/image/recipes/recipe6.png HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:41:28,403 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:28] "[33mGET /static/image/recipes/屏幕截图%202023-10-26%20195548.png HTTP/1.1[0m" 404 -
+INFO 2023-12-10 14:41:30,450 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:30] "GET /api/get_posted_recipe HTTP/1.1" 200 -
+INFO 2023-12-10 14:41:30,470 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:30] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:41:30,489 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:30] "[36mGET /static/js/recipe.js HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:41:30,490 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:30] "[36mGET /static/js/jquery-1.12.4.min.js HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:41:33,597 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:33] "GET /api/get_favorite HTTP/1.1" 200 -
+INFO 2023-12-10 14:41:33,620 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:33] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:41:33,634 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:33] "[36mGET /static/js/recipe.js HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:41:33,635 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:33] "[36mGET /static/js/jquery-1.12.4.min.js HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:41:34,885 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:34] "GET /api/get_posted_recipe HTTP/1.1" 200 -
+INFO 2023-12-10 14:41:34,909 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:34] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:41:34,921 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:34] "[36mGET /static/js/recipe.js HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:41:34,923 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:34] "[36mGET /static/js/jquery-1.12.4.min.js HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:41:35,451 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:35] "GET /api/get_favorite HTTP/1.1" 200 -
+INFO 2023-12-10 14:41:35,505 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:35] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:41:35,507 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:35] "[36mGET /static/js/recipe.js HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:41:35,509 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:35] "[36mGET /static/js/jquery-1.12.4.min.js HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:41:36,840 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:36] "GET /api/get_recipe?type=all HTTP/1.1" 200 -
+INFO 2023-12-10 14:41:36,857 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:36] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:41:36,872 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:36] "[36mGET /static/js/recipe.js HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:41:36,875 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:36] "[36mGET /static/js/jquery-1.12.4.min.js HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:41:36,885 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:36] "[36mGET /static/image/recipes/recipe2.png HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:41:36,885 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:36] "[36mGET /static/image/recipes/recipe1.png HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:41:36,893 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:36] "[36mGET /static/image/recipes/recipe3.png HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:41:36,899 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:36] "[36mGET /static/image/recipes/recipe4.png HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:41:36,905 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:36] "[36mGET /static/image/recipes/recipe5.png HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:41:36,917 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:36] "[36mGET /static/image/recipes/recipe6.png HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:41:36,920 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:36] "[33mGET /static/image/recipes/屏幕截图%202023-10-26%20195548.png HTTP/1.1[0m" 404 -
+INFO 2023-12-10 14:41:36,921 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:36] "[33mGET /static/image/recipes/1.png HTTP/1.1[0m" 404 -
+INFO 2023-12-10 14:41:40,794 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:40] "GET /api/get_recipe?type=all HTTP/1.1" 200 -
+INFO 2023-12-10 14:41:40,815 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:40] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:41:40,817 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:40] "[36mGET /static/js/recipe.js HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:41:40,817 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:40] "[36mGET /static/js/jquery-1.12.4.min.js HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:41:40,829 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:40] "[36mGET /static/image/recipes/recipe1.png HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:41:40,830 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:40] "[36mGET /static/image/recipes/recipe2.png HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:41:40,845 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:40] "[36mGET /static/image/recipes/recipe5.png HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:41:40,848 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:40] "[36mGET /static/image/recipes/recipe6.png HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:41:40,849 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:40] "[36mGET /static/image/recipes/recipe3.png HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:41:40,849 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:40] "[36mGET /static/image/recipes/recipe4.png HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:41:40,858 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:40] "[33mGET /static/image/recipes/1.png HTTP/1.1[0m" 404 -
+INFO 2023-12-10 14:41:40,862 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:40] "[33mGET /static/image/recipes/屏幕截图%202023-10-26%20195548.png HTTP/1.1[0m" 404 -
+INFO 2023-12-10 14:41:43,695 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:43] "GET /api/get_posted_recipe HTTP/1.1" 200 -
+INFO 2023-12-10 14:41:43,719 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:43] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:41:43,731 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:43] "[36mGET /static/js/recipe.js HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:41:43,734 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:43] "[36mGET /static/js/jquery-1.12.4.min.js HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:41:44,610 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:44] "GET /api/get_favorite HTTP/1.1" 200 -
+INFO 2023-12-10 14:41:44,635 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:44] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:41:44,645 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:44] "[36mGET /static/js/jquery-1.12.4.min.js HTTP/1.1[0m" 304 -
+INFO 2023-12-10 14:41:44,647 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 14:41:44] "[36mGET /static/js/recipe.js HTTP/1.1[0m" 304 -
+INFO 2023-12-10 15:54:05,955 [app.py]: 6 - <module> - Recipe webapp startup
+INFO 2023-12-10 15:54:06,118 [_internal.py]: 187 - _log - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO 2023-12-10 15:54:06,119 [_internal.py]: 187 - _log - [33mPress CTRL+C to quit[0m
+INFO 2023-12-10 15:54:06,123 [_internal.py]: 187 - _log -  * Restarting with stat
+INFO 2023-12-10 15:54:07,023 [app.py]: 6 - <module> - Recipe webapp startup
+WARNING 2023-12-10 15:54:07,029 [_internal.py]: 187 - _log -  * Debugger is active!
+INFO 2023-12-10 15:54:07,034 [_internal.py]: 187 - _log -  * Debugger PIN: 139-595-486
+INFO 2023-12-10 15:54:10,097 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 15:54:10] "GET / HTTP/1.1" 200 -
+INFO 2023-12-10 15:54:10,319 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 15:54:10] "GET /api/get_recipe?type=all HTTP/1.1" 200 -
+INFO 2023-12-10 15:54:11,726 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 15:54:11] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+INFO 2023-12-10 15:54:11,728 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 15:54:11] "[36mGET /static/image/logo.jpg HTTP/1.1[0m" 304 -
+INFO 2023-12-10 15:54:11,733 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 15:54:11] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+INFO 2023-12-10 15:54:11,738 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 15:54:11] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+INFO 2023-12-10 15:54:11,742 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 15:54:11] "[36mGET /static/image/main.jpg HTTP/1.1[0m" 304 -
+INFO 2023-12-10 15:54:11,749 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 15:54:11] "[36mGET /static/js/jquery-1.12.4.min.js HTTP/1.1[0m" 304 -
+INFO 2023-12-10 15:54:11,754 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 15:54:11] "[36mGET /static/js/jquery-1.12.4.min.js HTTP/1.1[0m" 304 -
+INFO 2023-12-10 15:54:11,763 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 15:54:11] "[36mGET /static/js/recipe.js HTTP/1.1[0m" 304 -
+INFO 2023-12-10 15:54:11,782 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 15:54:11] "[36mGET /static/image/recipes/recipe1.png HTTP/1.1[0m" 304 -
+INFO 2023-12-10 15:54:11,782 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 15:54:11] "[36mGET /static/image/recipes/recipe2.png HTTP/1.1[0m" 304 -
+INFO 2023-12-10 15:54:11,798 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 15:54:11] "[36mGET /static/image/recipes/recipe5.png HTTP/1.1[0m" 304 -
+INFO 2023-12-10 15:54:11,798 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 15:54:11] "[36mGET /static/image/recipes/recipe3.png HTTP/1.1[0m" 304 -
+INFO 2023-12-10 15:54:11,799 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 15:54:11] "[36mGET /static/image/recipes/recipe4.png HTTP/1.1[0m" 304 -
+INFO 2023-12-10 15:54:11,799 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 15:54:11] "[36mGET /static/image/recipes/recipe6.png HTTP/1.1[0m" 304 -
+INFO 2023-12-10 15:54:15,794 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 15:54:15] "GET /api/get_recipe?type=all HTTP/1.1" 200 -
+INFO 2023-12-10 15:54:15,812 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 15:54:15] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+INFO 2023-12-10 15:54:15,818 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 15:54:15] "[36mGET /static/js/recipe.js HTTP/1.1[0m" 304 -
+INFO 2023-12-10 15:54:15,819 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 15:54:15] "[36mGET /static/js/jquery-1.12.4.min.js HTTP/1.1[0m" 304 -
+INFO 2023-12-10 15:54:15,829 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 15:54:15] "[36mGET /static/image/recipes/recipe1.png HTTP/1.1[0m" 304 -
+INFO 2023-12-10 15:54:15,830 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 15:54:15] "[36mGET /static/image/recipes/recipe2.png HTTP/1.1[0m" 304 -
+INFO 2023-12-10 15:54:15,844 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 15:54:15] "[36mGET /static/image/recipes/recipe3.png HTTP/1.1[0m" 304 -
+INFO 2023-12-10 15:54:15,847 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 15:54:15] "[36mGET /static/image/recipes/recipe6.png HTTP/1.1[0m" 304 -
+INFO 2023-12-10 15:54:15,848 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 15:54:15] "[36mGET /static/image/recipes/recipe5.png HTTP/1.1[0m" 304 -
+INFO 2023-12-10 15:54:15,849 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 15:54:15] "[36mGET /static/image/recipes/recipe4.png HTTP/1.1[0m" 304 -
+INFO 2023-12-10 15:54:16,694 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 15:54:16] "GET /api/login HTTP/1.1" 200 -
+INFO 2023-12-10 15:54:16,751 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 15:54:16] "[36mGET /static/css/login.css HTTP/1.1[0m" 304 -
+INFO 2023-12-10 15:54:16,786 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 15:54:16] "[36mGET /static/image/background.jpg HTTP/1.1[0m" 304 -
+INFO 2023-12-10 15:54:20,502 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 15:54:20] "GET /api/register HTTP/1.1" 200 -
+INFO 2023-12-10 15:54:20,541 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 15:54:20] "[36mGET /static/css/register.css HTTP/1.1[0m" 304 -
+INFO 2023-12-10 15:54:20,588 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 15:54:20] "[36mGET /static/image/background.jpg HTTP/1.1[0m" 304 -
+INFO 2023-12-10 15:54:31,376 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 15:54:31] "[32mPOST /api/register HTTP/1.1[0m" 302 -
+INFO 2023-12-10 15:54:31,394 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 15:54:31] "GET /api/login HTTP/1.1" 200 -
+INFO 2023-12-10 15:54:31,447 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 15:54:31] "[36mGET /static/css/login.css HTTP/1.1[0m" 304 -
+INFO 2023-12-10 15:54:40,027 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 15:54:40] "[32mPOST /api/login HTTP/1.1[0m" 302 -
+INFO 2023-12-10 15:54:40,042 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 15:54:40] "GET / HTTP/1.1" 200 -
+INFO 2023-12-10 15:54:40,094 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 15:54:40] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+INFO 2023-12-10 15:54:40,118 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 15:54:40] "[36mGET /static/js/index.js HTTP/1.1[0m" 304 -
+INFO 2023-12-10 15:54:40,118 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 15:54:40] "[36mGET /static/js/jquery-1.12.4.min.js HTTP/1.1[0m" 304 -
+INFO 2023-12-10 15:54:40,120 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 15:54:40] "[36mGET /static/image/logo.jpg HTTP/1.1[0m" 304 -
+INFO 2023-12-10 15:54:40,132 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 15:54:40] "[36mGET /static/image/main.jpg HTTP/1.1[0m" 304 -
+INFO 2023-12-10 15:54:40,133 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 15:54:40] "GET /api/get_recipe?type=all HTTP/1.1" 200 -
+INFO 2023-12-10 15:54:40,163 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 15:54:40] "[36mGET /static/css/index.css HTTP/1.1[0m" 304 -
+INFO 2023-12-10 15:54:40,166 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 15:54:40] "[36mGET /static/js/recipe.js HTTP/1.1[0m" 304 -
+INFO 2023-12-10 15:54:40,168 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 15:54:40] "[36mGET /static/js/jquery-1.12.4.min.js HTTP/1.1[0m" 304 -
+INFO 2023-12-10 15:54:40,181 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 15:54:40] "[36mGET /static/image/recipes/recipe1.png HTTP/1.1[0m" 304 -
+INFO 2023-12-10 15:54:40,190 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 15:54:40] "[36mGET /static/image/recipes/recipe2.png HTTP/1.1[0m" 304 -
+INFO 2023-12-10 15:54:40,193 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 15:54:40] "[36mGET /static/image/recipes/recipe3.png HTTP/1.1[0m" 304 -
+INFO 2023-12-10 15:54:40,196 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 15:54:40] "[36mGET /static/image/recipes/recipe4.png HTTP/1.1[0m" 304 -
+INFO 2023-12-10 15:54:40,208 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 15:54:40] "[36mGET /static/image/recipes/recipe6.png HTTP/1.1[0m" 304 -
+INFO 2023-12-10 15:54:40,211 [_internal.py]: 187 - _log - 127.0.0.1 - - [10/Dec/2023 15:54:40] "[36mGET /static/image/recipes/recipe5.png HTTP/1.1[0m" 304 -
+INFO 2023-12-10 15:57:02,931 [_internal.py]: 187 - _log -  * Detected change in 'd:\\01Bjut\\Stage3\\Web Application\\COMP3019J-Group11\\Recipe Web\\apps\\api\\recipe.py', reloading
+INFO 2023-12-10 15:57:03,095 [_internal.py]: 187 - _log -  * Restarting with stat
+INFO 2023-12-10 15:57:04,529 [app.py]: 6 - <module> - Recipe webapp startup
+WARNING 2023-12-10 15:57:04,543 [_internal.py]: 187 - _log -  * Debugger is active!
+INFO 2023-12-10 15:57:04,555 [_internal.py]: 187 - _log -  * Debugger PIN: 139-595-486
+INFO 2023-12-10 15:57:09,679 [_internal.py]: 187 - _log -  * Detected change in 'd:\\01Bjut\\Stage3\\Web Application\\COMP3019J-Group11\\Recipe Web\\apps\\api\\recipe.py', reloading
+INFO 2023-12-10 15:57:09,822 [_internal.py]: 187 - _log -  * Restarting with stat
+INFO 2023-12-10 15:57:10,781 [app.py]: 6 - <module> - Recipe webapp startup
+WARNING 2023-12-10 15:57:10,798 [_internal.py]: 187 - _log -  * Debugger is active!
+INFO 2023-12-10 15:57:10,808 [_internal.py]: 187 - _log -  * Debugger PIN: 139-595-486
+INFO 2023-12-10 15:57:41,348 [_internal.py]: 187 - _log -  * Detected change in 'd:\\01Bjut\\Stage3\\Web Application\\COMP3019J-Group11\\Recipe Web\\apps\\api\\recipe.py', reloading
+INFO 2023-12-10 15:57:41,508 [_internal.py]: 187 - _log -  * Restarting with stat
+INFO 2023-12-10 15:57:42,400 [app.py]: 6 - <module> - Recipe webapp startup
+WARNING 2023-12-10 15:57:42,413 [_internal.py]: 187 - _log -  * Debugger is active!
+INFO 2023-12-10 15:57:42,423 [_internal.py]: 187 - _log -  * Debugger PIN: 139-595-486
+INFO 2023-12-10 15:57:43,465 [_internal.py]: 187 - _log -  * Detected change in 'd:\\01Bjut\\Stage3\\Web Application\\COMP3019J-Group11\\Recipe Web\\apps\\api\\recipe.py', reloading
+INFO 2023-12-10 15:57:43,600 [_internal.py]: 187 - _log -  * Restarting with stat
+INFO 2023-12-10 15:57:44,562 [app.py]: 6 - <module> - Recipe webapp startup
+WARNING 2023-12-10 15:57:44,579 [_internal.py]: 187 - _log -  * Debugger is active!
+INFO 2023-12-10 15:57:44,591 [_internal.py]: 187 - _log -  * Debugger PIN: 139-595-486
+INFO 2023-12-10 15:57:49,704 [_internal.py]: 187 - _log -  * Detected change in 'd:\\01Bjut\\Stage3\\Web Application\\COMP3019J-Group11\\Recipe Web\\apps\\api\\recipe.py', reloading
+INFO 2023-12-10 15:57:49,779 [_internal.py]: 187 - _log -  * Restarting with stat
+INFO 2023-12-10 15:57:50,865 [app.py]: 6 - <module> - Recipe webapp startup
+WARNING 2023-12-10 15:57:50,876 [_internal.py]: 187 - _log -  * Debugger is active!
+INFO 2023-12-10 15:57:50,885 [_internal.py]: 187 - _log -  * Debugger PIN: 139-595-486
