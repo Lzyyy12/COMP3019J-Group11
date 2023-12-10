@@ -19,10 +19,31 @@
 <body>
   <main class="page">
     <div class="header">
-      <h2 class="name_input">{{ recipe.name }}</h2>
-        <img src="{{ recipe.path }}" class="img recipe-img" alt="" />
-      <p>Type: {{ recipe.type }}</p>
-      <p>Description: {{ recipe.description }}</p>
+      <h1 class="name_input">{{ recipe.name }}</h1>
+    </div>
+
+    <div class="content">
+
+
+      <div class="image-content">
+{#        <img src="{{ url_for('static', filename='image/recipes/recipe2.png') }}" alt="Recipe Image" class="img recipe-img">#}
+           <img src="{{ recipe.path }}" class="img recipe-img" alt="" />
+      </div>
+
+        <div class="text-content">
+
+{#        <h3>Description: {{ recipe.description }}</h3>#}
+          <p class="description">Light pollution harms health and the environment, but global assessments only measure light pollution levels,
+              lacking a comprehensive evaluation of its risk. The evaluation model was developed to assess direct and indirect influences
+              with 11 factors, ensuring mutual independence through the KMO test, assigning weights via the AHP model, and applying it to
+              49 cities globally based on varying urban levels. Using the TOPSIS model, we calculated comprehensive scores for each city
+              and applied K-Means clustering to categorize scores into different levels.</p>
+          <h3 class="type">Type: {{ recipe.type }}</h3>
+        <!-- Other content -->
+      </div>
+    </div>
+
+  <div class="favoriteBtn">
       {% if session.get('logged_in') %}
         {% if recipe.is_favorited %}
           <form action="{{ url_for('recipe.unfavorite_recipe', recipe_id=recipe.id) }}" method="post">

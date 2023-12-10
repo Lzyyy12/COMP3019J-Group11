@@ -53,6 +53,8 @@
         <div class="tags-container">
           <div class="tags-list">
             {% if islogin %}
+            <h3 class="User">Hello</h3>
+            <h3 class="User">{{ session.username }}</h3>
             <a href="./api/get_recipe?type=all" target="mainframe" class="main" onclick="showNavLinks()">Main</a>
             <a href="./api/add_recipe" target="mainframe" class="post" onclick="hideNavLinks()">Post</a>
             <a href="./api/get_posted_recipe" target="mainframe" class="user" onclick="showNavLinks()">View Posted</a>
