@@ -16,7 +16,7 @@
 
             <div class="header">
                 <input type="text" id="recipe_name" name="recipe_name" value="" class="name_input"
-                    placeholder="Name:" />
+                    placeholder="Recipe Name*:" />
                 <div class="types">
                     <label class="type">
                         <input type="radio" name="type" value="eastern"><span>Eastern</span>
@@ -30,7 +30,7 @@
 
             <div class="upload_picture">
                 <!-- <from> -->
-                <h3>Upload Image:</h3>
+                <h3>Upload Image*:</h3>
                 <label for="id_for_file" class="choose_file">
                     <input type="file" id="id_for_file" name="photo"  onchange="handleFileSelected()" multiple>Choose
                     Image
@@ -48,7 +48,7 @@
 
 
             <div class="text">
-                <textarea id="recipe_context" name="recipe_context" class="context" placeholder="Steps:" rows="4"
+                <textarea id="recipe_context" name="recipe_context" class="context" placeholder="Description:" rows="4"
                     cols="50" value=""></textarea>
             </div>
 
@@ -68,6 +68,16 @@
                 </table>
                 <button type="button" id="addRowButton">Add Row</button>
             </div>
+
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+              <ul class="flashes">
+                {% for message in messages %}
+                  <li>{{ message }}</li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+            {% endwith %}
 
             <div class="submit">
                 <button type="submit">Submit</button>

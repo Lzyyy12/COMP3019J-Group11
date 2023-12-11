@@ -95,6 +95,10 @@ def add_recipe():
             ingredients = request.form.getlist('ingredient[]')
             amounts = request.form.getlist('amount[]')
 
+            if not recipe_name or not recipe_image or not recipe_type:
+                flash('Name, type, image are required.', 'error')
+                return redirect(request.url)
+            
             # Save recipe data to the database
             new_recipe = Recipe(user_id=user_id, name=recipe_name, path=recipe_image,
                                 type=recipe_type, description=recipe_description)
