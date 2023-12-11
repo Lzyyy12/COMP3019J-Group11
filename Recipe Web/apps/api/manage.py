@@ -60,7 +60,8 @@ def manage_recipe():
             recipedata['path'] = recipe.path
             cplist.append(recipedata)
     context = {
-        "cplist": cplist
+        "cplist": cplist,
+        "recipe_type": type
     }
     return render_template("manage_recipe.html", **context)
 
@@ -106,8 +107,8 @@ def manage_edit_recipe(recipe_id):
                 db.session.commit()
 
             flash('Recipe added successfully!', 'success')
-            # return redirect("/")
-            return redirect("/api/manage_recipe")
+            # return redirect
+            return redirect(url_for('manage.manage_recipe'))
         else:
             recipe = Recipe.query.get(recipe_id)
             # ingredients = recipe.ingredients
@@ -149,11 +150,21 @@ def search_recipe():
     keyword = request.args.get("keyword")
     cplist = []
     # Get the list of recipes from database
-    recipe_objs = Recipe.query.filter(Recipe.name.ilike(
-        '%{keyword}%'.format(keyword=keyword))).all()
+    recipe_type = request.args.get("recipe_type")
+    print("Using specific recipe type:", recipe_type)
+    # Search in all recipes
+    if recipe_type in ["eastern", "western"]:
+        recipe_objs = Recipe.query.filter(
+            Recipe.name.ilike(f'%{keyword}%'),
+            Recipe.type == recipe_type
+        ).all()
+    else:
+        recipe_objs = Recipe.query.filter(
+            Recipe.name.ilike(f'%{keyword}%')
+        ).all()
+
     for recipe in recipe_objs:
-        recipedata = {}
-        recipedata['name'] = recipe.name
-        recipedata['path'] = recipe.path
+        recipedata = {"id": recipe.id, "name": recipe.name, "path": recipe.path}
         cplist.append(recipedata)
+        
     return cplist

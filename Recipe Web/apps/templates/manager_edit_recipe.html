@@ -35,7 +35,7 @@
 
             <div class="header">
                 <input type="text" id="recipe_name" name="recipe_name" value="{{recipe.name}}" class="name_input"
-                    placeholder="Name:" />
+                    placeholder="Recipe Name:" />
                 <div class="types">
                     <label class="type">
                         {% if recipe.type=='eastern' %}
@@ -75,7 +75,7 @@
 
 
             <div class="text">
-                <textarea id="recipe_context" name="recipe_context" class="context" placeholder="Steps:" rows="4"
+                <textarea id="recipe_context" name="recipe_context" class="context" placeholder="Description:" rows="4"
                     cols="50" value="{{recipe.description}}"></textarea>
             </div>
 

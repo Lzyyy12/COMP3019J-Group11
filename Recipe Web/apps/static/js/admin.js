@@ -99,9 +99,10 @@ function search_user() {
   });
 }
 
+var recipe_type = "{{ recipe_type }}";
 function search_recipe() {
   var input = document.getElementById("search_recipe").value;
-  var url = "./search_recipe?keyword=" + input;
+  var url = "./search_recipe?keyword=" + input + "&recipe_type=" + recipe_type;
   $.ajax({
     url: url,
     type: "get",
