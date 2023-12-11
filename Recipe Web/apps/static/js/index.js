@@ -42,33 +42,65 @@ navBtnDOM.addEventListener('click', () => {
 
 // Get a list of navigation links and assign data-index attributes
 var navlist = document.querySelectorAll(".nav-link");
+var iframe = document.getElementById("recipeframe");
+var currentPageType = getCurrentPageType(); // 获取当前页面类型的函数
+
 for (let i = 0; i < navlist.length; i++) {
   navlist[i].setAttribute("data-index", i);
   navlist[i].onclick = function () {
     var index = this.getAttribute("data-index");
 
-    for (let i = 0; i < navlist.length; i++) {
-      if (index == i)
-        navlist[i].style.color = "#FFFA05";
-      else
-        navlist[i].style.color = "#FFF";
-    }
-    // Update the color of the clicked link and adjust the iframe source accordingly
-    var iframe = document.getElementById("recipeframe");
-    switch (index) {
-      case "0":
-        iframe.setAttribute("src", "./api/get_recipe?type=all")
-        break;
-      case "1":
-        iframe.setAttribute("src", "./api/get_recipe?type=eastern")
-        break;
-      case "2":
-        iframe.setAttribute("src", "./api/get_recipe?type=western")
-        break;
+    // 更新链接颜色
+    updateNavLinksColor(navlist, index);
 
-    }
+    // 根据页面类型和点击的 nav-link 更新 iframe 的 src
+    updateIframeSource(iframe, currentPageType, index);
   };
 }
+
+function getCurrentPageType() {
+  // 这里添加逻辑来判断当前是哪个页面，返回 'main', 'favorite' 或 'posted'
+  if (window.location.href.includes('main')) {
+    return 'main';
+  } else if (window.location.href.includes('favorite')) {
+    return 'favorite';
+  } else if (window.location.href.includes('user')) {
+    return 'user';
+  }
+  return 'main'; // 默认返回 'main'
+}
+
+function updateNavLinksColor(navlist, selectedIndex) {
+  for (let i = 0; i < navlist.length; i++) {
+    navlist[i].style.color = (selectedIndex == i) ? "#FFFA05" : "#FFF";
+  }
+}
+
+function updateIframeSource(iframe, pageType, index) {
+  var src;
+  switch (pageType) {
+    case 'main':
+      src = `./api/get_recipe?type=${getRecipeType(index)}`;
+      break;
+    case 'favorite':
+      src = `./api/get_favorite?type=${getRecipeType(index)}`;
+      break;
+    case 'user':
+      src = `./api/get_posted_recipe?type=${getRecipeType(index)}`;
+      break;
+  }
+  iframe.setAttribute('src', src);
+}
+
+function getRecipeType(index) {
+  switch (index) {
+    case "0": return "all";
+    case "1": return "eastern";
+    case "2": return "western";
+  }
+  return "all"; // 默认返回 'all'
+}
+
 document.getElementById('toggle-mode').addEventListener('click', function() {
   var modeText = document.getElementById('toggle-mode');
   document.body.classList.toggle('dark-mode');

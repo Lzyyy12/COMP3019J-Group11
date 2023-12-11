@@ -109,7 +109,6 @@ Navbar
   }
 
   .nav-links {
-    display: none;
     height: auto !important;
     flex-direction: row;
     align-items: center;
@@ -142,6 +141,7 @@ Page
   width: 90vw;
   max-width: var(--max-width);
   margin: 0 auto;
+
 }
 
 .page {
@@ -261,6 +261,7 @@ Recipes
 }
 
 .tags-list {
+  margin-top: 3rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }

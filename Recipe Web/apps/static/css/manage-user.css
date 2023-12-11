@@ -1,0 +1,88 @@
+/* 基础重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.page{
+    overflow-y: auto;
+    min-height: calc(100vh - (6rem + 4rem));
+}
+
+/* 搜索框样式 */
+.search {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem; /* 添加底部外边距 */
+}
+
+.search_input {
+  width: 70%;
+  font-size: 20px;
+}
+
+.search_button {
+  display: inline-block;
+  background-color: #787a7c;
+  color: #fff;
+  cursor: pointer;
+  margin-left: 3%;
+  border-radius: 6px;
+  width: 10%;
+  text-align: center;
+}
+
+.search_button:hover {
+    background-color: #0056b3;
+}
+
+/* 表格样式 */
+.table-box {
+    min-height: 100px; /* 例如设置一个最小高度 */
+    overflow-y: auto;
+    display: flex;/* 确保垂直滚动条在需要时显示 */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* 按钮样式 */
+.btn_delete {
+    padding: 5px 10px;
+    background-color: #ff4c4c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn_delete:hover {
+    background-color: #e84343;
+}
+
+/* 响应式调整 */
+@media screen and (max-width: 768px) {
+    .search_input {
+        width: calc(100% - 80px);
+    }
+
+    .search_button {
+        width: 80px;
+    }
+}

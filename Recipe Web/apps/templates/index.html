@@ -39,12 +39,12 @@
     <!-- Main Content -->
     <main class="page">
       <header class="hero">
-        
-        <!-- <div class="search">
-          <input type="text" id="search" value="" class="search_input" placeholder="Search..." />
-          <div class="search_button" onclick="search()">Search</div>
-        </div> -->
-       
+{#        #}
+{#        <!-- <div class="search">#}
+{#          <input type="text" id="search" value="" class="search_input" placeholder="Search..." />#}
+{#          <div class="search_button" onclick="search()">Search</div>#}
+{#        </div> -->#}
+{#       #}
       </header>
       <!-- End of Header -->
 
@@ -59,8 +59,8 @@
             <div class="change">
             <a href="./api/get_recipe?type=all" target="mainframe" class="main" onclick="showNavLinks()">Main</a>
             <a href="./api/add_recipe" target="mainframe" class="post" onclick="hideNavLinks()">Post</a>
-            <a href="./api/get_posted_recipe" target="mainframe" class="user" onclick="showNavLinks()">View Posted</a>
-            <a href="./api/get_favorite" target="mainframe" class="favorite" onclick="showNavLinks()">Favorite</a>
+            <a href="./api/get_posted_recipe" target="mainframe" class="user" onclick="hideNavLinks()">View Posted</a>
+            <a href="./api/get_favorite" target="mainframe" class="favorite" onclick="hideNavLinks()">Favorite</a>
             </div>
             <a href="#" id="toggle-mode">Dark Mode</a>
             <a href="./api/logout" class="logout">Log out</a>

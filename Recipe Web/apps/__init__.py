@@ -9,7 +9,7 @@ app = Flask(__name__)
 app.config['STATIC_FOLDER'] = './static'
 app.config['UPLOAD_IMAGE_FOLDER'] = 'apps/static/image/recipes'
 app.config['SECRET_KEY'] = '1qaz2wsx'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:123456@127.0.0.1:3306/recipe_web?charset=utf8'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:Ella20030325=@127.0.0.1:3306/recipe_web?charset=utf8'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 db = SQLAlchemy(app)
 

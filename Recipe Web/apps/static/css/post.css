@@ -228,6 +228,21 @@ margin-left: auto;
     /* 或足够的边距以适当分隔上传区域和提交按钮 */
 }
 
+.deleteButton {
+  display: flex;
+    background-color: #ff4c4c;
+    color: #f8d7da;
+  justify-content: center;
+    align-items: center;
+  margin-top: 15px;
+    font-size: 16px;
+    width: 25%;
+  height: 2rem;
+
+    border-radius: 7px;
+    /* 或足够的边距以适当分隔上传区域和提交按钮 */
+}
+
 .dark-mode {
   background-color: #333; /* 深色背景 */
   color: #fff; /* 浅色文字 */
@@ -267,8 +282,22 @@ margin-left: auto;
   border-color: white; /* 设置边框颜色为白色 */
 }
 .dark-mode .ingredientsTable td {
-  border: 1px solid yellow;}
+  border: 1px solid yellow;
+}
 
+ul.flashes {
+    margin-top: 1rem;
+    list-style-type: none;
+    padding: 10px;
+    background-color: #f8d7da;
+    color: #721c24;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+ul.flashes li {
+    margin: 5px 0;
+}
 
 
 

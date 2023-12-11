@@ -303,13 +303,14 @@ Recipes
   margin-bottom: 1rem;
 }
 
-.recipe h5 {
+.recipe h4 {
   margin-bottom: 0;
   margin-top: 0.25rem;
   text-decoration: none;
   color: black;
   font-weight: bold;
 }
+
 
 .recipe p {
   margin-bottom: 0;

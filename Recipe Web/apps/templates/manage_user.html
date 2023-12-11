@@ -3,11 +3,12 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="/static/css/admin.css" />
+  <link rel="stylesheet" href="/static/css/manage-user.css" />
   <script src="/static/js/jquery-1.12.4.min.js"></script>
 </head>
 
 <body>
+<main class="page">
   <header class="hero recipes-container" style="margin-top: 20px;">
     <!-- search bar -->
     <div class="search">
@@ -16,18 +17,12 @@
     </div>
   </header>
 
-  <style>
-    .btn_delete {
-      padding: 5px 5px;
-    }
-  </style>
 
   <!-- recipes list -->
-  <div id="recipes" class="recipes-list">
 
     <div class="table-box"><table>
       <tr>
-          <th id="user-id">ID</th>
+          <th id="user-id" >ID</th>
           <th id="user-name">Name</th>
           <th id="opt-delete"></th>
       
@@ -44,10 +39,10 @@
       {% endfor %}
 
   </table></div>
-  </div>
   <!-- end of recipes list -->
 
   <script src="/static/js/admin.js"></script>
+</main>
 </body>
 
 </html>
