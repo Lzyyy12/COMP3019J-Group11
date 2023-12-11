@@ -187,7 +187,7 @@ margin-left: auto;
 
 #ingredientsTable th,
 #ingredientsTable td {
-  border: 1px solid #333333;
+  border: 1px solid #787a7c;
   padding: 7px;
   text-align: center; /* 居中显示单元格内容 */
 }
@@ -241,7 +241,9 @@ margin-left: auto;
 .dark-mode h4,
 .dark-mode h5,
 .dark-mode h6,
-.dark-mode a
+.dark-mode a,
+.dark-mode input,
+.dark-mode textarea
 /* 以及任何其他您希望在深夜模式下拥有白色文字的元素 */ {
   color: #fff; /* 设置这些元素的文字颜色为白色 */
 }
@@ -264,6 +266,8 @@ margin-left: auto;
 .dark-mode .ingredientsTable td {
   border-color: white; /* 设置边框颜色为白色 */
 }
+.dark-mode .ingredientsTable td {
+  border: 1px solid yellow;}
 
 
 
