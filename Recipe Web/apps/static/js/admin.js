@@ -1,19 +1,24 @@
-window.onload = function() {
+window.onload = function () {
+  deleteuser();
+}
+
+function deleteuser() {
   var userdeletelist = document.querySelectorAll(".btn_delete");
   for (let i = 0; i < userdeletelist.length; i++) {
     userdeletelist[i].onclick = function () {
       var inputNode = this;
       var userid = this.getAttribute("user-id");
-      var data = {userId: userid};
+      var data = { userId: userid };
       $.ajax({
         url: "delete_user",
         data: data,
         type: "post",
         success: function (response) {
-          var parentNode = inputNode.parentNode.parentNode
-          var grandParentNode = parentNode.parentNode
-          grandParentNode.removeChild(parentNode)
-
+          if (response == 'delete succeeded') {
+            var parentNode = inputNode.parentNode.parentNode;
+            var grandParentNode = parentNode.parentNode;
+            grandParentNode.removeChild(parentNode);
+          }
           alert(response);
         }
       });
@@ -21,20 +26,20 @@ window.onload = function() {
   }
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    var tags = document.querySelectorAll('.tags-list a'); // 获取所有标签
+document.addEventListener('DOMContentLoaded', function () {
+  var tags = document.querySelectorAll('.tags-list a'); // 获取所有标签
 
-    tags.forEach(function(tag) {
-        tag.addEventListener('click', function() {
-            // 首先移除所有按钮的 'active-tag' 类
-            tags.forEach(function(t) {
-                t.classList.remove('active-tag');
-            });
+  tags.forEach(function (tag) {
+    tag.addEventListener('click', function () {
+      // 首先移除所有按钮的 'active-tag' 类
+      tags.forEach(function (t) {
+        t.classList.remove('active-tag');
+      });
 
-            // 然后给当前点击的按钮添加 'active-tag' 类
-            tag.classList.add('active-tag');
-        });
+      // 然后给当前点击的按钮添加 'active-tag' 类
+      tag.classList.add('active-tag');
     });
+  });
 });
 
 function hideNavLinks() {
@@ -74,22 +79,42 @@ for (let i = 0; i < navlist.length; i++) {
   };
 }
 
+function search_user() {
+  var input = document.getElementById("search_user").value;
+  var url = "./search_user?keyword=" + input;
+  $.ajax({
+    url: url,
+    type: "get",
+    success: function (response) {
+      var recipes = document.getElementById("recipes");
+      html = '<div class="table-box"><table>'
+        + '<tr><th id="user-id">ID</th><th id="user-name">Name</th><th id="opt-delete"></th></tr>';
+      response.forEach(function (item, index) {
+        html = html + '<tr><td>' + response[index].id + '</td><td>' + response[index].name + '</td>'
+          + '<td><input type="button" class="btn_delete" user-id=' + response[index].id + ' value="Delete"/></td></tr>';
+      });
+      recipes.innerHTML = html;
+      deleteuser();
+    }
+  });
+}
+
 function search_recipe() {
   var input = document.getElementById("search_recipe").value;
   var url = "./search_recipe?keyword=" + input;
   $.ajax({
-      url: url,
-      type: "get",
-      success: function (response) {
-          var recipes = document.getElementById("recipes");
+    url: url,
+    type: "get",
+    success: function (response) {
+      var recipes = document.getElementById("recipes");
 
-          var html = '';
-          response.forEach(function (item, index) {
-              html = html + '<a href="./manage_edit_recipe/' + item.id + '"class="recipe">'
-                  + '<img src=' + item.path + ' class="img recipe-img" alt="" />'
-                  + '<h5>' + item.name + '</h5></a>';
-          })
-          recipes.innerHTML = html;
-      }
+      var html = '';
+      response.forEach(function (item, index) {
+        html = html + '<a href="./manage_edit_recipe/' + item.id + '" class="recipe">'
+          + '<img src=' + item.path + ' class="img recipe-img" alt="" />'
+          + '<h5>' + item.name + '</h5></a>';
+      })
+      recipes.innerHTML = html;
+    }
   });
 }

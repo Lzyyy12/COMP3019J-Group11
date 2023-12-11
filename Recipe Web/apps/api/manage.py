@@ -21,11 +21,9 @@ def manage_user():
         userdata['name'] = user.name
         # userdata['photo'] = user.photo
         cplist.append(userdata)
-   
     context = {
         "cplist": cplist
         }
-    
     return render_template("manage_user.html", **context)
 
 @bp.route("/delete_user", methods=["POST"])
@@ -130,6 +128,22 @@ def manage_edit_recipe(recipe_id):
             return render_template("manager_edit_recipe.html", **context)
     return "please log in"
 
+
+@bp.route("/search_user", methods=["GET"])
+def search_user():
+    keyword = request.args.get("keyword")
+    cplist = []
+    # Get the list of users from database
+    user_objs = User.query.filter(User.name.ilike(
+        '%{keyword}%'.format(keyword=keyword))).all()
+    for user in user_objs:
+        userdata = {}
+        userdata['id'] = user.id
+        userdata['name'] = user.name
+        cplist.append(userdata)
+    return cplist
+
+
 @bp.route("/search_recipe", methods=["GET"])
 def search_recipe():
     keyword = request.args.get("keyword")
@@ -142,5 +156,4 @@ def search_recipe():
         recipedata['name'] = recipe.name
         recipedata['path'] = recipe.path
         cplist.append(recipedata)
-
     return cplist
