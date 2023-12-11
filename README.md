@@ -10,3 +10,4 @@ Main Program Folder: **Recipe Web**
 
 -	Information for creating database is stored in **database** folder.
 -	**dbfinal** will be the final version of database creation.
+-	**Administrator** can only be added by manipulating database.
