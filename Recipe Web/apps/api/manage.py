@@ -72,7 +72,7 @@ def delete_recipe(recipe_id):
         Ingredient.query.filter_by(recipe_id=recipe_id).delete()
         db.session.delete(recipe)
         db.session.commit()
-    return redirect(url_for('manage.manage_recipe'))
+    return redirect(url_for('manage.manage_recipe', type='all'))
 
 
 @bp.route("/manage_edit_recipe/<int:recipe_id>", methods=["GET", "POST"])
@@ -108,7 +108,7 @@ def manage_edit_recipe(recipe_id):
 
             flash('Recipe added successfully!', 'success')
             # return redirect
-            return redirect(url_for('manage.manage_recipe'))
+            return redirect(url_for('manage.manage_recipe', type='all'))
         else:
             recipe = Recipe.query.get(recipe_id)
             # ingredients = recipe.ingredients

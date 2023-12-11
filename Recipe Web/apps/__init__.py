@@ -5,11 +5,10 @@ from apps import config
 import os
 
 app = Flask(__name__)
-
-app.config['STATIC_FOLDER'] = './static'
-app.config['UPLOAD_IMAGE_FOLDER'] = 'apps/static/image/recipes'
-app.config['SECRET_KEY'] = '1qaz2wsx'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:Ella20030325=@127.0.0.1:3306/recipe_web?charset=utf8'
+app.config['STATIC_FOLDER'] = os.getenv('STATIC_FOLDER')
+app.config['UPLOAD_IMAGE_FOLDER'] = os.getenv('UPLOAD_IMAGE_FOLDER')
+app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DB_URI')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 db = SQLAlchemy(app)
 
