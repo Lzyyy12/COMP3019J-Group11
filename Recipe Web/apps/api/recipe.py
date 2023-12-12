@@ -97,7 +97,7 @@ def add_recipe():
 
             if not recipe_name or not recipe_image or not recipe_type:
                 flash('Name, type, image are required.', 'error')
-                return redirect(request.url)
+                return redirect(url_for('recipe.add_recipe'))
             
             # Save recipe data to the database
             new_recipe = Recipe(user_id=user_id, name=recipe_name, path=recipe_image,
